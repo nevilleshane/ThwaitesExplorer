@@ -7,6 +7,7 @@ function MapClient(view, params) {
   //load up the GMRT base layer
   gmrtLayer = new ol.layer.Tile({
     // type: 'base',
+    basemap: true,
     visible: true,
     title: "GMRT Synthesis",
     source: new ol.source.TileWMS({
@@ -47,6 +48,7 @@ function MapClient(view, params) {
 
   ibcso = new ol.layer.Tile({
     type: 'base',
+    basemap: true,
     title: "IBCSO",
     visible: true,
     source: new ol.source.TileArcGISRest({
@@ -60,6 +62,7 @@ function MapClient(view, params) {
 
   terra = new ol.layer.Tile({
     type: 'base',
+    basemap: true,
     title: "15m TerraColor",
     visible: false,
     source: new ol.source.TileArcGISRest({
@@ -75,6 +78,7 @@ function MapClient(view, params) {
   lima = new ol.layer.Tile({
     type: 'base',
     title: "LIMA 240m",
+    basemap: true,
     visible: false,
     source: new ol.source.TileWMS({
         url:"http://api.usap-dc.org:81/wfs?",
@@ -105,7 +109,7 @@ function MapClient(view, params) {
   // add overview map
   var overviewMapControl = new ol.control.OverviewMap({
     className: 'ol-overviewmap ol-custom-overviewmap',
-    layers: [gmrtLayer, ibcso],
+    layers: [gmrtLayer, terra, ibcso, lima],
     collapseLabel: '\u00BB',
     label: '\u00AB',
     collapsed: false, 

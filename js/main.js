@@ -462,13 +462,26 @@ function menuItemClicked(overlay, parent, icon, title) {
   this is a multi_layer overlay 
 */
 function removeAllLayers(removeGMRT) {    
-  map.setLayerGroup(new ol.layer.Group());
-  if (!removeGMRT) {
-    map.addLayer(gmrtLayer);
-    map.addLayer(terra);
-    map.addLayer(ibcso);
-    map.addLayer(lima);
+  console.log(map.getLayers());
+  var layersToRemove = [];
+  map.getLayers().forEach(function(lyr) {
+    if (lyr.getProperties().basemap !== true) {
+      layersToRemove.push(lyr);
+    }
+  });
+  var len = layersToRemove.length;
+  for(var i = 0; i < len; i++) {
+      map.removeLayer(layersToRemove[i]);
   }
+
+  /* TODO: Handle remove GMRT */
+
+  // if (!removeGMRT) {
+  //   map.addLayer(gmrtLayer);
+  //   map.addLayer(terra);
+  //   map.addLayer(ibcso);
+  //   map.addLayer(lima);
+  // }
   if (showSeabedNames) map.addLayer(placeNamesLayer);
   $("#sequence").hide(); 
   $("#legend").hide();
