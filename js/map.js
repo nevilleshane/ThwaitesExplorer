@@ -19,12 +19,6 @@ function MapClient(view, params) {
     })
   });
 
-
-
-
-
-
-
   //set up the map
   var map = new ol.Map({
     interactions: ol.interaction.defaults().extend([
@@ -51,13 +45,13 @@ function MapClient(view, params) {
   }));
 
 
-
   var ibcso = new ol.layer.Tile({
     type: 'base',
     title: "IBCSO",
     visible: false,
     source: new ol.source.TileArcGISRest({
         url:"https://gis.ngdc.noaa.gov/arcgis/rest/services/antarctic/antarctic_basemap/MapServer",
+        crossOrigin: 'anonymous',
         params: {
         transparent: true
       }
@@ -70,6 +64,7 @@ function MapClient(view, params) {
     visible: false,
     source: new ol.source.TileArcGISRest({
         url:"https://services.arcgisonline.com/arcgis/rest/services/Polar/Antarctic_Imagery/MapServer",
+        crossOrigin: 'anonymous',
         params: {
         layers: "Antarctic_Imagery",
         transparent: true
@@ -83,6 +78,7 @@ function MapClient(view, params) {
     visible: true,
     source: new ol.source.TileWMS({
         url:"http://api.usap-dc.org:81/wfs?",
+        crossOrigin: 'anonymous',
         params: {
         layers: "LIMA 240m",
         transparent: true
