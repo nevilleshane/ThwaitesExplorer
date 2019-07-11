@@ -1,2 +1,2 @@
-# PolarExplorerWebApp
-WebApp version of Polar Explorer
+# ThwaitesExplorerWebApp
+Thwaites Explorer Web Application, based on polarExplorer
