@@ -45,10 +45,10 @@ function MapClient(view, params) {
   }));
 
 
-  var ibcso = new ol.layer.Tile({
+  ibcso = new ol.layer.Tile({
     type: 'base',
     title: "IBCSO",
-    visible: false,
+    visible: true,
     source: new ol.source.TileArcGISRest({
         url:"https://gis.ngdc.noaa.gov/arcgis/rest/services/antarctic/antarctic_basemap/MapServer",
         crossOrigin: 'anonymous',
@@ -58,7 +58,7 @@ function MapClient(view, params) {
     })
   });
 
-  var terra = new ol.layer.Tile({
+  terra = new ol.layer.Tile({
     type: 'base',
     title: "15m TerraColor",
     visible: false,
@@ -72,13 +72,13 @@ function MapClient(view, params) {
     })
   });
 
-  var lima = new ol.layer.Tile({
+  lima = new ol.layer.Tile({
     type: 'base',
     title: "LIMA 240m",
-    visible: true,
+    visible: false,
     source: new ol.source.TileWMS({
         url:"http://api.usap-dc.org:81/wfs?",
-        crossOrigin: 'anonymous',
+        // crossOrigin: 'anonymous',
         params: {
         layers: "LIMA 240m",
         transparent: true
@@ -105,7 +105,7 @@ function MapClient(view, params) {
   // add overview map
   var overviewMapControl = new ol.control.OverviewMap({
     className: 'ol-overviewmap ol-custom-overviewmap',
-    layers: [gmrtLayer, lima],
+    layers: [gmrtLayer, ibcso],
     collapseLabel: '\u00BB',
     label: '\u00AB',
     collapsed: false, 

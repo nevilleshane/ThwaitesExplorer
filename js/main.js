@@ -463,7 +463,12 @@ function menuItemClicked(overlay, parent, icon, title) {
 */
 function removeAllLayers(removeGMRT) {    
   map.setLayerGroup(new ol.layer.Group());
-  if (!removeGMRT) map.addLayer(gmrtLayer);
+  if (!removeGMRT) {
+    map.addLayer(gmrtLayer);
+    map.addLayer(terra);
+    map.addLayer(ibcso);
+    map.addLayer(lima);
+  }
   if (showSeabedNames) map.addLayer(placeNamesLayer);
   $("#sequence").hide(); 
   $("#legend").hide();
