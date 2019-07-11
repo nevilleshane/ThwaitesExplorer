@@ -1,0 +1,1412 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.mobile_portrait, .mobile_landscape, .tablet_portrait, .tablet_landscape, .small_tablet_portrait, .small_tablet_landscape{
+  display: none;
+  z-index: 50;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper .map-div {
+  position:absolute;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity:0;
+}
+
+.wrapper .map-div-arcgis {
+  position:absolute;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.logoDiv {
+  position: absolute;
+  top: 20%;
+  right: -12%;
+  opacity: 0.5;
+  z-index: 101;
+}
+
+.triangle {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #f00;
+  position: absolute;
+  z-index:50;
+}
+
+
+#elev {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  cursor: default;
+}
+
+#layerList {
+  padding: 0.5em;
+}
+
+#icons {
+  bottom: 0;
+  right: 3%;
+  position: absolute;
+  z-index: 60;
+}
+
+#icons button {
+  width: auto;
+  padding: 5px 8px 5px 8px;
+}
+
+.menu {
+  background: #f1f1f1;
+  border: 2px solid #d3d3d3;
+  bottom: 0;
+  position: absolute;
+  font-family: arial;
+  height: 55%;
+  right: 3%;
+  padding: 5px;
+  width: 23%;
+  z-index: 70;
+  -moz-box-shadow: 0 2px 7px #292929;
+  -webkit-box-shadow: 0 2px 7px #292929;
+  box-shadow: 0 2px 7px #292929;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#menubody {
+  height: 76%;
+  width: 100%;
+  overflow: auto; 
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+  border-left: none;
+  border-right: none;
+}
+
+tr {
+  width: 100%;
+}
+
+.menu_overview {
+  height: 2em;
+  color: #0a4199;
+}
+
+.menu_item {
+  height: 2em;
+  cursor: pointer;
+}
+
+.menu_icon {
+  padding: 10px;
+}
+
+.menu_info {
+  color: blue;
+}
+
+.popup {
+  background: #f1f1f1;
+  border: 2px solid #d3d3d3;
+  position: absolute;
+  font-family: arial;
+  height: 52%;
+  bottom: 2%;
+  left: 2%;
+  padding: 0.5em;
+  width: 28%;
+  z-index: 70;
+  overflow: hidden;  
+  resize: both;
+  min-height:42%;
+  min-width:24%;
+  -moz-box-shadow: 0 2px 7px #292929;
+  -webkit-box-shadow: 0 2px 7px #292929;
+  box-shadow: 0 2px 7px #292929;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#popup_text {
+  line-height: 1.7em;
+  position: absolute;
+  height: 75%;
+  overflow: auto; 
+  padding: 10px 10px 0 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.settings-container {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.settings {
+  background: #bfbfbf;
+  border: 2px solid #d3d3d3;
+  bottom: 35%;
+  position: absolute;
+  font-family: arial;
+  height: 330px;
+
+  left: 40%;
+  padding: 0.5em;
+  width: 23%;
+  z-index: 90;
+  -moz-box-shadow: 0 2px 7px #292929;
+  -webkit-box-shadow: 0 2px 7px #292929;
+  box-shadow: 0 2px 7px #292929;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#settingsbody {
+  margin: 15px;
+}
+
+.settings-table {
+  padding: 5px;
+  background: #f1f1f1;
+  border-collapse: separate;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.settings-table td{
+  border:none;
+}
+
+.window-header {
+  padding: 10px;
+  cursor: move;
+  background-color:  #071d3f;
+  color: #fff;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.window-footer {
+  bottom: 1%;
+  position: absolute;
+  width: 96%;
+  padding: 3% 0 3% 0;
+  background-color: #071d3f;
+  color: #fff;
+  text-align: center;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#info {
+  position: absolute;
+  bottom: 2%;
+  left: 40%;
+  z-index: 40;
+}
+
+#opacity {
+  position: absolute;
+  bottom: 1.7%;
+  left: 42%;
+  z-index: 40;
+}
+
+#sequence {
+  border-radius:25px;
+  border: 2px solid black;
+  background-color: white;
+  width: 23%;
+  height: 2em;
+  position: absolute;
+  bottom: 5.5%;
+  left: 39%;
+  z-index: 40;
+}
+
+#sequence_left {
+  float: left;
+  margin-left: 2px;
+}
+
+#sequence_right {
+  float: right;
+  margin-right: 2px;
+}
+
+#sequence_level {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 0;  
+}
+
+.fa.disabled {
+    color: #dddddd;
+}
+
+tr.disabled {
+    color: #999999;
+}
+
+#legend {
+  border: 2px solid #d3d3d3;
+  background-color: white;
+  position: absolute;
+  top: 2%;
+  left: 4%;
+  z-index: 60;
+}
+
+#legendheader {
+  font-size: 0.7em;
+  text-align:center;
+  padding: 5px;
+  cursor: move;
+  background-color: #071d3f;
+  color: #fff;
+  object-fit: contain;
+}
+
+#scaleline {
+  position: absolute;
+  top: 4%;
+  right: 20%;
+  z-index: 30;
+}
+
+#layer_header {
+  position: absolute;
+  top: 2%;
+  left: 30%;
+  z-index: 20;
+}
+
+.layer_header_text {
+  font-size: 1.5em;
+  display:inline;
+  margin-right:20px;
+  padding:5px;
+}
+
+.screen_text {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.ol-control button {
+  z-index: 30;
+}
+
+#hidden_map .ol-control {
+  display: none;
+}
+.ol-mouse-position {
+  left: 45%;
+  top: 0.6em;
+  z-index: 30;
+}
+
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+  padding: 15px;
+  border-radius: 10px;
+  border: 5px solid #666666;
+  bottom: 12px;
+  left: -50px;
+  min-width: 150px;
+  z-index: 80;
+}
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+.ol-attribution {
+  display: none;
+}
+
+.ol-custom-overviewmap,
+.ol-custom-overviewmap.ol-uncollapsible {
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: 0;
+}
+
+.ol-custom-overviewmap:not(.ol-collapsed)  {
+  border: 1px solid black;
+}
+
+.ol-custom-overviewmap .ol-overviewmap-box {
+  border: 2px solid red;
+}
+
+.ol-custom-overviewmap:not(.ol-collapsed) button{
+  bottom: auto;
+  left: auto;
+  right: 1px;
+  top: 1px;
+}
+
+.ol-rotate {
+  display: none;
+  right: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00cc00;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00cc00;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  -moz-transform: translateX(26px);
+  -o-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.overview_link {
+  color: blue;
+  text-decoration: none;
+}
+
+
+.menu.disabled {
+  color: #eeeeee;
+}
+
+.menu.disabled #menuheader, .menu_overview {
+  background-color: #dddddd;
+  color: #eeeeee;
+}
+
+#menufooter.disabled {
+  background-color: #dddddd;
+  color: #eeeeee;
+}
+
+.new_user_btn-container {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#new_user_btn {
+  background-color: #071d3f;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  position: absolute;
+  bottom: 10%;
+  left: 48%;
+  z-index: 60;
+}
+
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  /*opacity: 0.5;*/
+}
+
+#start_btn {
+  background-color: #071d3f;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  position: absolute;
+  bottom: 10%;
+  left: 48%;
+  z-index: 101;
+}
+
+button {
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #f1f1f1;
+  padding: 3px 1px 3px 1px;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 75%;
+  font-family: arial;
+  font-weight: bold;
+  width: 15%;
+  text-align: center;
+}
+
+
+/* smart phone portrait */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .mobile_portrait {
+    display: block;
+  }
+
+  button {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .window-header {
+    width: 99%;
+    padding: 10px 0 10px 10px;
+    border-radius: 0;
+  }
+
+  .window-footer {
+    width: 99%;
+    padding: 10px 0 10px 10px;
+    bottom: 0;
+    border-radius: 0;
+  }
+
+  .menu {
+    bottom: 0;
+    border-color: black;
+    border-radius: 0;
+    height: 100%;
+    right: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #menubody {
+    height: 82%;
+    width: 100%;
+  }
+
+  .popup {
+    border-radius: 10px;
+    height: 95%;
+    bottom: 2px;
+    left: 5px;
+    padding: 0;
+    width: 95%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;  
+    resize: none;
+    border-color: blue
+  }
+
+  #popup_text {
+    height: 82%;
+    line-height: 1.5em;
+    margin: 0;
+  }
+
+  #info {
+    bottom: 0.3em;
+    left: 0.5em;
+  }
+
+  #icons {
+    right: 2%;
+    bottom: 2%;
+    position: absolute;
+  }
+
+  #scaleline {
+    top: 7%;
+    right: 35%;
+  }
+
+  #opacity {
+    bottom: 0.2em;
+    left: 2em;
+  }
+
+  .ol-control button {
+    font-size: 50%;
+    height: 1.1em;
+    width: 1.1em;
+  }
+
+  .ol-mouse-position {
+    left: 30%;
+    top: 0.6em;
+  }
+
+  #layer_header {
+    top: auto;
+    bottom: 5%;
+    left: 2%;
+  }
+
+  .layer_header_text {
+    font-size: 80%;
+    margin-right:0;
+    padding:0;
+  }
+
+  #sequence {
+    width: 80%;
+    height: 2em;
+    bottom: 9%;
+    left: 0.2em;
+  }
+
+  .settings {
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    border-color: black;
+  }
+
+  #table-popup-content {
+    font-size: 60%;
+  }
+
+  #new_user_btn {
+    left: 35%;
+  }
+
+  #elev {
+    margin-top: 14px;
+  }
+
+  /*
+    used to flip between menu and map on mobile devices
+  */
+  /* flip the pane when added or removed */
+  .flip {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  .flip-container {
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* flip speed goes here */
+  .flipper {
+    -webkit-transition: 1s;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* hide back of pane during swap */
+  .front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* front pane, placed above back */
+  .front {
+    z-index: 3;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  /* back, initially hidden pane */
+  .back {
+    z-index: 1;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+
+
+/* smart phone landscape */
+@media screen and (max-height: 420px) and (orientation: landscape) {
+  .mobile_landscape {
+    display: block;
+  }
+  
+  button {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .window-header {
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    border-radius: 0;
+  }
+
+  .window-footer {
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    bottom: 0;
+    border-radius: 0;
+  }
+
+  .menu {
+    bottom: 0;
+    border-color: black;
+    border-radius: 0;
+    height: 100%;
+    right: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #menubody {
+    height: 75%;
+    width: 100%;
+  }
+
+
+  .popup {
+    border-radius: 10px;
+    height: 95%;
+    bottom: 2px;
+    left: 15px;
+    padding: 0;
+    width: 95%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;  
+    resize: none;
+    border-color: blue
+  }
+
+  #info {
+    bottom: 0.3em;
+    left: 0.5em;
+  }
+
+  #icons {
+    right: 2%;
+    bottom: 2%;
+    position: absolute;
+  }
+
+  #scaleline {
+    top: 12%;
+    right: 20%;
+  }
+
+  #opacity {
+    bottom: 0;
+    left: 5%;
+  }
+
+  #opacity_slider {
+    width: 150%;
+  }
+
+  .ol-control button {
+    font-size: 50%;
+    height: 1.1em;
+    width: 1.1em;
+  }
+
+  .ol-mouse-position {
+    left: 45%;
+    top: 0.6em;
+  }
+
+  #layer_header {
+    top: auto;
+    bottom: 10%;
+    left: 2%;
+  }
+
+  .layer_header_text {
+    font-size: 100%;
+    margin-right:0;
+    padding:0;
+  }
+
+  #sequence {
+    width: 50%;
+    height: 2em;
+    bottom: 16%;
+    left: 25%;
+  }
+
+  .settings {
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    border-color: black;
+  }
+
+  #table-popup-content {
+    font-size: 60%;
+  }
+
+  #new_user_btn {
+    left: 45%;
+    bottom: 20%;
+  }
+
+  #elev {
+    margin-top: 14px;
+  }
+
+  #popup_text {
+    line-height: 1.5em;
+    margin: 0;
+  }
+
+  .switch {
+    width: 44px;
+    height: 24px;
+  }
+
+  .slider:before {
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /*
+    used to flip between menu and map on mobile devices
+  */
+  /* flip the pane when added or removed */
+  .flip {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  .flip-container {
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* flip speed goes here */
+  .flipper {
+    -webkit-transition: 1s;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* hide back of pane during swap */
+  .front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* front pane, placed above back */
+  .front {
+    z-index: 3;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  /* back, initially hidden pane */
+  .back {
+    z-index: 1;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+}
+
+
+
+/* small tablets landscape */
+@media only screen and (min-height: 421px) and (max-height: 599px) and (orientation: landscape) {
+  .small_tablet_landscape {
+    display: block;
+  }
+
+  .menu {
+    font-size: 70%;
+    width: 20%; 
+    right: 1.5%;
+  }
+
+  #menubody {
+    height: 70%;
+  }
+
+  #icons {
+    right: 1.5%;
+  }
+
+  button {
+    font-size: 65%;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+
+  .popup {
+    font-size: 70%;
+    min-width: 0;
+    width: 20%;
+    overflow: hidden;  
+    resize: none;
+    left: 1.5%;
+  }
+
+  #popup_text {
+    height: 68%;
+  }
+
+  .settings {
+    font-size: 70%;
+    height: 55%;
+    width: 20%;
+    left: 40%;
+    bottom: 30%;
+  }
+
+  .switch {
+    width: 34px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    -moz-transform: translateX(15px);
+    -o-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+
+  #table-popup-content {
+    font-size: 70%;
+  }
+
+  #scaleline {
+    top: 8%;
+  }
+
+  #new_user_btn {
+    left: 45.5%;
+    bottom: 20%;
+  }
+
+  #legend {
+    zoom: 0.7;
+  }
+
+  .ol-control button {
+    zoom: 0.8;
+  }
+
+  #sequence {
+    bottom: 10%;
+    width: 25%;
+    left: 38%;
+  }
+}
+
+
+
+/* small tablets portrait*/
+@media only screen and (min-width: 481px) and (max-width: 767px) and (orientation: portrait) {
+  .small_tablet_portrait {
+    display: block;
+  }
+
+  .menu {
+    font-size: 70%;
+    height: 45%;
+    width: 34%; 
+    right: 0.5%;
+  }
+
+  #icons {
+    right: 0.5%;
+  }
+
+  button {
+    font-size: 75%;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: auto;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .popup {
+    font-size: 70%;
+    width: 34%;
+    height: 40%;
+    bottom: 1%;
+    left: 0.5%;
+  }
+
+  .settings {
+    font-size: 80%;
+    height: 30%;
+    width: 35%;
+    left: 35%;
+    bottom: 50%;
+  }
+
+  .switch {
+    width: 34px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    -moz-transform: translateX(15px);
+    -o-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+
+  #table-popup-content {
+    font-size: 70%;
+  }
+
+  #scaleline {
+    top: 6%;
+    right: 25%;
+  }
+
+  #new_user_btn {
+    left: 43%;
+    bottom: 13%;
+  }
+
+  #legend {
+    top: 6%;
+    left: 8%;
+    zoom: 0.6;
+  }
+
+  #layer_header {
+    left: 10%;
+  }
+
+  .ol-control button {
+    zoom: 0.8;
+  }
+
+  #opacity {
+    bottom: 1.5%;
+    left: 44%;
+  }
+
+  #opacity_slider {
+    width: 70%;
+  } 
+
+  #info {
+    left: 37%;
+  }
+
+  #sequence{ 
+    left: 37.25% ;
+    width: 25%; 
+    font-size: 60%;
+  }
+
+  #sequence_left {
+    margin-left: 1px;
+  }
+
+  #sequence_right {
+    margin-right: 1px;
+  }
+}
+
+
+
+
+/* tablets landscape*/
+@media only screen and (min-height: 600px) and (max-height: 1024px) and (max-width: 1024px) and (orientation: landscape) {
+  .tablet_landscape {
+    display: block;
+  }
+
+  .menu {
+    font-size: 80%;
+  }
+
+  button {
+    font-size: 75%;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .popup {
+    font-size: 80%;
+  }
+
+  .settings {
+    font-size: 80%;
+    height: 250px;
+  }
+
+  .switch {
+    width: 34px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    -moz-transform: translateX(15px);
+    -o-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+
+  #table-popup-content {
+    font-size: 70%;
+  }
+
+  #scaleline {
+    top: 6%;
+  }
+
+  #new_user_btn {
+    left: 43.5%;
+    bottom: 13%;
+  }
+
+  #legend {
+    zoom: 0.8;
+  }
+
+  .ol-control button {
+    zoom: 0.8;
+  }
+}
+
+
+/* tablets portrait*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .tablet_portrait {
+    display: block;
+  }
+
+  .menu {
+    font-size: 80%;
+    height: 45%;
+    width: 33%; 
+    right: 1%;
+  }
+
+ #icons {
+    right: 1%;
+  }
+
+  #menubody {
+    height: 80%;
+  }
+
+  button {
+    font-size: 80%;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .popup {
+    font-size: 80%;
+    width: 33%;
+    height: 40%;
+    bottom: 1%;
+    left: 1%;
+  }
+
+  .settings {
+    font-size: 80%;
+    height: 30%;
+    width: 35%;
+    left: 35%;
+    bottom: 50%;
+    z-index: 90;
+  }
+
+  .switch {
+    width: 34px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    -moz-transform: translateX(15px);
+    -o-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+
+  #table-popup-content {
+    font-size: 70%;
+  }
+
+  #scaleline {
+    top: 6%;
+  }
+
+  #new_user_btn {
+    left: 44%;
+    bottom: 13%;
+  }
+
+  #legend {
+    top: 6%;
+    left: 6%;
+    zoom: 0.7;
+  }
+
+  #layer_header {
+    left: 10%;
+  }
+
+  .ol-control button {
+    zoom: 0.8;
+  }
+
+  #info {
+    left: 37%;
+  }
+
+  #sequence{ 
+    left: 36.5% ;
+    width: 26.5%; 
+    font-size: 90%;
+  }
+}

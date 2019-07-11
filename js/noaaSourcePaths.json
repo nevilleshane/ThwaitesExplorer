@@ -1,0 +1,7 @@
+{
+    "WOAS.yearly": "https://www.nnvl.noaa.gov/Portal/Tiles/WOAS/WOAS.yearly.2013.0000.color/",
+    "SURF.weekly": "https://www.nnvl.noaa.gov/Portal/Tiles/SURF/SURF.weekly.201836.color/",
+    "RAIN.weekly": "https://www.nnvl.noaa.gov/Portal/Tiles/RAIN/RAIN.weekly.201836.color/",
+    "OLWR.weekly": "https://www.nnvl.noaa.gov/Portal/Tiles/OLWR/OLWR.weekly.201825.color/",
+    "SURF.yearly": "https://www.nnvl.noaa.gov/Portal/Tiles/SURF/SURF.yearly.2017.color/"
+}

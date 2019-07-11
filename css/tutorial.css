@@ -1,0 +1,128 @@
+/*html, body {
+  padding: 0 3em 1em 3em;
+}
+*/
+.lesson_div {
+	border-style: dashed;
+	border-width: 2px;
+	margin: 10px;
+	padding: 1em;
+
+}
+
+p, h1, h2 {
+	text-align: center;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.lesson_div td {
+	vertical-align: top;
+}
+
+td {
+	vertical-align: middle;
+}
+
+.banner {
+	background-color: #071d3f;
+	color: white;	
+}
+
+.banner-logo {
+	height: 90px;
+	width: 90px;
+}
+
+.banner-text {
+	font-size: 250%
+}
+
+.selected-item {
+	background-color: #071d3f;
+	color: white;
+}
+
+.back-btn {
+    background-color: #f1f1f1;
+	border: none;
+	border-radius: 10px;
+	color:  #071d3f;
+	position: absolute;
+	right: 1%;
+	top: 1%;
+}
+
+@media screen and (max-width: 481px) and (orientation: portrait){
+	.banner-logo {
+		height: 45px;
+		width: 45px;
+	}
+
+	.banner-text {
+		font-size: 100%;
+		margin-top: 25px;
+	}
+
+	h1 {
+		font-size: 110%;
+		font-style: bold;
+	}
+
+	h2 {
+		font-size: 90%;
+		font-style: bold;
+	}
+
+	p {
+		font-size: 70%;
+	}
+
+	li {
+		font-size: 70%;
+	}
+
+	.back-btn {
+		font-size: 70%;
+		top:2%;
+	}
+}
+
+@media screen and (max-height: 481px) and (orientation: landscape) {
+	.banner-logo {
+		height: 45px;
+		width: 45px;
+	}
+
+	.banner-text {
+		font-size: 150%;
+		margin-top: 15px;
+	}
+
+	h1 {
+		font-size: 110%;
+		font-style: bold;
+	}
+
+	h2 {
+		font-size: 90%;
+		font-style: bold;
+	}
+
+	p {
+		font-size: 70%;
+	}
+
+	li {
+		font-size: 70%;
+	}
+
+	.back-btn {
+		font-size: 100%;
+		top:2%;
+	}
+}

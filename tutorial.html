@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Polar Explorer WebApp Tutorial</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  <link href='https://fonts.googleapis.com/css?family=Londrina Outline' rel='stylesheet'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/tutorial.css" type="text/css">
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+</head>
+
+<body>
+
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-card" style="z-index:3;width:250px;" id="mySidebar">
+    <h1 class="w3-bar-item w3-large">Polar Explorer Tutorial</h1>
+    <a class="w3-bar-item w3-button selected-item" href="#">Top</a>
+    <a class="w3-bar-item w3-button" href="#welcome">Welcome To Polar Explorer</a>
+    <a class="w3-bar-item w3-button" href="#navigating">Navigating The Maps</a>
+    <a class="w3-bar-item w3-button" href="#selecting">Selecting A Topic</a></a>
+    <a class="w3-bar-item w3-button" href="#navigating_info">Navigating Info Pages</a>
+    <a class="w3-bar-item w3-button" href="#wrapping_up">Wrapping Up</a>
+    <a class="w3-bar-item w3-text-blue" href="index.html">Polar Explorer</a>
+  </nav>
+
+
+  <div class="w3-main" style="margin-left:250px;">
+    <header class="w3-container banner">
+      <button type="button" onclick="window.open('', '_self', ''); window.close();" class="back-btn">Back</button>
+      <table>
+        <tr>
+          <td>
+            <img src="img/polar_explorer_logo.png" alt="logo" class="banner-logo">
+          </td>
+          <td>
+            <h1 class="banner-text">Polar Explorer Web Application Tutorial</h1>
+          </td>
+        </tr>
+      </table>
+    </header>
+
+
+    <div class="w3-container" style="padding:5px">
+
+      <div id="welcome" class="lesson_div">
+        <h1>Welcome To Polar Explorer</h1>
+        <img src="img/welcome.png" alt="Welcome image" width="80%">
+        <p>Welcome to the Polar Explorer Web Application!  This map-based app will allow you to explore the many factors that contribute to sea level.  Using this tutorial should send you on a smooth journey through the web app!</p>   
+      </div>
+
+      <div id="navigating" class="lesson_div">
+        <h1>Navigating The Maps</h1>
+        <table>
+          <tr>
+            <td>
+              <h2>Moving</h2>
+              <img src="img/pan.png" alt="Moving the map" width="90%">
+              <p>Left click and drag the mouse to move around the map.  If you are using a touch-sensitive screen, you can swipe back and forth with your finger to move the map.</p>
+            </td>
+            <td>
+              <h2>Zooming</h2>
+              <img src="img/zoom.png" alt="Zooming the map" width="80%">
+              <p>Use the + and - buttons in the top right corner to zoom in and out. Alternativley, you can use your mouse wheel or trackpad.  If you are using a touch-sensitive screen, place two fingers on the screen and move them away from each other to zoom in.  Do the inverse to zoom out.</p>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <h2>Parts Of The Map</h2>
+          <img src="img/parts.png" alt="Parts of the map" width="80%">
+          <p>Note: the legend will not be displayed on smaller screens, such as on smart phones.
+        </div>
+      </div>
+
+      <div id="selecting" class="lesson_div">
+        <h1>Selecting A Topic</h1>
+        <table>
+          <tr>
+            <td valign="top">
+              <h2>1</h2>
+              <img src="img/select_menu.png" alt="Select Menu" width="90%">
+              <p>Click the menu button at the bottom-right corner of the screen to access the array of items available</p>
+            </td>
+            <td valign="top">
+              <h2>2</h2>
+              <img src="img/menu.png" alt="Menu description" width="60%">
+              <p>There are three types of cells in the menu: 
+                <ul>
+                  <li>Overview: The first cell in each section. Explains the theme of the topics listed below it. Can be accessed by pressing the 'i' button next to it.</li>
+                  <li>Questions: Each set of maps is organized around a question and each question has its own menu of topics.</li>
+                  <li>Topics: Each Topic has its own map, info page, and 'about' with audio.</li>
+                </ul>
+              </p>
+              <p>You can move the menu window by holding down the left mouse button over the header at the top and dragging it to a new location.  If you have a touch-sensitive screen, you can drag the menu window to a new location using your finger.  Note: You cannot move the menu if you are using a smart phone.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h2>3</h2>
+              <img src="img/about.png" alt="Description window" width="60%">
+              <p>Read the short description as an introduction to each topic's map. Select the 1 minute 'Audio' for more information. Click 'Silent' to stop the audio. Clicking 'Close' will close the description window.</p>
+              <p>You can move the description window by holding down the left mouse button over the header at the top and dragging it to a new location.  If you have a touch-sensitive screen, you can drag the description menu window to a new location using your finger.</p>
+              <p>If you are using a smart phone, clicking 'Audio' will close the description window and display the map, whilst the audio is playing.  Clicking 'Silent' will close the description window and display the map, without the audio playing.  Clicking 'Cancel' will close the description window and return you to the menu, without displaying the map.  Note: You cannot move the description window if you are using a smart phone.</p>
+            </td>
+            <td>
+              <h2>4</h2>
+              <img src="img/explore_map.png" alt="Explore map" width="90%">
+              <p>Now you have a new map to explore. The maps are data visualizations. In exploring each map, click anywhere on the map to get the numeric value for that point. The range is displayed on the scale bar.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="navigating_info" class="lesson_div">
+        <h1>Navigating Info Pages</h1>
+        <table>
+          <tr>
+            <td>
+              <h2>Pulling Up A Page</h2>
+              <img src="img/info_btn.png" alt="Information button" width="90%">
+              <p>Along with each topic map comes an information page with additional information. Once you've chosen a topic, access its information page by clicking the 'i' button next to the topic in the menu, or by clicking the 'i' button at the bottom of the screen.</p>
+            </td>
+            <td>
+              <h2>Information Page</h2>
+              <img src="img/info_page.png" alt="Information page" width="80%">
+              <p>Information pages will open in a new window or tab on your browser. For your benefit, information pages include descriptions of terms that may be confusing. These terms are blue and underligned and can be accessed by clicking on them. When you are done reading a description, click elsewhere on the page to make it disappear.
+                <br/>
+              Additional information can be accessed through the links at the bottom of the info page.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="wrapping_up" class="lesson_div">
+        <h1>Wrapping Up</h1>
+        <table>
+          <tr>
+            <td>
+              <h2>Exiting A Webpage</h2>
+              <img src="img/exiting_info_page.png" alt="Exiting information page" width="80%">
+              <p>Once you have finished using an information page, you can return to the main Polar Explorer window by clicking on its tab in your browser, or you can close the information page by clicking the back button in the top right hand corner.</p>
+            </td>
+            <td>
+              <h2>Congratulations!</h2>
+              <img src="img/thumbs_up.png" alt="Congratulations" width="100%">
+              <p>Now you are ready to explore the Polar Observer web app all by yourself! Hopefully, you will learn a lot and have fun doing it!</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(".w3-button").click(function() {
+       $(".w3-button").removeClass("selected-item");
+       $(this).addClass("selected-item");
+    });
+  </script>
+</body>
+</html>
