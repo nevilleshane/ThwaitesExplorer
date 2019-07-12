@@ -45,10 +45,29 @@ html, body {
 
 .logoDiv {
   position: absolute;
-  top: 20%;
-  right: -12%;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: 0;
   opacity: 0.5;
-  z-index: 101;
+}
+
+.projectLogoDiv {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: auto;
+  top: auto;
+  opacity: 1;
+}
+
+.logoImg {
+  width: 175px;
+}
+
+.projectLogoImg {
+  width: 100px;
+  height: 100px;
 }
 
 .triangle {
@@ -195,7 +214,7 @@ tr {
   bottom: 35%;
   position: absolute;
   font-family: arial;
-  height: 330px;
+  height: 380px;
 
   left: 40%;
   padding: 0.5em;
@@ -325,8 +344,8 @@ tr.disabled {
 
 #scaleline {
   position: absolute;
-  top: 4%;
-  right: 20%;
+  top: 29px;
+  right: 350px;
   z-index: 30;
 }
 
@@ -620,6 +639,15 @@ button {
     width: 100%;
   }
 
+  .logoImg {
+    width:100px;
+  }
+
+  .projectLogoImg {
+    width: 75px;
+    height: 75px;
+  }
+
   .popup {
     border-radius: 10px;
     height: 95%;
@@ -653,8 +681,7 @@ button {
   }
 
   #scaleline {
-    top: 7%;
-    right: 35%;
+    right: 80%;
   }
 
   #opacity {
@@ -670,7 +697,12 @@ button {
 
   .ol-mouse-position {
     left: 30%;
-    top: 0.6em;
+    top: 30px;
+  }
+
+  .ol-overviewmap .ol-overviewmap-map {
+      height: 100px;
+      width: 100px;
   }
 
   #layer_header {
@@ -707,6 +739,10 @@ button {
 
   #new_user_btn {
     left: 35%;
+  }
+
+  #start_btn {
+    left: 40%;
   }
 
   #elev {
@@ -829,6 +865,14 @@ button {
     width: 100%;
   }
 
+  .logoImg {
+    width:100px;
+  }
+
+  .projectLogoImg {
+    width: 75px;
+    height: 75px;
+  }
 
   .popup {
     border-radius: 10px;
@@ -857,8 +901,7 @@ button {
   }
 
   #scaleline {
-    top: 12%;
-    right: 20%;
+    right: 60%;
   }
 
   #opacity {
@@ -870,6 +913,11 @@ button {
     width: 150%;
   }
 
+  .ol-overviewmap .ol-overviewmap-map {
+      height: 100px;
+      width: 100px;
+  }
+
   .ol-control button {
     font-size: 50%;
     height: 1.1em;
@@ -878,7 +926,7 @@ button {
 
   .ol-mouse-position {
     left: 45%;
-    top: 0.6em;
+    top: 25px;
   }
 
   #layer_header {
@@ -914,6 +962,11 @@ button {
   }
 
   #new_user_btn {
+    left: 45%;
+    bottom: 20%;
+  }
+
+  #start_btn {
     left: 45%;
     bottom: 20%;
   }
@@ -1103,6 +1156,11 @@ button {
     bottom: 20%;
   }
 
+  #start_btn {
+    left: 45%;
+    bottom: 20%;
+  }
+
   #legend {
     zoom: 0.7;
   }
@@ -1193,6 +1251,11 @@ button {
 
   #new_user_btn {
     left: 43%;
+    bottom: 13%;
+  }
+
+  #start_btn {
+    left: 45%;
     bottom: 13%;
   }
 
@@ -1289,13 +1352,18 @@ button {
   #table-popup-content {
     font-size: 70%;
   }
-
+/*
   #scaleline {
     top: 6%;
-  }
+  }*/
 
   #new_user_btn {
     left: 43.5%;
+    bottom: 13%;
+  }
+
+  #start_btn {
+    left: 45%;
     bottom: 13%;
   }
 
@@ -1377,12 +1445,17 @@ button {
     font-size: 70%;
   }
 
-  #scaleline {
+ /* #scaleline {
     top: 6%;
-  }
+  }*/
 
   #new_user_btn {
     left: 44%;
+    bottom: 13%;
+  }
+
+  #start_btn {
+    left: 43%;
     bottom: 13%;
   }
 

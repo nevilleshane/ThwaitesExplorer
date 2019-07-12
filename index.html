@@ -32,25 +32,30 @@
 
 <body>
   <div class="wrapper flip-container">
-   
 
     <div class="flipper">
-      <div id="logo" class="logoDiv">
-        <img src="img/thwaitesExplorer.png" alt="logo" width="50%">
-      </div>
-      <div id="viewDiv" class="map-div-arcgis front" style="z-index:100;"></div>
-      <div class="new_user_btn-container">
-        <button class="btn" id="start_btn" onclick="startThwaitesExplorer();">START</button>
-      </div>
-      <div id="hidden_map" class="map-div front"></div>
-      <div id="map" class="map-div front">
 
-<!--       <h1 class="mobile_portrait">mobile portrait</h1>
-      <h1 class="mobile_landscape">mobile landscape</h1>
-      <h1 class="tablet_portrait">tablet portrait</h1>
-      <h1 class="tablet_landscape">tablet landscape</h1>
-      <h1 class="small_tablet_portrait">small tablet portrait</h1>
-      <h1 class="small_tablet_landscape">small tablet landscape</h1> -->
+     <div id="viewDiv" class="map-div-arcgis" style="z-index:100;">
+      <div class="logoDiv">
+        <img class="logoImg" src="img/thwaitesExplorer.png" alt="Thwaites Explorer logo">
+      </div>
+      <div class="projectLogoDiv">
+        <img class="projectLogoImg" src="img/itgc-logo-color-white-background-295.png" alt="project logo">
+      </div>
+    </div>
+   
+    <button class="btn" id="start_btn" onclick="startThwaitesExplorer();">START</button>
+ 
+
+    <div id="hidden_map" class="map-div front"></div>
+    <div id="map" class="map-div front">
+
+  <!--       <h1 class="mobile_portrait">mobile portrait</h1>
+        <h1 class="mobile_landscape">mobile landscape</h1>
+        <h1 class="tablet_portrait">tablet portrait</h1>
+        <h1 class="tablet_landscape">tablet landscape</h1>
+        <h1 class="small_tablet_portrait">small tablet portrait</h1>
+        <h1 class="small_tablet_landscape">small tablet landscape</h1> -->
 
         <div class="new_user_btn-container">
           <button class="btn" id="new_user_btn" onclick="window.open('tutorial.html')">New User?</button>
@@ -85,21 +90,20 @@
           <p id="sequence_level"></p>
         </div>
 
-        
+
         <div id="legend" hidden>
           <div id="legendheader">Legend</div>
           <img id="legend_img">
         </div>
 
-
-
       </div> <!-- map -->
+
 
       <div id="table-popup" class="ol-popup">
         <a href="#" id="table-popup-closer" class="ol-popup-closer"><i class="fa fa-times"></i></a>
         <div id="table-popup-content"></div>
       </div>
-
+      
       <div class="back">
 
         <div id="menu" class="menu" hidden>
@@ -161,6 +165,15 @@
                     </label>
                   </td>
                 </tr>
+                <tr>
+                  <td>Overview Map:</td>
+                  <td align="center">
+                    <label class="switch">
+                      <input id="overview_switch" type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
                 <tr class="disabled">
                   <td>Location:</td>
                   <td align="center">
@@ -187,8 +200,6 @@
             </div>
           </div>
         </div>
-
-
 
       </div> <!-- back -->
     </div> <!-- flipper -->

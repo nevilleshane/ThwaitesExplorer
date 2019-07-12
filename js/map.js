@@ -33,6 +33,9 @@ function MapClient(view, params) {
   if (isMobile) {
     mobileZoomAdjust = 0.5;
     $("#close_btn").text("Cancel");
+    //hide overview map by default for mobiles
+    $(".ol-overviewmap").hide();
+    $("#overview_switch").prop("checked", false);
   }
 
   //set the map view

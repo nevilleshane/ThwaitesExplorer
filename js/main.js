@@ -122,6 +122,14 @@ $(document).ready(function() {
   });
 
   /*
+    Toggle overview map with the overview switch
+  */
+  $("#overview_switch").click(function() {
+    $(".ol-overviewmap").toggle(this.checked);
+  });
+
+
+  /*
     Toggle the RGB function with the RGB switch
   */
   showRGB = false;
@@ -309,6 +317,7 @@ $(document).ready(function() {
     //for tablets, make the whole of the legend draggable, since it will be smaller
     dragElement(document.getElementById(("legend")), $("#legend").css("zoom") < 1);
     dragElement(document.getElementById(("settings")), false);  
+    dragElement(document.getElementsByClassName(("ol-overviewmap"))[1], true);  
   }
 });
 
@@ -839,6 +848,8 @@ function dragElement(elmnt, dragOnAll) {
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmnt.style.right = "auto";
+    elmnt.style.bottom = "auto";
   }
 
   function elementTouchDrag(e) {
@@ -851,6 +862,8 @@ function dragElement(elmnt, dragOnAll) {
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmnt.style.right = "auto";
+    elmnt.style.bottom = "auto";
   }
 
   function closeDragElement() {
