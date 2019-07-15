@@ -40,7 +40,7 @@ function MapClient(view, params) {
 
   //set the map view
   map.setView(new ol.View({
-    center: ol.proj.transform([-106.75,-75.5], 'EPSG:4326', 'EPSG:3031'),
+    center: params.center,
     zoom: params.zoom - mobileZoomAdjust,
     minZoom: 2,
     projection: params.projection,
@@ -94,9 +94,11 @@ function MapClient(view, params) {
   });
 
   map.addLayer(gmrtLayer);
-  map.addLayer(terra);
-  map.addLayer(ibcso);
-  map.addLayer(lima);
+  if (params.projection == sp_proj) {
+    map.addLayer(terra);
+    map.addLayer(ibcso);
+    map.addLayer(lima);
+  }
 
   //add the scale line
   var scaleline = new ol.control.ScaleLine({target:"scaleline"});
@@ -110,14 +112,14 @@ function MapClient(view, params) {
 
 
   // add overview map
-  var overviewMapControl = new ol.control.OverviewMap({
+  overviewMapControl = new ol.control.OverviewMap({
     className: 'ol-overviewmap ol-custom-overviewmap',
-    layers: [gmrtLayer, terra, ibcso, lima],
+    layers: map.getLayers(),
     collapseLabel: '\u00BB',
     label: '\u00AB',
     collapsed: false, 
     view: new ol.View({
-      center: ol.proj.transform([-180,0], 'EPSG:4326', 'EPSG:3031'),
+      center: params.overview_center,
       projection: params.projection,
       extent: params.view_extent,
     })
@@ -148,6 +150,8 @@ $(document).ready(function() {
   sp_proj = ol.proj.get('EPSG:3031');
   sp_proj.setWorldExtent([-180.0000, -90.0000, 180.0000, -60.0000]);
   sp_proj.setExtent([-8200000, -8200000, 8200000, 8200000]);
+  sp_center = ol.proj.transform([-180,0], 'EPSG:4326', 'EPSG:3031');
+  thwaitesCoords = ol.proj.transform([-106.75,-75.5], 'EPSG:4326', 'EPSG:3031');
   np_proj = ol.proj.get('EPSG:3995');
   np_proj.setWorldExtent([-180.0000, 60.0000, 180.0000, 90.0000]);
   np_proj.setExtent([-8200000, -8200000, 8200000, 8200000]);
@@ -158,9 +162,12 @@ $(document).ready(function() {
   sp_view_extent = [-8200000, -8200000, 8200000, 8200000];
   //parameters for different GMRT projections
   gmrt_params = {
-    "merc": {"url_ext": "wms_merc?", "projection": merc_proj, "layer": "topo", "zoom": 2, "view_extent": merc_view_extent},
-    "sp": {"url_ext": "wms_SP?", "projection": sp_proj, "layer": "GMRT_SP", "zoom": 4.7, "view_extent": sp_view_extent},
-    "np": {"url_ext": "wms_NP?", "projection": np_proj, "layer": "GMRT_NP", "zoom": 2, "view_extent": np_view_extent}
+    "merc": {"url_ext": "wms_merc?", "projection": merc_proj, "layer": "topo", "zoom": 2, "view_extent": merc_view_extent, 
+             "center": [0,0], "overview_center": [0,0]},
+    "sp": {"url_ext": "wms_SP?", "projection": sp_proj, "layer": "GMRT_SP", "zoom": 4.7, "view_extent": sp_view_extent, 
+           "center": thwaitesCoords, "overview_center": sp_center},
+    "np": {"url_ext": "wms_NP?", "projection": np_proj, "layer": "GMRT_NP", "zoom": 2, "view_extent": np_view_extent,
+          "center": [0,0], "overview_center": [0,0]}
   };
 
   //initialize the main map in Mercator projection
@@ -711,7 +718,7 @@ function switchProjection(proj) {
   map.removeLayer(gmrtLayer);
 
   view = new ol.View({
-    center: [0, 0],
+    center: params.center,
     zoom: params.zoom,
     minZoom: 2,
     projection: params.projection,
@@ -731,6 +738,36 @@ function switchProjection(proj) {
     })
   });
   map.addLayer(gmrtLayer);
+
+
+  //replace the overview map
+  var layers = [];
+  if (proj == 1) {
+    layers = map.getLayers(); 
+  }
+  else {
+    layers = [gmrtLayer];
+  }
+
+  var layerGroup = new ol.layer.Group({
+    layers: layers
+  });
+
+  overviewMapControl.getOverviewMap().set('view',
+    new ol.View({
+      center: params.overview_center,
+      projection: params.projection,
+      extent: params.view_extent,
+    }));
+  overviewMapControl.getOverviewMap().set('layergroup', layerGroup);
+
+  map.getControls().forEach(function (control) {
+    if (control instanceof ol.control.OverviewMap) {
+      map.removeControl(control);
+    }
+  });
+
+  map.addControl(overviewMapControl);
 
   //update projection of hidden map too
   map2.setView(view);

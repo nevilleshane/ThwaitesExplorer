@@ -37,7 +37,7 @@ var mapOverlays =
                   "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticElevation_320",
                   "info":"http://app.earth-observer.org/data/web_pages/html/AntarcticIceSheetElevation.html",
                   "imageType":".png",
-                  "numLevels":4,
+                  "numLevels":2,
                   "credit":"NSIDC",
                   "legend":true,
                   "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320_Legend.png",
@@ -56,7 +56,7 @@ var mapOverlays =
                   "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticSurfaceElevationChange_320",
                   "info":"http://app.earth-observer.org/data/web_pages/html/ChangesAntarcticIceSheetElevations.html",
                   "imageType":".png",
-                  "numLevels":4,
+                  "numLevels":2,
                   "credit":"CSIRIO",
                   "legend":true,
                   "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticSurfaceElevationChange_320/AntarcticSurfaceElevationChangeLegend.png",
@@ -67,7 +67,32 @@ var mapOverlays =
                   "aboutAlertURL":"http://app.earth-observer.org/data/about/About_ChangesAntarcticIceSheetElevation.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
                },
-               
+               {
+                  "name":"Fingerprints from melting ice sheets",
+                  "title":"Fingerprints from Melting Ice Sheets",
+                  "showSeabedNames":false,
+                  "showElevation":false,
+                  "type":"overlay_sequence",
+                  "overlayType":"tile_512",
+                  "sequenceSource":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/IceSheetFootprintsList2.txt",
+                  "info":"http://app.earth-observer.org/data/web_pages/html/IceSheetFingerprinting.html",
+                  "legend":true,
+                  "legendPath":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/FootprintsLegend.png",
+                  "retinaLegendPath":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/FootprintsLegend_2x.png",
+                  "iPhoneLegend":true,
+                  "scale":true,
+                  "scalePath":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/FootprintsLegend.scl",
+                  "hideOpacitySlider":true,
+                  "hideScaleBar":true,
+                  "imageType":".png",
+                  "numLevels":2,
+                  "tileDelta":180,
+                  "tileSize":512,
+                  "wesn":"-180,180,-90,90",
+                  "credit":"Carling Hay, Jerry Mitrovica",
+                  "aboutAlertURL":"http://app.earth-observer.org/data/about/About_IceSheetFingerprinting.txt",
+                  "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_IceSheetFingerprinting.m4a"
+               }
             ]
          }
       ]

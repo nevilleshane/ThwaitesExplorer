@@ -471,7 +471,6 @@ function menuItemClicked(overlay, parent, icon, title) {
   this is a multi_layer overlay 
 */
 function removeAllLayers(removeGMRT) {    
-  console.log(map.getLayers());
   var layersToRemove = [];
   map.getLayers().forEach(function(lyr) {
     if (lyr.getProperties().basemap !== true) {
