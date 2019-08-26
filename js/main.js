@@ -7,6 +7,15 @@ $(document).ready(function() {
     $("#menu_btn").show();
   }
 
+
+  /* 
+    Close the splash screen
+  */
+  $("#close_splash").click(function() {
+    $("#splash").hide("slow");
+    $("#menu").show("slow");
+  });
+
   /*
     Display the menu when the menu button is clicked
   */
@@ -37,6 +46,26 @@ $(document).ready(function() {
         $("#menu").hide("slow");
       }
       $("#menu_btn").show();
+  });
+
+
+  /*
+    Hide the menu when the hide button is clicked
+  */
+  $("#tutorial_btn").click(function() {
+      if (isMobile) {
+        $('#splash').show();
+        $("#menu_btn").show();
+        $('#hidden_map').hide(); // hide the hidden map during flipping
+        $('.flipper').removeClass('flip');
+        setTimeout(function() {
+          $('#hidden_map').show();
+        }, 1000);
+      } else {
+        $('#splash').show('slow');
+        $("#menu").hide("slow");
+      }
+      
   });
 
   /* 
@@ -343,7 +372,7 @@ function populateMenu(overlays, title) {
     var info = $("<td/>");
     var info_link = $("<a/>").attr("target", "_blank");
     var more = $("<td/>");
-    var info_icon = $("<i/>").addClass("menu_icon menu_info");
+     var info_icon = $("<i/>").addClass("menu_icon menu_info");
     var icon = $("<i/>").addClass("menu_icon");
     var overlay = overlays[i];
 
@@ -359,14 +388,17 @@ function populateMenu(overlays, title) {
       } else {
         info_link.attr("href", info_url);
       }
-      info.append(info_link);
+      // COMMENTED OUT LINKS FOR NOW
+      // info.append(info_link);
     }
     //if overlay is of type overview, set as menu header
     if (overlay.type == "overview") {
       //item = $("<th/>").text(overlay.name);
       item = $("<th/>");
       var overview_topic = overlay.info.split(webpages_url)[1].replace(".html", "");
-      var overview_link = $("<a/>").attr("target", "_blank").attr("href", "info.html?topic=" + overview_topic).text(overlay.name);
+      // COMMENTED OUT LINKS FOR NOW
+      // var overview_link = $("<a/>").attr("target", "_blank").attr("href", "info.html?topic=" + overview_topic).text(overlay.name);
+      var overview_link = $("<p/>").text(overlay.name);
       overview_link.addClass("overview_link");
       item.append(overview_link);
       row.addClass("menu_overview");

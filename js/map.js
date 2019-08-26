@@ -93,11 +93,23 @@ function MapClient(view, params) {
     })
   });
 
+
+      var vectorSource = new ol.source.Vector({
+        features: (new ol.format.GeoJSON()).readFeatures(geojsonObject)
+      });
+
+      var vectorLayer = new ol.layer.Vector({
+        source: vectorSource,
+        // style: styleFunction
+      });
+
+
   map.addLayer(gmrtLayer);
   if (params.projection == sp_proj) {
     map.addLayer(terra);
     map.addLayer(ibcso);
     map.addLayer(lima);
+   // map.addLayer(vectorLayer);
   }
 
   //add the scale line
@@ -640,8 +652,35 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
   var resolutions = new Array(overlay.numLevels+1);
   for (var i = 0, ii = resolutions.length; i < ii; ++i) {
     resolutions[i] = startResolution / Math.pow(2, i);
+  } 
+
+  if (overlay.zoom && overlay.coords) {
+    // fudge for antactic ice loss layer
+    map.setView(new ol.View({
+      center: ol.proj.transform(overlay.coords, 'EPSG:4326', 'EPSG:3031'),
+      zoom: overlay.zoom - mobileZoomAdjust,
+      minZoom: 2,
+      projection: params.projection,
+      extent: params.view_extent,
+      enableRotation: false,
+    }));
+    $(".ol-overviewmap").hide();
+
+  } else {
+    map.setView(new ol.View({
+      center: params.center,
+      zoom: params.zoom - mobileZoomAdjust,
+      minZoom: 2,
+      projection: params.projection,
+      extent: params.view_extent,
+      enableRotation: false,
+    }));
+    if (!isMobile) {
+      $(".ol-overviewmap").show();
+    }
   }
 
+  
   //set up a tile grid
   tileGrid = new ol.tilegrid.TileGrid({
     minZoom: 1,

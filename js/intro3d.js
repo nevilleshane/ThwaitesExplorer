@@ -89,5 +89,5 @@
   $("#viewDiv").fadeOut(1000);
   $("#start_btn").hide();
   $(".map-div").css('opacity',1);
-  $("#menu").show();
+  // $("#menu").hide();
 }

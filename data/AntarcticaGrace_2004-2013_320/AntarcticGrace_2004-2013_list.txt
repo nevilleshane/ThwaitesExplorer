@@ -1,0 +1,10 @@
+2004	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2004_320
+2005	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2005_320
+2006	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2006_320
+2007	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2007_320
+2008	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2008_320
+2009	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2009_320
+2010	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2010_320
+2011	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2011_320
+2012	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2012_320
+2013	data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2013_320

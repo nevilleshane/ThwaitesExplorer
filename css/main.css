@@ -539,6 +539,47 @@ input:checked + .slider:before {
   width: 100%;
 }
 
+
+.splash-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -350px;
+  width: 700px;
+  height: 700px;
+  padding: 10px;
+  z-index: 80;
+  background: #f1f1f1;
+  border: 2px solid #d3d3d3;
+  font-family: arial;
+  -moz-box-shadow: 0 2px 7px #292929;
+  -webkit-box-shadow: 0 2px 7px #292929;
+  box-shadow: 0 2px 7px #292929;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.splash_logo {
+  float:left;
+  width:168px;
+  height:168px;
+  margin-right:20px;
+}
+
+#splash_fig {
+  width: 228px;
+  height: 228px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure figcaption {
+    text-align: center;
+}
+
 #new_user_btn {
   background-color: #071d3f;
   border: none;
@@ -820,6 +861,27 @@ button {
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
+
+  .splash-container {
+    width: 70%;
+    height: 70%;
+    top: 10%;
+    left: 15%;
+    margin: 0;
+    font-size: 0.5em;
+  }
+
+  .splash_logo {
+    float:left;
+    width:68px;
+    height:68px;
+    margin-right:10px;
+  }
+
+  #splash_fig {
+    width: 128px;
+    height: 128px;
+  }
 }
 
 
@@ -1070,6 +1132,27 @@ button {
     -o-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg);
+  }
+
+  .splash-container {
+    width: 70%;
+    height: 81%;
+    top: 10%;
+    left: 15%;
+    margin: 0;
+    font-size: 0.4em;
+  }
+
+  .splash_logo {
+    float:left;
+    width:55px;
+    height:55px;
+    margin-right:10px;
+  }
+
+  #splash_fig {
+    width: 90px;
+    height: 90px;
   }
 
 }
