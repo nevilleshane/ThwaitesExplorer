@@ -547,7 +547,6 @@ input:checked + .slider:before {
   margin-top: -350px;
   margin-left: -350px;
   width: 700px;
-  height: 700px;
   padding: 10px;
   z-index: 80;
   background: #f1f1f1;
@@ -569,8 +568,7 @@ input:checked + .slider:before {
 }
 
 #splash_fig {
-  width: 228px;
-  height: 228px;
+  width: 360px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -864,7 +862,6 @@ button {
 
   .splash-container {
     width: 70%;
-    height: 70%;
     top: 10%;
     left: 15%;
     margin: 0;
@@ -880,7 +877,6 @@ button {
 
   #splash_fig {
     width: 128px;
-    height: 128px;
   }
 }
 
@@ -1136,7 +1132,7 @@ button {
 
   .splash-container {
     width: 70%;
-    height: 81%;
+/*    height: 81%;*/
     top: 10%;
     left: 15%;
     margin: 0;
@@ -1151,8 +1147,8 @@ button {
   }
 
   #splash_fig {
-    width: 90px;
-    height: 90px;
+    width: 128px;
+    /*height: 90px;*/
   }
 
 }
