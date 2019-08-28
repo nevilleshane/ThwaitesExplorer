@@ -395,8 +395,9 @@ function populateMenu(overlays, title) {
     if (overlay.type == "overview") {
       //item = $("<th/>").text(overlay.name);
       item = $("<th/>");
-      var overview_topic = overlay.info.split(webpages_url)[1].replace(".html", "");
+
       // COMMENTED OUT LINKS FOR NOW
+      // var overview_topic = overlay.info.split(webpages_url)[1].replace(".html", "");
       // var overview_link = $("<a/>").attr("target", "_blank").attr("href", "info.html?topic=" + overview_topic).text(overlay.name);
       var overview_link = $("<p/>").text(overlay.name);
       overview_link.addClass("overview_link");
@@ -473,8 +474,8 @@ function menuItemClicked(overlay, parent, icon, title) {
     case "arcgis_tile_256":
       displayArcGIS(overlay, true);
       break;
-    case "arcgis_image":
-      displayArcGISImage(overlay, true);
+    case "image":
+      displayImage(overlay, true);
       break;
     case "xb_map":
       displayXBMap(overlay, true);

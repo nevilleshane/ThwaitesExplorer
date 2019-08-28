@@ -103,7 +103,6 @@ function MapClient(view, params) {
         // style: styleFunction
       });
 
-
   map.addLayer(gmrtLayer);
   if (params.projection == sp_proj) {
     map.addLayer(terra);
@@ -547,6 +546,9 @@ function displayOverlaySequence(overlay, removeOldLayers) {
       case "xb_map":
         displayXBMap(layer, removeOldLayers, sequence);
         break;
+      case "image":
+        displayImage(layer, removeOldLayers, sequence);
+        break;
       default:
         console.log("Unknown Sequence Layer Type: " + type);
     }
@@ -637,6 +639,25 @@ function displayArcGIS(overlay, removeOldLayers, sequence) {
 
 
 /*
+  display static Image layer
+*/
+function displayImage(overlay, removeOldLayers, sequence) {
+  console.log(overlay);
+  var imageLayer;
+  imageLayer = new ol.layer.Image({
+    opacity: 1,
+    title: sequence ? "Sequence" : overlay.title,              
+    source: new ol.source.ImageStatic({
+      url: overlay.source,
+      imageExtent: overlay.extent
+    })
+  });
+
+  displayLayer(imageLayer, overlay, removeOldLayers);
+}
+
+
+/*
   display xb_map (local polar projected layers)
 */
 function displayXBMap(overlay, removeOldLayers, sequence) {
@@ -711,7 +732,7 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
       },
       wrapX: false
     }),
-    title: sequence ? "Sequence" : ""
+    title: sequence ? "Sequence" : overlay.title
   });
   //use the tileCoords to geerate the URL name
   function getNameWithTileX(tileCoord) {

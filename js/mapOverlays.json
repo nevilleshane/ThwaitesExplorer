@@ -221,5 +221,34 @@ var mapOverlays =
             ]
          }
       ]
+   },
+   {
+      "name":"New Topic",
+      "type":"dir",
+      "children":[
+         {
+            "name":"New maps",
+            "type":"overview",
+            "info":"TBD",
+            "source":"TBD"
+         },
+         {
+            "name":"Observed Ocean Temperatures at 350m",
+            "title":"Observed Ocean Temperatures at 350m",
+            "type":"image",
+            "mapProjection":1,
+            "legendUnits":"meters",
+            "source":"data/oceanT350m/WOA18_T350m_0.png",
+            "info":"TBD",
+            "credit":"TBD",
+            "legend":false,
+            "legendPath":"TBD",
+            "scale":false,
+            "scalePath":"",
+            "aboutAlertURL":"data/oceanT350m/about.txt",
+            "aboutAudioURL":"TBD",
+            "extent": [-3337500.000000, -3337500.000000, 3337500.000000, 3337500.000000]
+         }
+      ]
    }
 ]
