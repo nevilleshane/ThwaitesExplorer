@@ -231,61 +231,81 @@ $(document).ready(function() {
     $("#elev_triangle").hide();
 
     //first check if clicking on a circle in a table layer (and not a placeName)
-    var feature;
+    var featureAndCoords;
     if (evt.pixel) {
-      feature = map.forEachFeatureAtPixel(evt.pixel, 
+      featureAndCoords = map.forEachFeatureAtPixel(evt.pixel, 
         function(feature, layer) {
-          if (layer.get('title') == "placeNamesLayer") return; 
-          return feature;
+          if (layer.get('title') == "placeNamesLayer") return;
+          var geometry = feature.getGeometry(); 
+          var mypoint = geometry.getClosestPoint(evt.coordinate);
+          return [feature, mypoint];
         }, {"hitTolerance":7});
     }
+    var feature = featureAndCoords[0];
+    var feature_coord = featureAndCoords[1];
     if (feature) {
         //ignore placename label features
         if (typeof feature.fontName != "undefined") return; 
-
-        var geometry = feature.getGeometry();
-        var feature_coord = geometry.getCoordinates();
-        var content="";
-        var url;
-        if (tablePopupObj.base_url && tablePopupObj.url_property) {
-          url = tablePopupObj.base_url + feature.get(tablePopupObj.url_property);
-        }
-        else if (tablePopupObj.base_url && !tablePopupObj.url_property) {
-          url = tablePopupObj.base_url;
-        }
-        else if (!tablePopupObj.base_url && tablePopupObj.url_property) {
-          url = feature.get(tablePopupObj.url_property);
-        }
-
-        var image_url;
-        if (tablePopupObj.image_base_url && tablePopupObj.image_url_property && feature.get(tablePopupObj.image_url_property)) {
-          console.log(feature.get(tablePopupObj.image_url_property));
-          image_url = tablePopupObj.image_base_url + feature.get(tablePopupObj.image_url_property);
-        }
-        else if (tablePopupObj.image_base_url && !tablePopupObj.image_url_property) {
-          image_url = tablePopupObj.image_base_url;
-        }
-        else if (!tablePopupObj.image_base_url && tablePopupObj.image_url_property) {
-          image_url = feature.get(tablePopupObj.image_url_property);
-        }
-        if (image_url) content += "<a target='_blank' href='" + url + "'><img style='width:150px;height:150px;' src='" + image_url +"'></img></a><br/>";
-
-
-        for (var i in tablePopupObj.properties) {
-          var key = tablePopupObj.properties[i];
-          // make sure any keys which originally had duplicate names are renamed back to 
-          // their original vales by removing the #repeated_key# extension
-          var key_text = key.replace("#repeated_key#", "");
-          var value = feature.get(key);
-          var value_text = "n/a";
-          if (value) {
-            value_text = feature.get(key).replace("|", ",") + " " + tablePopupObj.units[i]; 
-          }
-          content +=  key_text + " = " + value_text + "<br/>";
-        }
-
-        if (url) content += "<a target='_blank' href='" + url + "'>More info</a>";
         
+        var content="";
+
+        // if popup details included in the geojson
+        if (feature.get('popup')) {
+
+          var popup = feature.get('popup');
+
+          if (popup.desc) {
+            content += "<p style='width:250px'>"+popup.desc+"</p>";
+          }
+          if (popup.url) {
+            content += "<a target='_blank' href='" + popup.url + "'>More info</a>";
+          }
+
+        }
+        // old polar explorer code
+        else {
+        
+          var url;
+          if (tablePopupObj.base_url && tablePopupObj.url_property) {
+            url = tablePopupObj.base_url + feature.get(tablePopupObj.url_property);
+          }
+          else if (tablePopupObj.base_url && !tablePopupObj.url_property) {
+            url = tablePopupObj.base_url;
+          }
+          else if (!tablePopupObj.base_url && tablePopupObj.url_property) {
+            url = feature.get(tablePopupObj.url_property);
+          }
+
+          var image_url;
+          if (tablePopupObj.image_base_url && tablePopupObj.image_url_property && feature.get(tablePopupObj.image_url_property)) {
+            console.log(feature.get(tablePopupObj.image_url_property));
+            image_url = tablePopupObj.image_base_url + feature.get(tablePopupObj.image_url_property);
+          }
+          else if (tablePopupObj.image_base_url && !tablePopupObj.image_url_property) {
+            image_url = tablePopupObj.image_base_url;
+          }
+          else if (!tablePopupObj.image_base_url && tablePopupObj.image_url_property) {
+            image_url = feature.get(tablePopupObj.image_url_property);
+          }
+          if (image_url) content += "<a target='_blank' href='" + url + "'><img style='width:150px;height:150px;' src='" + image_url +"'></img></a><br/>";
+
+
+          for (var i in tablePopupObj.properties) {
+            var key = tablePopupObj.properties[i];
+            // make sure any keys which originally had duplicate names are renamed back to 
+            // their original vales by removing the #repeated_key# extension
+            var key_text = key.replace("#repeated_key#", "");
+            var value = feature.get(key);
+            var value_text = "n/a";
+            if (value) {
+              value_text = feature.get(key).replace("|", ",") + " " + tablePopupObj.units[i]; 
+            }
+            content +=  key_text + " = " + value_text + "<br/>";
+          }
+
+          if (url) content += "<a target='_blank' href='" + url + "'>More info</a>";
+        }
+
         content_element.innerHTML = content;
         table_popup_overlay.setPosition(feature_coord);
         $("#table-popup").css("width", "max-content");

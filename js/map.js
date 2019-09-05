@@ -97,7 +97,7 @@ function MapClient(view, params) {
 
     var itgc_overlay = {
               "title":"ITGC Projects",
-              "source":"data/ITGCprojects/layers/ITGC_projects.geojson",
+              "source":"data/ITGCprojects/layers/ITGC_projects_multipoint.geojson",
               "styleFunction":"data/ITGCprojects/styles/ITGC_projects_style.js",
               "listUnits": ",",
               "mapProjection":1,
@@ -919,6 +919,10 @@ function displayGeojson(overlay, removeOldLayers) {
 
         displayLayer(geojsonLayer, overlay, removeOldLayers);
       });
+    },
+    error: function(xhr,status,error) {
+      console.log(status);
+      console.log(error);
     }
   });
 }
