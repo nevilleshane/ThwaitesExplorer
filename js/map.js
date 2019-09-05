@@ -48,7 +48,8 @@ function MapClient(view, params) {
     enableRotation: false,
   }));
 
-
+ // don't need for hidden_map
+  if (view == 'map') {
     ibcso = new ol.layer.Tile({
       type: 'base',
       basemap: true,
@@ -93,19 +94,16 @@ function MapClient(view, params) {
       })
     });
 
- // don't need for hidden_map
-  if (view == 'map') {
+
     var itgc_overlay = {
               "title":"ITGC Projects",
               "source":"data/ITGCprojects/layers/ITGC_projects.geojson",
-              "styleFunction":"data/ITGCprojects/styles/ITGC_projects_0_style.js",
+              "styleFunction":"data/ITGCprojects/styles/ITGC_projects_style.js",
               "listUnits": ",",
               "mapProjection":1,
-              "awlaysOn": true
+              "alwaysOn": true
             };
     displayGeojson(itgc_overlay);
-}
-
 
     map.addLayer(gmrtLayer);
     if (params.projection == sp_proj) {
@@ -114,17 +112,16 @@ function MapClient(view, params) {
       map.addLayer(lima);
     }
   
+    //add the scale line
+    var scaleline = new ol.control.ScaleLine({target:"scaleline"});
+    map.addControl(scaleline);
 
-  //add the scale line
-  var scaleline = new ol.control.ScaleLine({target:"scaleline"});
-  map.addControl(scaleline);
-
-  //add layer switcher
-  var layerSwitcher = new ol.control.LayerSwitcher({
-      tipLabel: 'Légende'
-  });
-  map.addControl(layerSwitcher);
-
+    //add layer switcher
+    var layerSwitcher = new ol.control.LayerSwitcher({
+        tipLabel: 'Légende'
+    });
+    map.addControl(layerSwitcher);
+  }
 
   // add overview map
   overviewMapControl = new ol.control.OverviewMap({
@@ -909,8 +906,12 @@ function displayGeojson(overlay, removeOldLayers) {
           }),
           style: geojsonStyleFunction,
           title: overlay.title,
-          alwaysOn: overlay.awlaysOn
+          projection: params.projection
         });
+
+        if (overlay.alwaysOn) {
+          alwaysOnLayers.push(geojsonLayer);
+        }
 
         //properties for the popup table
         var properties = Object.keys(data.features[0].properties);

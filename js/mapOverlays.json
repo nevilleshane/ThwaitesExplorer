@@ -255,7 +255,7 @@ var mapOverlays =
             "type":"geojson",
             "mapProjection":1,
             "source":"data/ITGCprojects/layers/ITGC_projects.geojson",
-            "styleFunction":"data/ITGCprojects/styles/ITGC_projects_0_style.js",
+            "styleFunction":"data/ITGCprojects/styles/ITGC_projects_style.js",
             "info":"TBD",
             "credit":"TBD",
             "legend":false,

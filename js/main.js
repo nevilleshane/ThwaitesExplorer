@@ -143,6 +143,18 @@ $(document).ready(function() {
     }
   });
 
+
+  /*
+    Toggle the outline layers with the outlines switch
+  */
+  // showOutlines = true;
+  $("#outline_switch").click(function() {
+    // showOutlines = this.checked;
+    for (var lyr of alwaysOnLayers) {
+      lyr.setVisible(this.checked);
+    }
+  });
+
   /*
     Toggle place name labels with the place names switch
   */
@@ -183,8 +195,8 @@ $(document).ready(function() {
   scaleTable = {};
   scaleUnits = "";
   tablePopupObj = {};
-  showSeabedNames = true;
   alwaysOnLayers = [];
+  showSeabedNames = true;
   webpages_url = "http://app.earth-observer.org/data/web_pages/html/";
 
   // Populate the menu using the overlays in the mapOverlays.json file
@@ -509,16 +521,16 @@ function menuItemClicked(overlay, parent, icon, title) {
 */
 function removeAllLayers(removeGMRT) {    
   var layersToRemove = [];
-  alwaysOnLayers = [];
+  //alwaysOnLayers = [];
   map.getLayers().forEach(function(lyr) {
 
     if (lyr.getProperties().basemap !== true) {
       layersToRemove.push(lyr);
       // compile list of layers that are always on to 
       // display on the top
-      if (lyr.getProperties().alwaysOn) {
-        alwaysOnLayers.push(lyr);
-      }
+      // if (lyr.getProperties().alwaysOn) {
+      //   alwaysOnLayers.push(lyr);
+      // }
     }
   });
   var len = layersToRemove.length;
@@ -751,9 +763,9 @@ function displayLayer(layer, overlay, removeOldLayers) {
   //add the new layer to the map
   map.addLayer(layer);
 
-  //add always-on layers at the top
+  //add always-on layers at the top (if the projection is right)
   for(var lyr of alwaysOnLayers) {
-    map.addLayer(lyr);
+    if (lyr != layer && lyr.get('projection') == map.getView().getProjection()) map.addLayer(lyr);
   }
 
   //set the opacity slider
