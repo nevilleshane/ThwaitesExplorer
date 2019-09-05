@@ -184,6 +184,7 @@ $(document).ready(function() {
   scaleUnits = "";
   tablePopupObj = {};
   showSeabedNames = true;
+  alwaysOnLayers = [];
   webpages_url = "http://app.earth-observer.org/data/web_pages/html/";
 
   // Populate the menu using the overlays in the mapOverlays.json file
@@ -486,6 +487,9 @@ function menuItemClicked(overlay, parent, icon, title) {
     case "table":
       displayTable(overlay, true);
       break;
+    case "geojson":
+      displayGeojson(overlay, true);
+      break;
     default:
       console.log("Unknown Overlay Type: " + overlay.type);
   }
@@ -505,9 +509,16 @@ function menuItemClicked(overlay, parent, icon, title) {
 */
 function removeAllLayers(removeGMRT) {    
   var layersToRemove = [];
+  alwaysOnLayers = [];
   map.getLayers().forEach(function(lyr) {
+
     if (lyr.getProperties().basemap !== true) {
       layersToRemove.push(lyr);
+      // compile list of layers that are always on to 
+      // display on the top
+      if (lyr.getProperties().alwaysOn) {
+        alwaysOnLayers.push(lyr);
+      }
     }
   });
   var len = layersToRemove.length;
@@ -737,9 +748,13 @@ function displayLayer(layer, overlay, removeOldLayers) {
     if (map.getView().getProjection() != merc_proj) switchProjection(0); 
   }
 
-
   //add the new layer to the map
   map.addLayer(layer);
+
+  //add always-on layers at the top
+  for(var lyr of alwaysOnLayers) {
+    map.addLayer(lyr);
+  }
 
   //set the opacity slider
   setSlider(layer, overlay);  

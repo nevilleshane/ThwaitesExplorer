@@ -1,0 +1,17 @@
+{
+    "type": "FeatureCollection",
+    "name": "ITGC_projects_0",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "features": [
+        { "type": "Feature", "properties": { "id": "1", "project": "GHOST" }, "geometry": { "type": "Point", "coordinates": [ -107.154933068071756, -76.38622312242633 ] } },
+        { "type": "Feature", "properties": { "id": "1", "project": "TIME" }, "geometry": { "type": "Point", "coordinates": [ -102.841653383397954, -76.356782785443144 ] } },
+        { "type": "Feature", "properties": { "id": "2", "project": "PROPHET" }, "geometry": { "type": "Point", "coordinates": [ -109.570580877189585, -77.116149212700279 ] } },
+        { "type": "Feature", "properties": { "id": "1", "project": "GHC" }, "geometry": { "type": "Point", "coordinates": [ -99.157262997576069, -74.611052611031113 ] } },
+        { "type": "Feature", "properties": { "id": "1", "project": "MELT" }, "geometry": { "type": "Point", "coordinates": [ -105.78281031055711, -75.043480933134035 ] } },
+        { "type": "Feature", "properties": { "id": "1", "project": "THOR" }, "geometry": { "type": "Point", "coordinates": [ -105.476550157968887, -74.281278590007815 ] } },
+        { "type": "Feature", "properties": { "id": "1", "project": "TARSAN" }, "geometry": { "type": "Point", "coordinates": [ -107.532879748519562, -73.390870861805041 ] } },
+        { "type": "Feature", "properties": { "id": "2", "project": "DOMINOS" }, "geometry": { "type": "Point", "coordinates": [ -108.560313026407414, -74.694292701933648 ] } },
+        { "type": "Feature", "properties": { "id": "1", "project": "TARSAN" }, "geometry": { "type": "Point", "coordinates": [ -112.028103474853111, -74.883906585830587 ] } },
+        { "type": "Feature", "properties": { "id": "1", "project": "GHC" }, "geometry": { "type": "Point", "coordinates": [ -110.227193923938316, -75.412516063050418 ] } }
+    ]
+}

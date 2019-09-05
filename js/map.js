@@ -49,67 +49,71 @@ function MapClient(view, params) {
   }));
 
 
-  ibcso = new ol.layer.Tile({
-    type: 'base',
-    basemap: true,
-    title: "IBCSO",
-    visible: true,
-    source: new ol.source.TileArcGISRest({
-        url:"https://gis.ngdc.noaa.gov/arcgis/rest/services/antarctic/antarctic_basemap/MapServer",
-        crossOrigin: 'anonymous',
-        params: {
-        transparent: true
-      }
-    })
-  });
-
-  terra = new ol.layer.Tile({
-    type: 'base',
-    basemap: true,
-    title: "15m TerraColor",
-    visible: false,
-    source: new ol.source.TileArcGISRest({
-        url:"https://services.arcgisonline.com/arcgis/rest/services/Polar/Antarctic_Imagery/MapServer",
-        crossOrigin: 'anonymous',
-        params: {
-        layers: "Antarctic_Imagery",
-        transparent: true
-      }
-    })
-  });
-
-  lima = new ol.layer.Tile({
-    type: 'base',
-    title: "LIMA 240m",
-    basemap: true,
-    visible: false,
-    source: new ol.source.TileWMS({
-        url:"http://api.usap-dc.org:81/wfs?",
-        // crossOrigin: 'anonymous',
-        params: {
-        layers: "LIMA 240m",
-        transparent: true
+    ibcso = new ol.layer.Tile({
+      type: 'base',
+      basemap: true,
+      title: "IBCSO",
+      visible: true,
+      source: new ol.source.TileArcGISRest({
+          url:"https://gis.ngdc.noaa.gov/arcgis/rest/services/antarctic/antarctic_basemap/MapServer",
+          crossOrigin: 'anonymous',
+          params: {
+          transparent: true
         }
-    })
-  });
+      })
+    });
+
+    terra = new ol.layer.Tile({
+      type: 'base',
+      basemap: true,
+      title: "15m TerraColor",
+      visible: false,
+      source: new ol.source.TileArcGISRest({
+          url:"https://services.arcgisonline.com/arcgis/rest/services/Polar/Antarctic_Imagery/MapServer",
+          crossOrigin: 'anonymous',
+          params: {
+          layers: "Antarctic_Imagery",
+          transparent: true
+        }
+      })
+    });
+
+    lima = new ol.layer.Tile({
+      type: 'base',
+      title: "LIMA 240m",
+      basemap: true,
+      visible: false,
+      source: new ol.source.TileWMS({
+          url:"http://api.usap-dc.org:81/wfs?",
+          // crossOrigin: 'anonymous',
+          params: {
+          layers: "LIMA 240m",
+          transparent: true
+          }
+      })
+    });
+
+ // don't need for hidden_map
+  if (view == 'map') {
+    var itgc_overlay = {
+              "title":"ITGC Projects",
+              "source":"data/ITGCprojects/layers/ITGC_projects.geojson",
+              "styleFunction":"data/ITGCprojects/styles/ITGC_projects_0_style.js",
+              "listUnits": ",",
+              "mapProjection":1,
+              "awlaysOn": true
+            };
+    displayGeojson(itgc_overlay);
+}
 
 
-      var vectorSource = new ol.source.Vector({
-        features: (new ol.format.GeoJSON()).readFeatures(geojsonObject)
-      });
-
-      var vectorLayer = new ol.layer.Vector({
-        source: vectorSource,
-        // style: styleFunction
-      });
-
-  map.addLayer(gmrtLayer);
-  if (params.projection == sp_proj) {
-    map.addLayer(terra);
-    map.addLayer(ibcso);
-    map.addLayer(lima);
-   // map.addLayer(vectorLayer);
-  }
+    map.addLayer(gmrtLayer);
+    if (params.projection == sp_proj) {
+      map.addLayer(terra);
+      map.addLayer(ibcso);
+      map.addLayer(lima);
+    }
+  
 
   //add the scale line
   var scaleline = new ol.control.ScaleLine({target:"scaleline"});
@@ -137,6 +141,7 @@ function MapClient(view, params) {
   });
 
   map.addControl(overviewMapControl);
+
 
   return map;
 }
@@ -262,36 +267,36 @@ $(document).ready(function() {
   });
 
   // set the location feature as a blue circle 
-  var positionFeature = new ol.Feature();
-  positionFeature.setStyle(
-    new ol.style.Style({
-    image: new ol.style.Circle({
-      radius: 6,
-      fill: new ol.style.Fill({
-        color: '#3399CC'
-      }),
-      stroke: new ol.style.Stroke({
-        color: '#fff',
-        width: 2
-      })
-    })
-  }));
+  // var positionFeature = new ol.Feature();
+  // positionFeature.setStyle(
+  //   new ol.style.Style({
+  //   image: new ol.style.Circle({
+  //     radius: 6,
+  //     fill: new ol.style.Fill({
+  //       color: '#3399CC'
+  //     }),
+  //     stroke: new ol.style.Stroke({
+  //       color: '#fff',
+  //       width: 2
+  //     })
+  //   })
+  // }));
 
   //get current location and set the coordinates of the location feature
-  geolocation.on('change:position', function() {
-    var coords = geolocation.getPosition();
-    //just use coords to 2dp, ie around 1 mile range
-    coords = [coords[0].toFixed(2), coords[1].toFixed(2)];
-    positionFeature.setGeometry(coords ?
-      new ol.geom.Point(coords) : null);
-  });
+  // geolocation.on('change:position', function() {
+  //   var coords = geolocation.getPosition();
+  //   //just use coords to 2dp, ie around 1 mile range
+  //   coords = [coords[0].toFixed(2), coords[1].toFixed(2)];
+  //   positionFeature.setGeometry(coords ?
+  //     new ol.geom.Point(coords) : null);
+  // });
 
-  //create a geolocation layer
-  geolocationLayer = new ol.layer.Vector({
-    source: new ol.source.Vector({
-      features: [positionFeature]
-    })
-  });
+  // //create a geolocation layer
+  // geolocationLayer = new ol.layer.Vector({
+  //   source: new ol.source.Vector({
+  //     features: [positionFeature]
+  //   })
+  // });
 });
 
 /*
@@ -538,7 +543,10 @@ function displayOverlaySequence(overlay, removeOldLayers) {
         displayNOAA(layer, removeOldLayers, sequence);
         break;
       case "table":
-        display(layer, removeOldLayers, sequence);
+        displayTable(layer, removeOldLayers, sequence);
+        break;
+      case "geojson":
+        displayGeojson(layer, removeOldLayers, sequence);
         break;
       case "overlay_sequence":
         displayOverlaySequence(layer, removeOldLayers);
@@ -874,6 +882,46 @@ function displayMultiLayers(overlay) {
 
   }
 }
+
+
+/*
+  display a geojson layer
+*/
+function displayGeojson(overlay, removeOldLayers) {
+  console.log(overlay);
+  //load up the geojson
+  $.get({
+    url: overlay.source,
+    dataType: "json",
+    crossOrigin: true,
+    success: function(response) {
+      data = response;
+
+      //load up the style function
+      $.getScript(overlay.styleFunction, function() {
+        //make sure all other tables are cleared first
+        removeAllTables();
+
+        var geojsonLayer = new ol.layer.Vector({
+          visible:true,
+          source: new ol.source.Vector({
+            features: (new ol.format.GeoJSON()).readFeatures(data, {dataProjection: 'EPSG:4326', featureProjection:'EPSG:3031'}),
+          }),
+          style: geojsonStyleFunction,
+          title: overlay.title,
+          alwaysOn: overlay.awlaysOn
+        });
+
+        //properties for the popup table
+        var properties = Object.keys(data.features[0].properties);
+        tablePopupObj = {"properties": properties ,"units": overlay.listUnits.replace(/NULL/g, "").split(",")};
+
+        displayLayer(geojsonLayer, overlay, removeOldLayers);
+      });
+    }
+  });
+}
+
 
 /*
   display a table layer

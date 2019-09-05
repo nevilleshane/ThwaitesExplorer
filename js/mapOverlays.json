@@ -237,7 +237,7 @@ var mapOverlays =
             "title":"Observed Ocean Temperatures at 350m",
             "type":"image",
             "mapProjection":1,
-            "legendUnits":"meters",
+            "legendUnits":"TBD",
             "source":"data/oceanT350m/WOA18_T350m_0.png",
             "info":"TBD",
             "credit":"TBD",
@@ -248,6 +248,23 @@ var mapOverlays =
             "aboutAlertURL":"data/oceanT350m/about.txt",
             "aboutAudioURL":"TBD",
             "extent": [-3337500.000000, -3337500.000000, 3337500.000000, 3337500.000000]
+         },
+         {
+            "name":"ITGC Projects",
+            "title":"ITGC Projects",
+            "type":"geojson",
+            "mapProjection":1,
+            "source":"data/ITGCprojects/layers/ITGC_projects.geojson",
+            "styleFunction":"data/ITGCprojects/styles/ITGC_projects_0_style.js",
+            "info":"TBD",
+            "credit":"TBD",
+            "legend":false,
+            "legendPath":"TBD",
+            "scale":false,
+            "scalePath":"",
+            "aboutAlertURL":"data/ITGCprojects/about.txt",
+            "aboutAudioURL":"TBD",
+            "listUnits":",",
          }
       ]
    }
