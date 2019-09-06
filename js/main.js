@@ -5,6 +5,7 @@ $(document).ready(function() {
   if (isMobile) {
     // Start with the menu hidden in mobile mode
     $("#menu_btn").show();
+    $("#showonmap_btn").show();
   }
 
 
@@ -96,6 +97,20 @@ $(document).ready(function() {
       $("#menu_btn").show();
     }
   });
+
+  $("#showonmap_btn").click(function() {
+    if (isMobile) {
+      $("#popup").hide();
+      $("#menu").removeClass("disabled");
+      $('#hidden_map').hide(); // hide the hidden map during flipping
+      $('.flipper').removeClass('flip');
+      setTimeout(function() {
+        $('#hidden_map').show();
+      }, 1000);
+      $("#menu_btn").show();
+    }
+  });
+
 
   /*
     Take a snapshot of the main map canvas and save as a jpeg file
