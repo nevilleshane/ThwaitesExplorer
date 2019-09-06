@@ -250,7 +250,7 @@ $(document).ready(function() {
     if (evt.pixel) {
       featureAndCoords = map.forEachFeatureAtPixel(evt.pixel, 
         function(feature, layer) {
-          if (layer.get('title') == "placeNamesLayer") return;
+          if (["placeNamesLayer", "Antarctic Coast", "Thwaites Surface Catchment"].includes(layer.get('title'))) return null;
           var geometry = feature.getGeometry(); 
           var mypoint = geometry.getClosestPoint(evt.coordinate);
           return [feature, mypoint];
@@ -874,8 +874,9 @@ function getPixelRatio(ctx) {
   find closest color in the scaleTable
 */
 function getClosestColor(r0,g0,b0) {
-  var land_greys = ["0", 192, 203, 178];
-  if (r0 == b0 && b0 == g0 && ($.inArray(r0, land_greys))) return null;
+  var land_greys = ["0", 0, 192, 203, 178];
+  if (r0 == b0 && b0 == g0 && ($.inArray(r0, land_greys) > -1)) return null;
+
   var min = 999999;
   var closest = null;
   console.log(scaleTable);
