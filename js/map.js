@@ -94,17 +94,6 @@ function MapClient(view, params) {
       })
     });
 
-
-    var itgc_overlay = {
-              "title":"ITGC Projects",
-              "source":"data/ITGCprojects/layers/ITGC_projects_multipoint.geojson",
-              "styleFunction":"data/ITGCprojects/styles/ITGC_projects_style.js",
-              "listUnits": ",",
-              "mapProjection":1,
-              "alwaysOn": true
-            };
-    displayGeojson(itgc_overlay);
-
     map.addLayer(gmrtLayer);
     if (params.projection == sp_proj) {
       map.addLayer(terra);
@@ -890,32 +879,23 @@ function displayGeojson(overlay, removeOldLayers) {
   $.get({
     url: overlay.source,
     dataType: "json",
-    crossOrigin: true,
+    crossOrigin: false,
     success: function(response) {
       data = response;
 
       //load up the style function
-      $.getScript(overlay.styleFunction, function() {
+      $.getScript(overlay.styleFunctionFile, function() {
         //make sure all other tables are cleared first
         removeAllTables();
-
         var geojsonLayer = new ol.layer.Vector({
           visible:true,
           source: new ol.source.Vector({
             features: (new ol.format.GeoJSON()).readFeatures(data, {dataProjection: 'EPSG:4326', featureProjection:'EPSG:3031'}),
           }),
-          style: geojsonStyleFunction,
+          style: eval(overlay.styleFunction),
           title: overlay.title,
           projection: params.projection
         });
-
-        if (overlay.alwaysOn) {
-          alwaysOnLayers.push(geojsonLayer);
-        }
-
-        //properties for the popup table
-        var properties = Object.keys(data.features[0].properties);
-        tablePopupObj = {"properties": properties ,"units": overlay.listUnits.replace(/NULL/g, "").split(",")};
 
         displayLayer(geojsonLayer, overlay, removeOldLayers);
       });

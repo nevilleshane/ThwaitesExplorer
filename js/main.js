@@ -195,7 +195,7 @@ $(document).ready(function() {
   scaleTable = {};
   scaleUnits = "";
   tablePopupObj = {};
-  alwaysOnLayers = [];
+  alwaysOnLayers = new Set();
   showSeabedNames = true;
   webpages_url = "http://app.earth-observer.org/data/web_pages/html/";
 
@@ -241,14 +241,14 @@ $(document).ready(function() {
           return [feature, mypoint];
         }, {"hitTolerance":7});
     }
-    var feature = featureAndCoords[0];
-    var feature_coord = featureAndCoords[1];
-    if (feature) {
+
+    if (featureAndCoords) {
+        var feature = featureAndCoords[0];
+        var feature_coord = featureAndCoords[1];
         //ignore placename label features
         if (typeof feature.fontName != "undefined") return; 
-        
-        var content="";
 
+        var content="";
         // if popup details included in the geojson
         if (feature.get('popup')) {
 
@@ -305,10 +305,11 @@ $(document).ready(function() {
 
           if (url) content += "<a target='_blank' href='" + url + "'>More info</a>";
         }
-
-        content_element.innerHTML = content;
-        table_popup_overlay.setPosition(feature_coord);
-        $("#table-popup").css("width", "max-content");
+        if (content !== '') {
+          content_element.innerHTML = content;
+          table_popup_overlay.setPosition(feature_coord);
+          $("#table-popup").css("width", "max-content");
+        }
 
     } else if (showRGB) {
       //Show ARGB value at pixel
@@ -546,13 +547,9 @@ function removeAllLayers(removeGMRT) {
 
     if (lyr.getProperties().basemap !== true) {
       layersToRemove.push(lyr);
-      // compile list of layers that are always on to 
-      // display on the top
-      // if (lyr.getProperties().alwaysOn) {
-      //   alwaysOnLayers.push(lyr);
-      // }
     }
   });
+ 
   var len = layersToRemove.length;
   for(var i = 0; i < len; i++) {
       map.removeLayer(layersToRemove[i]);
@@ -785,7 +782,11 @@ function displayLayer(layer, overlay, removeOldLayers) {
 
   //add always-on layers at the top (if the projection is right)
   for(var lyr of alwaysOnLayers) {
-    if (lyr != layer && lyr.get('projection') == map.getView().getProjection()) map.addLayer(lyr);
+    try {
+      if (lyr != layer && lyr.get('projection') == map.getView().getProjection()) {
+        map.addLayer(lyr);
+      }
+    } catch(error) {console.log(error);}
   }
 
   //set the opacity slider

@@ -1,42 +1,6 @@
 var size = 0;
 var placement = 'point';
 
-
-var createTextStyle = function(feature, resolution, labelText, labelFont,
-                               labelFill, placement, bufferColor,
-                               bufferWidth) {
-
-    if (feature.hide || !labelText) {
-        return; 
-    } 
-    var bufferStyle = null;
-    if (bufferWidth == 0) {
-        bufferStyle = null;
-    } else {
-        bufferStyle = new ol.style.Stroke({
-            color: bufferColor,
-            width: bufferWidth
-        });
-    }
-    
-    var textStyle = new ol.style.Text({
-        font: labelFont,
-        text: labelText,
-        textBaseline: "top",
-        textAlign: "center",
-        // offsetX: 8,
-        offsetY: 10,
-        placement: placement,
-        maxAngle: 0,
-        fill: new ol.style.Fill({
-          color: labelFill
-        }),
-        stroke: bufferStyle
-    });
-
-    return textStyle;
-};
-
 function stripe(stripeWidth, gapWidth, angle, color) {
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
@@ -62,6 +26,7 @@ function stripe(stripeWidth, gapWidth, angle, color) {
 function categories_ITGC_projects(feature, value, size, resolution, labelText,
    labelFont, labelFill, bufferColor, bufferWidth,
    placement) {
+    if (!value) return; 
     switch(value.toString()) {default:
         return [ new ol.style.Style({
             image: new ol.style.Circle({radius: 6.0 + size,
@@ -89,7 +54,7 @@ function categories_ITGC_projects(feature, value, size, resolution, labelText,
     }
 }
 
-var geojsonStyleFunction = function(feature, resolution){
+var styleFunctionProjects = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
