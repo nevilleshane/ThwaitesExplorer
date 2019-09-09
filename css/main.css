@@ -1132,7 +1132,6 @@ button {
 
   .splash-container {
     width: 70%;
-/*    height: 81%;*/
     top: 10%;
     left: 15%;
     margin: 0;
@@ -1452,6 +1451,13 @@ button {
 
   .ol-control button {
     zoom: 0.8;
+  }
+
+  .splash-container {
+    width: 85%;
+    top: 10%;
+    left: 5%;
+    margin: 0;
   }
 }
 

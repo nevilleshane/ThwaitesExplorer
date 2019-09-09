@@ -56,7 +56,7 @@ $(document).ready(function() {
     })
     .then(function(res) {
       $.get({
-        url: 'data/ITGCprojects/layers/ITGC_projects_multipoint.geojson',
+        url: 'data/ITGCprojects/ITGC_projects_multipoint.geojson',
         dataType: "json",
         success: function(response) {
           data = response;
@@ -162,18 +162,14 @@ var styleFunctionProjects = function(feature, resolution){
     var labelText = "";
     var clusteredFeatures = feature.get("features");
     var labelFont = "11px \'Arial\', sans-serif";
-    var labelFill = "rgba(0, 0, 0, 1)";
-    var bufferColor = "#000000";
-    var bufferWidth = 0.5;
     size = 1;
+    var labelFill = "rgba(255, 255, 255, 1)";
+    var bufferColor = "#000000";
+    var bufferWidth = 1.5;
     var textAlign = "center";
     var offsetX = 0;
     var offsetY = 0;
     if (size == 1) {
-        textAlign = "left";
-        offsetX = 8;
-        offsetY = 3;
-        //var feature = clusteredFeatures[0];
         if (feature.get("project") !== null) {
             labelText = String(feature.get("project"));
         }
@@ -182,7 +178,10 @@ var styleFunctionProjects = function(feature, resolution){
         labelText = size.toString();
         size = 2*(Math.log(size)/ Math.log(2));
     }
-
+    if (isMobile) {
+      labelFont = "8px \'Arial\', sans-serif";
+      size = -1;
+    }
     var style = categories_ITGC_projects(feature, value, size, resolution, labelText,
       labelFont, labelFill, bufferColor,
       bufferWidth, placement);

@@ -798,7 +798,7 @@ function displayLayer(layer, overlay, removeOldLayers) {
   //add always-on layers at the top (if the projection is right)
   for(var lyr of alwaysOnLayers) {
     try {
-      if (lyr != layer && lyr.get('projection') == map.getView().getProjection()) {
+      if (lyr.get('projection') == map.getView().getProjection()) {
         map.addLayer(lyr);
       }
     } catch(error) {console.log(error);}

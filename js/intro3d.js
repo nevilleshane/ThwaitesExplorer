@@ -14,16 +14,22 @@
       map: map,
       constraints: {
        rotationEnabled: false
-     },
-     camera: {
-          position: {  // observation point
-            x: -60,
-            y: 31,
-            z: 25000000 // altitude in meters
-          },
-          tilt: 0  // perspective in degrees
-        }
-      });
+      },
+      camera: {
+        position: {  // observation point
+          x: -60,
+          y: 31,
+          z: 25000000 // altitude in meters
+        },
+        tilt: 0  // perspective in degrees
+      }
+    });
+
+
+    // Set the sun position to fully illuminate antarctica
+    view.environment.lighting.date = new Date("December 21, 2019, 12:00");
+
+
     var thwaites = {
       type: "point",
       longitude: -106.75,
