@@ -1,6 +1,6 @@
 var size = 0;
 var placement = 'point';
-function categories_ITGCTwinOtterFlights2019_0(feature, value, size, resolution, labelText,
+function categories_ITGCTwinOtterFlights2019(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement) {
                 switch(value.toString()) {case '11':
@@ -108,7 +108,7 @@ default:
     })];
                     break;}};
 
-var style_ITGCTwinOtterFlights2019_0 = function(feature, resolution){
+var style_ITGCTwinOtterFlights2019 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -128,7 +128,7 @@ var style_ITGCTwinOtterFlights2019_0 = function(feature, resolution){
         labelText = String("");
     }
     
-var style = categories_ITGCTwinOtterFlights2019_0(feature, value, size, resolution, labelText,
+var style = categories_ITGCTwinOtterFlights2019(feature, value, size, resolution, labelText,
                           labelFont, labelFill, bufferColor,
                           bufferWidth, placement);
 

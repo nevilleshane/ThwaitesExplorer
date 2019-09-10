@@ -359,7 +359,7 @@ $(document).ready(function() {
           } else {
             textColor = "#99ccff";
           }
-          $("#elev").text(response+" meters").css({top:y-45+"px", left:x-40+"px", color:textColor});
+          $("#elev").text(response+" meters").css({top:y-50+"px", left:x-40+"px", color:textColor});
           $("#elev_triangle").css({top:y-8+"px", left:x-8+"px"}).show();
         }
       });
@@ -380,7 +380,7 @@ $(document).ready(function() {
       if (closest) {
         $("#col_sq").css('background-color', 'rgb('+closest+')');
         var z_val = scaleTable[closest];
-        $("#elev").text(z_val).css({top:y-45+"px", left:x-40+"px", color:"white"});
+        $("#elev").text(z_val).css({top:y-50+"px", left:x-40+"px", color:"white"});
         $("#elev_triangle").css({top:y-8+"px", left:x-8+"px"}).show();
 
       }

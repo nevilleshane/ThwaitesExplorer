@@ -73,9 +73,9 @@ html, body {
 .triangle {
   width: 0; 
   height: 0; 
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #f00;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #f00;
   position: absolute;
   z-index:50;
 }
@@ -365,6 +365,7 @@ tr.disabled {
 
 .screen_text {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 1.2em;
   color:white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -773,7 +774,7 @@ button {
   }
 
   #table-popup-content {
-    font-size: 60%;
+    font-size: 90%;
   }
 
   #new_user_btn {
@@ -861,11 +862,11 @@ button {
   }
 
   .splash-container {
-    width: 70%;
-    top: 10%;
-    left: 15%;
+    width: 90%;
+    top: 2%;
+    left: 2%;
     margin: 0;
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 
   .splash_logo {
@@ -1016,7 +1017,7 @@ button {
   }
 
   #table-popup-content {
-    font-size: 60%;
+    font-size: 90%;
   }
 
   #new_user_btn {
@@ -1131,11 +1132,11 @@ button {
   }
 
   .splash-container {
-    width: 70%;
-    top: 10%;
-    left: 15%;
+    width: 90%;
+    top: 2%;
+    left: 1%;
     margin: 0;
-    font-size: 0.4em;
+    font-size: 0.5em;
   }
 
   .splash_logo {
@@ -1222,7 +1223,7 @@ button {
   }
 
   #table-popup-content {
-    font-size: 70%;
+    font-size: 90%;
   }
 
   #scaleline {
@@ -1251,6 +1252,13 @@ button {
     bottom: 10%;
     width: 25%;
     left: 38%;
+  }
+
+  .splash-container {
+    width: 85%;
+    top: 2%;
+    left: 5%;
+    margin: 0;
   }
 }
 
@@ -1319,7 +1327,7 @@ button {
   }
 
   #table-popup-content {
-    font-size: 70%;
+    font-size: 90%;
   }
 
   #scaleline {
@@ -1427,9 +1435,9 @@ button {
     transform: translateX(15px);
   }
 
-  #table-popup-content {
-    font-size: 70%;
-  }
+/*  #table-popup-content {
+    font-size: 90%;
+  }*/
 /*
   #scaleline {
     top: 6%;
@@ -1455,7 +1463,7 @@ button {
 
   .splash-container {
     width: 85%;
-    top: 10%;
+    top: 2%;
     left: 5%;
     margin: 0;
   }
@@ -1526,9 +1534,9 @@ button {
     transform: translateX(15px);
   }
 
-  #table-popup-content {
-    font-size: 70%;
-  }
+/*  #table-popup-content {
+    font-size: 90%;
+  }*/
 
  /* #scaleline {
     top: 6%;

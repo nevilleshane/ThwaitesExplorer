@@ -875,6 +875,11 @@ function displayMultiLayers(overlay) {
 */
 function displayGeojson(overlay, removeOldLayers) {
   console.log(overlay);
+
+  //switch projection
+  var proj = overlay.mapProjection;
+  switchProjection(proj);
+  
   //load up the geojson
   $.get({
     url: overlay.source,
