@@ -42,7 +42,7 @@ var mapOverlays =
                   "iPhoneLegend":false,
                   "scale":true,
                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticSurfaceElevationChange_320/AntarcticSurfaceElevationChange_320.scl",
-                  "aboutAlertURL":"http://app.earth-observer.org/data/about/About_ChangesAntarcticIceSheetElevation.txt",
+                  "aboutAlertURL":"data/AntarcticIceSurfaceLoss/About_ThwaitesAntarcticIceSurfaceLoss.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
                },
                {
@@ -60,7 +60,7 @@ var mapOverlays =
                   "scale":false,
                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend.scl",
                   "hideOpacitySlider":false,
-                  "aboutAlertURL":"http://app.earth-observer.org/data/about/About_AntarcticIceMassLoss.txt",
+                  "aboutAlertURL":"data/AntarcticaGrace_2004-2013_320/About_ThwaitesAntarcticIceMassLoss.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_MassLossAntarctica.m4a",
                   "layers":[
                      {
@@ -108,7 +108,7 @@ var mapOverlays =
                   "retinaLegendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticBedrockElevation2_320/AntarcticBedrockElevationScalebar_2x.png",
                   "scale":true,
                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticBedrockElevation2_320/AntarcticBedrockElevation.scl",
-                  "aboutAlertURL":"http://app.earth-observer.org/data/about/About_UndertheAntarcticIcesheet.txt",
+                  "aboutAlertURL":"data/BeneathAntarcticIcesheet/About_ThwaitesBeneathAntarcticIcesheet.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_UndertheAntarcticIceSheet.m4a"
                },
                {
@@ -128,7 +128,7 @@ var mapOverlays =
                   "iPhoneLegend":true,
                   "scale":true,
                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320.scl",
-                  "aboutAlertURL":"http://app.earth-observer.org/data/about/About_AntarcticIceVelocity.txt",
+                  "aboutAlertURL":"data/AntarcticIceVelocity/About_ThwaitesAntarcticIceVelocity.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticIceVelocity.m4a",
                },
                {
@@ -144,7 +144,7 @@ var mapOverlays =
                   "legendPath":"data/oceanT350m/WOA18_temps_ANT_350m_legend_plusminus2.png",
                   "scale":true,
                   "scalePath":"data/oceanT350m/WOA18_temps_ANT_350m.scl",
-                  "aboutAlertURL":"data/oceanT350m/about.txt",
+                  "aboutAlertURL":"data/oceanT350m/About_ThwiatesOceanTemp.txt",
                   "aboutAudioURL":"TBD",
                   "extent": [-3337500.000000, -3337500.000000, 3337500.000000, 3337500.000000]
                }
@@ -176,7 +176,7 @@ var mapOverlays =
                   "iPhoneLegend":false,
                   "scale":true,
                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320.scl",
-                  "aboutAlertURL":"http://app.earth-observer.org/data/about/About_AntarcticElevation.txt",
+                  "aboutAlertURL":"data/AntarcticIceSheetElevation/About_ThwaitesAntarcticIceSheetElevation.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticElevation.m4a"
                },
                {
@@ -195,7 +195,7 @@ var mapOverlays =
                   "retinaLegendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320/AntarcticIcesheetThicknessLegend_2x.png",
                   "scale":true,
                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320/AntarcticIcesheetThickness.scl",
-                  "aboutAlertURL":"http://app.earth-observer.org/data/about/About_AntarcticIceSheetThickness.txt",
+                  "aboutAlertURL":"data/AntarcticIceSheetThickness/About_ThwaitesAntarcticIceSheetThickness.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticIceSheetThickness.m4a"
                },
                {
@@ -221,7 +221,7 @@ var mapOverlays =
                    "tileSize":512,
                    "wesn":"-180,180,-90,90",
                    "credit":"Carling Hay, Jerry Mitrovica",
-                   "aboutAlertURL":"http://app.earth-observer.org/data/about/About_IceSheetFingerprinting.txt",
+                   "aboutAlertURL":"data/IceSheetFingerprinting/About_ThwaitesIceSheetFingerprinting.txt",
                    "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_IceSheetFingerprinting.m4a"
                }
             ]
@@ -252,7 +252,7 @@ var mapOverlays =
              "legendPath":"data/ITGCprojects/ITGC_projects_legend.png",
              "scale":false,
              "scalePath":"",
-             "aboutAlertURL":"data/ITGCprojects/about.txt",
+             "aboutAlertURL":"data/ITGCprojects/About_ThwaitesProjects.txt",
              "aboutAudioURL":"TBD",
              "listUnits":",",
          }
