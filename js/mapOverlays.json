@@ -255,6 +255,23 @@ var mapOverlays =
              "aboutAlertURL":"data/ITGCprojects/About_ThwaitesProjects.txt",
              "aboutAudioURL":"TBD",
              "listUnits":",",
+         },
+         {
+             "name":"BAS Airborne Survey",
+             "title":"UK National Capability-LDEO Airborne Survey",
+             "type":"geojson",
+             "mapProjection":1,
+             "source":"data/BAS_aerosurvey/ITGCTwinOtterFlights2019_0.js",
+             "styleFunctionFile":"data/ITGCprojects/ITGCTwinOtterFlights2019_0_style.js",
+             "info":"TBD",
+             "credit":"BAS-LDEO",
+             "legend":false,
+             "legendPath":"",
+             "scale":false,
+             "scalePath":"",
+             "aboutAlertURL":"data/ITGCprojects/About_BAS_aerosurvey.txt",
+             "aboutAudioURL":"TBD",
+             "listUnits":",",
          }
       ]
    }
