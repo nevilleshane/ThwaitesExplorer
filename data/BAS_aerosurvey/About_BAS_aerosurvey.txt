@@ -1,1 +1,3 @@
-About: This map shows the location of the NC aerosurvey flights in January and February of 2019.  More text to come.
+BAS-LDEO Airborne Survey: This map shows the flight paths of the UK National Capability aerosurvey flown by a joint BAS-LDEO team in January and February 2019.  The team used a BAS Twin Otter equipped with ice-penetrating radar, a scanning laser, gravimeters, and magnetometers. The survey, totaling 40 hours of flight time, was designed by incorporating input from every ITGC team, hitting important science targets while adding crucial new data and mapping for planning and logistics.
+
+Transit lines from Rothera Research Station on the Antarctic Peninsula to the deep field camp called 'Lower Thwaites Glacier' are colored black.  Aerosurvey lines over Thwaites Glacier and neighboring Dotson and Crosson ice shelves are multicolored.

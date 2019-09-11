@@ -21,7 +21,7 @@ case '12':
                     break;
 case '13':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(233,180,140,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -29,7 +29,7 @@ case '13':
                     break;
 case '14':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(57,240,16,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -37,7 +37,7 @@ case '14':
                     break;
 case '2':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(179,108,226,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -45,7 +45,7 @@ case '2':
                     break;
 case '3':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(135,166,224,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -101,7 +101,7 @@ case '9':
                     break;
 default:
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(66,192,223,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -127,7 +127,7 @@ var style_ITGCTwinOtterFlights2019 = function(feature, resolution){
     if ("" !== null) {
         labelText = String("");
     }
-    
+
 var style = categories_ITGCTwinOtterFlights2019(feature, value, size, resolution, labelText,
                           labelFont, labelFill, bufferColor,
                           bufferWidth, placement);
