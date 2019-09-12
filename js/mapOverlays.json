@@ -46,7 +46,7 @@ var mapOverlays =
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
                },
                {
-                  "name":"Antarctic total ice change (2003-2013)",
+                  "name":"Antarctic total ice change (2004-2013)",
                   "title":"Antarctic Ice Mass Change ",
                   "type":"multi_layer",
                   "legendUnits":"equivalent water height in meters",
