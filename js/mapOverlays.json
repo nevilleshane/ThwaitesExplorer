@@ -31,17 +31,17 @@ var mapOverlays =
                   "title":"Antarctic Ice Surface Elevation Change",
                   "type":"xb_map",
                   "mapProjection":1,
-                  "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticSurfaceElevationChange_320",
+                  "source":"data/AntarcticIceSurfaceLoss",
                   "info":"http://app.earth-observer.org/data/web_pages/html/ChangesAntarcticIceSheetElevations.html",
                   "imageType":".png",
                   "numLevels":2,
                   "credit":"CSIRIO",
                   "legend":true,
-                  "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticSurfaceElevationChange_320/AntarcticSurfaceElevationChangeLegend.png",
-                  "retinaLegendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticSurfaceElevationChange_320/AntarcticSurfaceElevationChangeLegend.png",
+                  "legendPath":"data/AntarcticIceSurfaceLoss/AntarcticSurfaceElevationChangeLegend.png",
+                  "retinaLegendPath":"data/AntarcticIceSurfaceLoss/AntarcticSurfaceElevationChangeLegend.png",
                   "iPhoneLegend":false,
                   "scale":true,
-                  "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticSurfaceElevationChange_320/AntarcticSurfaceElevationChange_320.scl",
+                  "scalePath":"data/AntarcticIceSurfaceLoss/AntarcticSurfaceElevationChange_320.scl",
                   "aboutAlertURL":"data/AntarcticIceSurfaceLoss/About_ThwaitesAntarcticIceSurfaceLoss.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
                },
@@ -72,13 +72,30 @@ var mapOverlays =
                      {
                         "type":"overlay_sequence",
                         "overlayType":"xb_map",
-                        "sequenceSource":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
+                        "sequenceSource":"data/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
                         "imageType":".png",
                         "numLevels":1,
                         "zoom": 3,
                         "coords": [-110,-46]
                      }
                   ]
+               },
+               {
+                  "name":"TEST",
+                  "title":"Test",
+                  "type":"image",
+                  "mapProjection":1,
+                  "legendUnits":"meters",
+                  "source":"data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2004_320/Year_2004.png",
+                  "info":"TBD",
+                  "credit":"WOA 2018",
+                  "legend":false,
+                  "legendPath":"data/oceanT350m/WOA18_temps_ANT_350m_legend_plusminus2.png",
+                  "scale":false,
+                  "scalePath":"data/oceanT350m/WOA18_temps_ANT_350m.scl",
+                  "aboutAlertURL":"data/oceanT350m/About_ThwiatesOceanTemp.txt",
+                  "aboutAudioURL":"TBD",
+                  "extent": [-3337500.000000, -3337500.000000, 3337500.000000, 3337500.000000]
                }
             ]
          },
