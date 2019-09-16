@@ -149,21 +149,21 @@ var mapOverlays =
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticIceVelocity.m4a",
                },
                {
-                  "name":"Observed Ocean Temperatures at 350m",
-                  "title":"350m Ocean Temperatures",
+                  "name":"Observed Ocean Temperatures at 550m",
+                  "title":"550m Ocean Temperatures",
                   "type":"image",
                   "mapProjection":1,
                   "legendUnits":"meters",
-                  "source":"data/oceanT350m/WOA18_T350m_0.png",
+                  "source":"data/oceanT550m/WOA18_T550m_0.png",
                   "info":"TBD",
                   "credit":"WOA 2018",
                   "legend":true,
-                  "legendPath":"data/oceanT350m/WOA18_temps_ANT_350m_legend_plusminus2.png",
+                  "legendPath":"data/oceanT550m/WOA18_temps_ANT_550m_legend_minus2plus4.png",
                   "scale":true,
-                  "scalePath":"data/oceanT350m/WOA18_temps_ANT_350m.scl",
-                  "aboutAlertURL":"data/oceanT350m/About_ThwiatesOceanTemp.txt",
+                  "scalePath":"data/oceanT550m/WOA18_temps_ANT_550m.scl",
+                  "aboutAlertURL":"data/oceanT550m/About_ThwiatesOceanTemp_550m.txt",
                   "aboutAudioURL":"TBD",
-                  "extent": [-3337500.000000, -3337500.000000, 3337500.000000, 3337500.000000]
+                  "extent": [-4590000.000000, -4590000.000000, 4590000.000000, 4590000.000000]
                }
             ]
          },
