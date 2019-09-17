@@ -113,8 +113,6 @@ var mapOverlays =
                   "legendUnits":" meters",
                   "source":"data/BeneathAntarcticIcesheet/Bedmap2_clipped_2000m_rendered_Win.png",
                   "info":"http://app.earth-observer.org/data/web_pages/html/UnderTheAntarcticIceSheet.html",
-                  "imageType":".png",
-                  "numLevels":2,
                   "credit":"British Antarctic Survey",
                   "legend":true,
                   "legendPath":"data/BeneathAntarcticIcesheet/Bedmap2_legend_minus3000plus2350m.png",
