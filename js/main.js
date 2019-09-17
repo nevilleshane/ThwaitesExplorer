@@ -380,6 +380,10 @@ $(document).ready(function() {
       if (closest) {
         $("#col_sq").css('background-color', 'rgb('+closest+')');
         var z_val = scaleTable[closest];
+        // add units if not already included in scale table
+        if (z_val.split(' ').length == 1) {
+          z_val += scaleUnits;
+        }
         $("#elev").text(z_val).css({top:y-50+"px", left:x-40+"px", color:"white"});
         $("#elev_triangle").css({top:y-8+"px", left:x-8+"px"}).show();
 
@@ -825,8 +829,8 @@ function displayLayer(layer, overlay, removeOldLayers) {
   if (overlay.scalePath) {
     getScaleTable(overlay.scalePath);
   }
-  if (overlay.LegendUnits) {
-    scaleUnits = overlay.LegendUnits;
+  if (overlay.legendUnits) {
+    scaleUnits = overlay.legendUnits;
   }
   if (overlay.type != "dir") {
     showElevation = overlay.showElevation;

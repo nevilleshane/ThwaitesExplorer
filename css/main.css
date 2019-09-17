@@ -543,11 +543,15 @@ input:checked + .slider:before {
 
 .splash-container {
   position: absolute;
-  top: 50%;
+/*  top: 50%;
   left: 50%;
   margin-top: -350px;
-  margin-left: -350px;
-  width: 700px;
+  margin-left: -400px;
+  width: 800px;*/
+  width: 66%;
+  top: 5%;
+  left: 17%;
+  margin: 0;
   padding: 10px;
   z-index: 80;
   background: #f1f1f1;
