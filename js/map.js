@@ -379,9 +379,38 @@ function displayTile512(overlay, removeOldLayers, sequence) {
       wrapX: true,
       transition:0
     }),
-    title: sequence ? "Sequence" : ""
+    title: sequence ? "Sequence" : overlay.title
   });
   displayLayer(eoLayer, overlay, removeOldLayers);
+}
+
+
+/*
+  Display a tiled (local) layer
+*/
+function displayTiled(overlay, removeOldLayers, sequence) {
+  console.log(overlay);
+  var mapResolutions = [];
+  for (var z = 0; z <= overlay.mapMaxZoom; z++) {
+    mapResolutions.push(Math.pow(2, overlay.mapMaxZoom - z) * overlay.mapMaxResolution);
+  }
+
+  var mapTileGrid = new ol.tilegrid.TileGrid({
+    tileSize: [overlay.tileWidth, overlay.tileHeight],
+    extent: overlay.extent,
+    minZoom: 1,
+    resolutions: mapResolutions
+  });
+
+  var layer = new ol.layer.Tile({
+    source: new ol.source.XYZ({
+      projection: params.projection,
+      tileGrid: mapTileGrid,
+      url: overlay.source + "/{z}/{x}/{y}.png",
+    }),
+    title: sequence ? "Sequence" : overlay.title
+  });
+  displayLayer(layer, overlay, removeOldLayers);
 }
 
 /*
@@ -392,14 +421,13 @@ function displayWMS512(overlay, removeOldLayers, sequence) {
   var url = overlay.source;
   var wmsLayer = new ol.layer.Tile({
     type: 'base',
-    title: overlay.title,
+    title: sequence ? "Sequence" : overlay.title,
     source: new ol.source.TileWMS({
       url: url,
       crossOrigin: 'anonymous',
       projection: getProjectionFromUrl(url),
       params: getParamsFromUrl(url)
     }),
-    title: sequence ? "Sequence" : ""
   });
   displayLayer(wmsLayer, overlay, removeOldLayers);
 }
@@ -521,6 +549,9 @@ function displayOverlaySequence(overlay, removeOldLayers) {
         break;
       case "tile_512":
         displayTile512(layer, removeOldLayers, sequence);
+        break;
+      case "tiled":
+        displayTiled(overlay, removeOldLayers, sequence);
         break;
       case "wms_512":
         displayWMS512(layer, removeOldLayers, sequence);
@@ -847,6 +878,9 @@ function displayMultiLayers(overlay) {
       case "tile_512":
         displayTile512(layer, removeOldLayers);
         break;
+      case "tiled":
+        displayTiled(layer, removeOldLayers);
+        break;      
       case "wms_512":
         displayWMS512(layer, removeOldLayers);
         break;

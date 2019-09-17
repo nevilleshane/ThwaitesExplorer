@@ -515,6 +515,9 @@ function menuItemClicked(overlay, parent, icon, title) {
     case "tile_512":
       displayTile512(overlay, true);
       break;
+    case "tiled":
+      displayTiled(overlay, true);
+      break;
     case "wms_512":
       displayWMS512(overlay, true);
       break;
