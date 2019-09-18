@@ -421,7 +421,7 @@ function displayWMS512(overlay, removeOldLayers, sequence) {
   var url = overlay.source;
   var wmsLayer = new ol.layer.Tile({
     type: 'base',
-    title: sequence ? overlay.title + " " + overlay.label : overlay.title
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title,
     source: new ol.source.TileWMS({
       url: url,
       crossOrigin: 'anonymous',
@@ -671,7 +671,7 @@ function displayImage(overlay, removeOldLayers, sequence) {
   var imageLayer;
   imageLayer = new ol.layer.Image({
     opacity: 1,
-    title: sequence ? overlay.title + " " + overlay.label : overlay.title              
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title,              
     source: new ol.source.ImageStatic({
       url: overlay.source,
       imageExtent: overlay.extent
