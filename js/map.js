@@ -379,7 +379,7 @@ function displayTile512(overlay, removeOldLayers, sequence) {
       wrapX: true,
       transition:0
     }),
-    title: sequence ? "Sequence" : overlay.title
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title
   });
   displayLayer(eoLayer, overlay, removeOldLayers);
 }
@@ -408,7 +408,7 @@ function displayTiled(overlay, removeOldLayers, sequence) {
       tileGrid: mapTileGrid,
       url: overlay.source + "/{z}/{x}/{y}.png",
     }),
-    title: sequence ? "Sequence" : overlay.title
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title
   });
   displayLayer(layer, overlay, removeOldLayers);
 }
@@ -421,7 +421,7 @@ function displayWMS512(overlay, removeOldLayers, sequence) {
   var url = overlay.source;
   var wmsLayer = new ol.layer.Tile({
     type: 'base',
-    title: sequence ? "Sequence" : overlay.title,
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title
     source: new ol.source.TileWMS({
       url: url,
       crossOrigin: 'anonymous',
@@ -542,7 +542,7 @@ function displayOverlaySequence(overlay, removeOldLayers) {
   function displaySequenceLayer(layer, type, removeOldLayers) {
     var sequence = true;
     //remove any existing sequence layers
-    //removeLayerByName("Sequence");
+    // removeLayerByName("Sequence");
     switch(type) {
       case "arcgis_tile_256":
         displayArcGIS(layer, removeOldLayers, sequence);
@@ -639,7 +639,7 @@ function displayNOAA(overlay, removeOldLayers, sequence) {
           mosaicRule: "{where:\"name = '" + urlAndImageName.imageName + "'\"}"
         }
       }),
-      title: sequence ? "Sequence" : ""
+      title: sequence ? overlay.title + " " + overlay.label : overlay.title
     });
     displayLayer(arcgisLayer, overlay, removeOldLayers);
   }
@@ -657,7 +657,7 @@ function displayArcGIS(overlay, removeOldLayers, sequence) {
       url: overlay.source + "{z}/{y}/{x}",
       crossOrigin: "anonymous"
     }),
-    title: sequence ? "Sequence" : ""
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title
   });
   displayLayer(arcgisLayer, overlay, removeOldLayers);
 }
@@ -671,7 +671,7 @@ function displayImage(overlay, removeOldLayers, sequence) {
   var imageLayer;
   imageLayer = new ol.layer.Image({
     opacity: 1,
-    title: sequence ? "Sequence" : overlay.title,              
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title              
     source: new ol.source.ImageStatic({
       url: overlay.source,
       imageExtent: overlay.extent
@@ -694,38 +694,25 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
 
   //calculate the resolutions for each zoom level
   var projExtent = map.getView().getProjection().getExtent();
+  if (overlay.extent) projExtent = overlay.extent;
   var startResolution = ol.extent.getWidth(projExtent) / 320;
   var resolutions = new Array(overlay.numLevels+1);
   for (var i = 0, ii = resolutions.length; i < ii; ++i) {
     resolutions[i] = startResolution / Math.pow(2, i);
   } 
 
-  if (overlay.zoom && overlay.coords) {
-    // fudge for antactic ice loss layer
-    map.setView(new ol.View({
-      center: ol.proj.transform(overlay.coords, 'EPSG:4326', 'EPSG:3031'),
-      zoom: overlay.zoom - mobileZoomAdjust,
-      minZoom: 2,
-      projection: params.projection,
-      extent: params.view_extent,
-      enableRotation: false,
-    }));
-    $(".ol-overviewmap").hide();
 
-  } else {
-    map.setView(new ol.View({
-      center: params.center,
-      zoom: params.zoom - mobileZoomAdjust,
-      minZoom: 2,
-      projection: params.projection,
-      extent: params.view_extent,
-      enableRotation: false,
-    }));
-    if (!isMobile) {
-      $(".ol-overviewmap").show();
-    }
+  map.setView(new ol.View({
+    center: params.center,
+    zoom: params.zoom - mobileZoomAdjust,
+    minZoom: 2,
+    projection: params.projection,
+    extent: params.view_extent,
+    enableRotation: false,
+  }));
+  if (!isMobile) {
+    $(".ol-overviewmap").show();
   }
-
   
   //set up a tile grid
   tileGrid = new ol.tilegrid.TileGrid({
@@ -757,7 +744,7 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
       },
       wrapX: false
     }),
-    title: sequence ? "Sequence" : overlay.title
+    title: sequence ? overlay.title + " " + overlay.label : overlay.title
   });
   //use the tileCoords to geerate the URL name
   function getNameWithTileX(tileCoord) {

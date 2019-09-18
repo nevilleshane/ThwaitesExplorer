@@ -46,7 +46,7 @@ var mapOverlays =
                {
                   "name":"Antarctic total ice change (2004-2013)",
                   "title":"Antarctic Ice Mass Change ",
-                  "type":"multi_layer",
+                  "type":"overlay_sequence",
                   "legendUnits":"equivalent water height in meters",
                   "mapProjection":1,
                   "info":"http://app.earth-observer.org/data/web_pages/html/MassLossAntarctica.html",
@@ -58,41 +58,30 @@ var mapOverlays =
                   "hideOpacitySlider":false,
                   "aboutAlertURL":"data/AntarcticaGrace_2004-2013_320/About_ThwaitesAntarcticIceMassLoss.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_MassLossAntarctica.m4a",
-                  "layers":[
-                     {
-                        "type":"xb_map",
-                        "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticaGrace_GMRT_Underlay_320",
-                        "imageType":".png",
-                        "numLevels":1
-                     },
-                     {
-                        "type":"overlay_sequence",
-                        "overlayType":"xb_map",
-                        "sequenceSource":"data/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
-                        "imageType":".png",
-                        "numLevels":1,
-                        "zoom": 3,
-                        "coords": [-110,-46]
-                     }
-                  ]
+                  "overlayType":"xb_map",
+                  "sequenceSource":"data/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
+                  "imageType":".png",
+                  "numLevels":1,
+                  "extent": [-2732568+20000, -2732568-50000, 2830175+20000, 2830175-50000]
+     
                },
-               {
-                  "name":"GRACE TEST",
-                  "title":"Test",
-                  "type":"image",
-                  "mapProjection":1,
-                  "legendUnits":"meters",
-                  "source":"data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2004_320/Year_2004.png",
-                  "info":"TBD",
-                  "credit":"WOA 2018",
-                  "legend":false,
-                  "legendPath":"data/oceanT350m/WOA18_temps_ANT_350m_legend_plusminus2.png",
-                  "scale":false,
-                  "scalePath":"data/oceanT350m/WOA18_temps_ANT_350m.scl",
-                  "aboutAlertURL":"data/oceanT350m/About_ThwiatesOceanTemp.txt",
-                  "aboutAudioURL":"TBD",
-                  "extent": [-2732568, -2732568, 2830175, 2830175]
-               }
+               // {
+               //    "name":"GRACE TEST",
+               //    "title":"Test",
+               //    "type":"image",
+               //    "mapProjection":1,
+               //    "legendUnits":"meters",
+               //    "source":"data/AntarcticaGrace_2004-2013_320/AntarcticaGraceYear2004_320/Year_2004.png",
+               //    "info":"TBD",
+               //    "credit":"WOA 2018",
+               //    "legend":false,
+               //    "legendPath":"data/oceanT350m/WOA18_temps_ANT_350m_legend_plusminus2.png",
+               //    "scale":false,
+               //    "scalePath":"data/oceanT350m/WOA18_temps_ANT_350m.scl",
+               //    "aboutAlertURL":"data/oceanT350m/About_ThwaitesOceanTemp.txt",
+               //    "aboutAudioURL":"TBD",
+               //    "extent": [-2732568+35000, -2732568-30000, 2830175+35000, 2830175-30000]
+               // }
             ]
          },
          {
@@ -174,7 +163,7 @@ var mapOverlays =
                   "legendPath":"data/oceanT550m/WOA18_temps_ANT_550m_legend_minus2plus4.png",
                   "scale":true,
                   "scalePath":"data/oceanT550m/WOA18_temps_ANT_550m.scl",
-                  "aboutAlertURL":"data/oceanT550m/About_ThwiatesOceanTemp_550m.txt",
+                  "aboutAlertURL":"data/oceanT550m/About_ThwaitesOceanTemp_550m.txt",
                   "aboutAudioURL":"TBD",
                   "extent": [-4590000.000000, -4590000.000000, 4590000.000000, 4590000.000000]
                }

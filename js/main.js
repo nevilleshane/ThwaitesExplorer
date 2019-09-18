@@ -792,7 +792,12 @@ function displayLayer(layer, overlay, removeOldLayers) {
   var removeGMRT = overlay.hideOpacitySlider || overlay.parent_type == "multi_layer";
   //don't remove base layer of multilayer with overlay sequence
   if (overlay.parent_type == "multi_layer" && overlay.type == "overlay_sequence") removeOldLayers = false;
-  if (removeOldLayers) removeAllLayers(removeGMRT);
+  if (removeOldLayers) {
+    removeAllLayers(removeGMRT);
+  } else {
+    // just remove alwaysOnLayers, so we can reload them at the top
+    for(var alyr of alwaysOnLayers) map.removeLayer(alyr);
+  }
 
   //switch projection if necessary
   if (!overlay.mapProjection) {
