@@ -147,6 +147,29 @@ var mapOverlays =
                   "aboutAlertURL":"data/oceanT550m/About_ThwaitesOceanTemp_550m.txt",
                   "aboutAudioURL":"TBD",
                   "extent": [-4590000.000000, -4590000.000000, 4590000.000000, 4590000.000000]
+               },
+               {
+                   "name":"Sea ice concentration",
+                   "title":"Sea ice concentration",
+                   "mapProjection":1,
+                   "showSeabedNames":false,
+                   "showElevation":false,
+                   "type":"overlay_sequence",
+                   "overlayType":"xb_map",
+                   "sequenceSource":"data/SeaIceConcentration/SeaIceConcentration_list.txt",
+                   "info":"http://app.earth-observer.org/data/web_pages/html/SeaIceConcentration.html",
+                   "legend":true,
+                   "legendPath":"data/SeaIceConcentration/SeaIceConcentrationLegend.png",
+                   "scale":true,
+                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/SeaIceConcentration/SeaIceConcentration.scl",
+                   "imageType":".png",
+                   "numLevels":2,
+                   "tileDelta":180,
+                   "tileSize":512,
+                   "credit":"NSIDC",
+                   "aboutAlertURL":"data/SeaIceConcentration/About_SeaIceConcentration.txt",
+                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_SeaIceConcentration.m4a",
+                   "cycleSequence": true
                }
             ]
          },
@@ -218,29 +241,6 @@ var mapOverlays =
                    "credit":"Carling Hay, Jerry Mitrovica",
                    "aboutAlertURL":"data/IceSheetFingerprinting/About_ThwaitesIceSheetFingerprinting.txt",
                    "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_IceSheetFingerprinting.m4a"
-               },
-               {
-                   "name":"Sea ice concentration",
-                   "title":"Sea ice concentration",
-                   "mapProjection":1,
-                   "showSeabedNames":false,
-                   "showElevation":false,
-                   "type":"overlay_sequence",
-                   "overlayType":"xb_map",
-                   "sequenceSource":"data/SeaIceConcentration/SeaIceConcentration_list.txt",
-                   "info":"http://app.earth-observer.org/data/web_pages/html/SeaIceConcentration.html",
-                   "legend":true,
-                   "legendPath":"data/SeaIceConcentration/SeaIceConcentrationLegend.png",
-                   "scale":true,
-                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/SeaIceConcentration/SeaIceConcentration.scl",
-                   "imageType":".png",
-                   "numLevels":2,
-                   "tileDelta":180,
-                   "tileSize":512,
-                   "credit":"NSIDC",
-                   "aboutAlertURL":"data/SeaIceConcentration/About_SeaIceConcentration.txt",
-                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_SeaIceConcentration.m4a",
-                   "cycleSequence": true
                }
             ]
          }
