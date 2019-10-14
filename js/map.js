@@ -506,33 +506,56 @@ function displayOverlaySequence(overlay, removeOldLayers) {
         sequences.push(mergeObjects(seq, overlay));
       }
       seq_num = 0;
-      $("#sequence_left").addClass("disabled");
+      if (overlay.cycleSequence) {
+         $("#sequence_left").removeClass("disabled");
+         $("#sequence_right").removeClass("disabled");
+      }
+      else {
+        $("#sequence_left").addClass("disabled");
+        if (sequences.length == 1) 
+          $("#sequence_right").addClass("disabled");
+        else
+          $("#sequence_right").removeClass("disabled");
+      }
+
       $("#sequence_level").text(sequences[0].label);
-      if (sequences.length == 1) 
-        $("#sequence_right").addClass("disabled");
-      else
-        $("#sequence_right").removeClass("disabled");
+
       $("#sequence").show();
       displaySequenceLayer(sequences[0], type, true);
     }
   });
 
+  
   // set the sequence left and right buttons to move through the sequences
   $("#sequence_left").unbind('click').click(function() {
     if ($("#sequence_left").hasClass("disabled")) return;
     seq_num--;
+    if (overlay.cycleSequence) {
+      // cycle to the end of the sequence
+      if (seq_num < 0) seq_num = sequences.length - 1;
+    }
+    else {
+      if (seq_num === 0) $("#sequence_left").addClass("disabled");
+    }
     $("#sequence_level").text(sequences[seq_num].label);
     $("#sequence_right").removeClass("disabled");
-    if (seq_num === 0) $("#sequence_left").addClass("disabled");
+
     displaySequenceLayer(sequences[seq_num], type, false); 
   });
 
   $("#sequence_right").unbind('click').click(function() {
     if ($("#sequence_right").hasClass("disabled")) return;
     seq_num++;
+    if (overlay.cycleSequence) {
+      // cycle to the start of the sequence
+      if (seq_num === sequences.length) seq_num = 0;
+    }
+    else {
+      if (seq_num === sequences.length - 1) $("#sequence_right").addClass("disabled");
+    }
     $("#sequence_level").text(sequences[seq_num].label);
     $("#sequence_left").removeClass("disabled");
-    if (seq_num === sequences.length - 1) $("#sequence_right").addClass("disabled");
+
     displaySequenceLayer(sequences[seq_num], type, false);
   });
 
@@ -701,15 +724,16 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
     resolutions[i] = startResolution / Math.pow(2, i);
   } 
 
+  // This resets the view to Thwaites - don't think we need it
+  // map.setView(new ol.View({
+  //   center: params.center,
+  //   zoom: params.zoom - mobileZoomAdjust,
+  //   minZoom: 2,
+  //   projection: params.projection,
+  //   extent: params.view_extent,
+  //   enableRotation: false,
+  // }));
 
-  map.setView(new ol.View({
-    center: params.center,
-    zoom: params.zoom - mobileZoomAdjust,
-    minZoom: 2,
-    projection: params.projection,
-    extent: params.view_extent,
-    enableRotation: false,
-  }));
   if (!isMobile) {
     $(".ol-overviewmap").show();
   }

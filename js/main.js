@@ -615,6 +615,20 @@ function removeLayerByName(name) {
 }
 
 /*
+  After a sequence layer has been loaded, remove the old layers.  Use the timeout delay to try and make it smooth.
+*/
+function removeOldSequenceLayers(sequence, layer_title) {
+  setTimeout(function() {
+    map.getLayers().forEach(function (layer) {
+      if (layer && layer.get('title') && layer.get('title').includes(sequence) && layer.get('title') !== layer_title) {
+          removeLayerByName(layer.get('title'));
+      }
+    });
+  }, 300);  
+}
+
+
+/*
   make sure all tables are removed by removing any untitled vector layers 
 */
 function removeAllTables() {
@@ -792,6 +806,7 @@ function displayLayer(layer, overlay, removeOldLayers) {
   var removeGMRT = overlay.hideOpacitySlider || overlay.parent_type == "multi_layer";
   //don't remove base layer of multilayer with overlay sequence
   if (overlay.parent_type == "multi_layer" && overlay.type == "overlay_sequence") removeOldLayers = false;
+
   if (removeOldLayers) {
     removeAllLayers(removeGMRT);
   } else {
@@ -814,6 +829,11 @@ function displayLayer(layer, overlay, removeOldLayers) {
         map.addLayer(lyr);
       }
     } catch(error) {console.log(error);}
+  }
+
+  //if sequence layer, remove old sequence layers
+  if (overlay.type == "overlay_sequence") {
+    removeOldSequenceLayers(overlay.title, layer.getProperties().title);
   }
 
   //set the opacity slider
@@ -866,6 +886,7 @@ function displayLayer(layer, overlay, removeOldLayers) {
   //on map 2 (the hidden map), just display top layer
   map2.setLayerGroup(new ol.layer.Group());
   map2.addLayer(layer);
+
 }
 
 /*
