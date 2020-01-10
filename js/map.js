@@ -405,6 +405,7 @@ function displayTiled(overlay, removeOldLayers, sequence) {
     source: new ol.source.XYZ({
       projection: params.projection,
       tileGrid: mapTileGrid,
+      tilePixelRatio: 1.00000000,
       url: overlay.source + "/{z}/{x}/{y}.png",
     }),
     title: sequence ? overlay.title + " " + overlay.label : overlay.title
