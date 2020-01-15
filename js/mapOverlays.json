@@ -118,7 +118,7 @@ var mapOverlays =
                   "title":"Bedrock Elevation Under the Antarctic Ice Sheet",
                   "type":"tiled",
                   "mapProjection":1,
-                  "mapMaxZoom":7,
+                  "mapMaxZoom":8,
                   "mapMaxResolution":150.00535457,
                   "tileWidth":256,
                   "tileHeight":256,
@@ -130,7 +130,7 @@ var mapOverlays =
                   "legend":true,
                   "legendPath":"data/BeneathAntarcticIcesheet/Bedmachine_legend_minus2500plus2000m.png",
                   "scale":true,
-                  "scalePath":"data/BeneathAntarcticIcesheet/Bedmap2_clipped_2000m_rendered_Win.scl",
+                  "scalePath":"data/BeneathAntarcticIcesheet/Bedmachine_minus2500plus2000m.scl",
                   "aboutAlertURL":"data/BeneathAntarcticIcesheet/About_ThwaitesBeneathAntarcticIcesheet.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_UndertheAntarcticIceSheet.m4a"
                },
