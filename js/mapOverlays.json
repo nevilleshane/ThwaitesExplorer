@@ -275,5 +275,34 @@ var mapOverlays =
              "aboutAudioURL":"TBD"
          }
       ]
-   }
+   },
+   {
+      "name":"WHAT do we know about Thwaites?",
+      "type":"dir",
+      "children":[
+         {
+            "name":"What do we know about Thwaites Glacier",
+            "type":"overview",
+            "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html",
+            "source":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html"
+         },
+         {
+             "name":"Paleo Grounding Line Locations",
+             "title":"Reconstructed Grounding Line locations for past 20,000 years",
+             "type":"geojson",
+             "mapProjection":1,
+             "source":"data/BAS_aerosurvey/ITGCTwinOtterFlights2019.geojson",
+             "styleFunctionFile":"data/BAS_aerosurvey/ITGCTwinOtterFlights2019_style.js",
+             "styleFunction":"style_ITGCTwinOtterFlights2019",
+             "info":"TBD",
+             "credit":"Rob Larter, BAS",
+             "legend":true,
+             "legendPath":"data/BAS_aerosurvey/BAS_aerosurvey_legend.png",
+             "scale":false,
+             "scalePath":"",
+             "aboutAlertURL":"data/BAS_aerosurvey/About_BAS_aerosurvey.txt",
+             "aboutAudioURL":"TBD"
+         }
+      ]
+    }
 ]
