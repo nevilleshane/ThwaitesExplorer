@@ -291,16 +291,16 @@ var mapOverlays =
              "title":"Reconstructed Grounding Line locations for past 20,000 years",
              "type":"geojson",
              "mapProjection":1,
-             "source":"data/BAS_aerosurvey/ITGCTwinOtterFlights2019.geojson",
-             "styleFunctionFile":"data/BAS_aerosurvey/ITGCTwinOtterFlights2019_style.js",
-             "styleFunction":"style_ITGCTwinOtterFlights2019",
+             "source":"data/Larter_Paleo_Groundinglines/Larter_paleo_groundinglines.geojson",
+             "styleFunctionFile":"data/Larter_Paleo_Groundinglines/Larter_paleo_groundinglines_style.js",
+             "styleFunction":"style_Larter_paleo_groundinglines",
              "info":"TBD",
              "credit":"Rob Larter, BAS",
-             "legend":true,
-             "legendPath":"data/BAS_aerosurvey/BAS_aerosurvey_legend.png",
+             "legend":false,
+             "legendPath":"TBD",
              "scale":false,
              "scalePath":"",
-             "aboutAlertURL":"data/BAS_aerosurvey/About_BAS_aerosurvey.txt",
+             "aboutAlertURL":"TBD",
              "aboutAudioURL":"TBD"
          }
       ]

@@ -253,7 +253,9 @@ $(document).ready(function() {
           if (["placeNamesLayer", "Antarctic Coast", "Thwaites Surface Catchment"].includes(layer.get('title'))) return null;
           var geometry = feature.getGeometry(); 
           var mypoint = geometry.getClosestPoint(evt.coordinate);
-          return [feature, mypoint];
+          // if multiple features withing tolerance range, return closest
+          var closestFeature = layer.getSource().getClosestFeatureToCoordinate(evt.coordinate);
+          return [closestFeature, mypoint];
         }, {"hitTolerance":7});
     }
 
@@ -277,6 +279,12 @@ $(document).ready(function() {
           }
 
         }
+        else if (feature.get('layer')) {
+          var layer = feature.get('layer');
+           $("#elev").text(layer).css({top:y-50+"px", left:x-20+"px", color:"white"});
+           $("#elev_triangle").css({top:y-8+"px", left:x-8+"px"}).show();
+        }
+
         // old polar explorer code
         else {
         

@@ -85,11 +85,10 @@ $(document).ready(function() {
 
 });
 
-
 // text style function for geojson layers
 var createTextStyle = function(feature, resolution, labelText, labelFont,
-                             labelFill, placement, bufferColor,
-                             bufferWidth) {
+                             labelFill, placement, bufferColor, offsetX, offsetY, textBaseline,
+                             bufferWidth, textAlign) {
 
   if (feature.hide || !labelText) {
       return; 
@@ -103,16 +102,16 @@ var createTextStyle = function(feature, resolution, labelText, labelFont,
           width: bufferWidth
       });
   }
-  
+
   var textStyle = new ol.style.Text({
       font: labelFont,
       text: labelText,
-      textBaseline: "top",
-      textAlign: "center",
-      // offsetX: 8,
-      offsetY: 10,
+      textBaseline: textBaseline,
+      textAlign: textAlign,
+      offsetX: offsetX,
+      offsetY: offsetY,
       placement: placement,
-      maxAngle: 0,
+      maxAngle: 1,
       fill: new ol.style.Fill({
         color: labelFill
       }),
@@ -122,33 +121,34 @@ var createTextStyle = function(feature, resolution, labelText, labelFont,
   return textStyle;
 };
 
+
 function categories_ITGC_projects(feature, value, size, resolution, labelText,
-   labelFont, labelFill, bufferColor, bufferWidth,
-   placement) {
+   labelFont, labelFill, bufferColor, offsetX, offsetY, textBaseline, bufferWidth,
+   placement, textAlign) {
     if (!value) return; 
     switch(value.toString()) {default:
         return [ new ol.style.Style({
             image: new ol.style.Circle({radius: 6.0 + size,
                 stroke: new ol.style.Stroke({color: 'rgba(220,40,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 3}), fill: new ol.style.Fill({color: 'rgba(213,87,75,1.0)'})}),
             text: createTextStyle(feature, resolution, labelText, labelFont,
-              labelFill, placement, bufferColor,
-              bufferWidth)
+              labelFill, placement, bufferColor, offsetX, offsetY, textBaseline,
+              bufferWidth, textAlign)
         })];
         case '1':
         return [ new ol.style.Style({
             image: new ol.style.Circle({radius: 6.0 + size,
                 stroke: new ol.style.Stroke({color: 'rgba(220,40,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 3}), fill: new ol.style.Fill({color: 'rgba(220,40,0,1.0)'})}),
             text: createTextStyle(feature, resolution, labelText, labelFont,
-              labelFill, placement, bufferColor,
-              bufferWidth)
+              labelFill, placement, bufferColor, offsetX, offsetY, textBaseline,
+              bufferWidth, textAlign)
         })];
         case '2':
         return [ new ol.style.Style({
             image: new ol.style.Circle({radius: 6.0 + size,
                 stroke: new ol.style.Stroke({color: 'rgba(220,40,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 3}), fill: new ol.style.Fill({color: 'rgba(220,40,0,0.0)'})}),
             text: createTextStyle(feature, resolution, labelText, labelFont,
-              labelFill, placement, bufferColor,
-              bufferWidth)
+              labelFill, placement, bufferColor, offsetX, offsetY, textBaseline,
+              bufferWidth, textAlign)
         })];
     }
 }
@@ -167,8 +167,9 @@ var styleFunctionProjects = function(feature, resolution){
     var bufferColor = "#000000";
     var bufferWidth = 1.5;
     var textAlign = "center";
+    var textBaseline = "top";
     var offsetX = 0;
-    var offsetY = 0;
+    var offsetY = 10;
     if (size == 1) {
         if (feature.get("project") !== null) {
             labelText = String(feature.get("project"));
@@ -183,8 +184,8 @@ var styleFunctionProjects = function(feature, resolution){
       size = -1;
     }
     var style = categories_ITGC_projects(feature, value, size, resolution, labelText,
-      labelFont, labelFill, bufferColor,
-      bufferWidth, placement);
+      labelFont, labelFill, bufferColor, offsetX, offsetY, textBaseline,
+      bufferWidth, placement, textAlign);
 
     return style;
 };
@@ -202,6 +203,7 @@ var styleFunctionOutline = function(feature, resolution){
     var bufferColor = "";
     var bufferWidth = 0;
     var textAlign = "left";
+    var textBaseline = "top";
     var offsetX = 8;
     var offsetY = 3;
     var placement = 'point';
@@ -215,8 +217,8 @@ var styleFunctionOutline = function(feature, resolution){
     var style = [ new ol.style.Style({
         stroke: new ol.style.Stroke({color: color, lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: width}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
+                              labelFill, placement, bufferColor, offsetX, offsetY, textBaseline,
+                              bufferWidth, textAlign)
     })];
 
     return style;
