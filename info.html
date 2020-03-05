@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>Polar Explorer WebApp Tutorial</title>
+  <title>Thwaites Explorer WebApp Tutorial</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -23,15 +23,15 @@
     <header class="w3-container banner-header">
       <button type="button" onclick="window.open('', '_self', ''); window.close();" class="back-btn">Back</button>
       <table>
-        <tr>  
+        <tr>
           <td>
             <a target="_blank" href="index.html" style="text-decoration: none;">
-              <img src="img/polar_explorer_logo.png" class="banner-logo" alt="logo">
+              <img src="img/itgc-logo-color-white-background-295.png" class="banner-logo" alt="logo">
             </a>
           </td>
           <td>
             <a target="_blank" href="index.html" style="text-decoration: none;">
-              <h1 class="banner-text">Polar Explorer Web Application</h1>
+              <h1 class="banner-text">Thwaites Explorer Web Application</h1>
             </a>
           </td>
         </tr>
@@ -68,22 +68,22 @@
 
       //add our own css styling to the iframe contents
       var cssLink = document.createElement("link");
-      cssLink.href = "http://app.earth-observer.org/data/web_pages/webapp/info.css"; 
-      cssLink.rel = "stylesheet"; 
-      cssLink.type = "text/css"; 
+      cssLink.href = "http://app.earth-observer.org/data/web_pages/webapp/info.css";
+      cssLink.rel = "stylesheet";
+      cssLink.type = "text/css";
       $(this).contents().find("head").append(cssLink);
       // open links in new tabs
       var base = document.createElement("base");
       base.target = "_blank";
       $(this).contents().find("head").append(base);
-      
+
     });
 
     $(window).resize(function() {
         //resize the iframe when the window is resized
         $('#iframe').height($(this).height());
         $('#iframe').width($(this).width());
-    }); 
+    });
 
   </script>
 

@@ -9,7 +9,7 @@ $(document).ready(function() {
   }
 
 
-  /* 
+  /*
     Close the splash screen
   */
   $("#close_splash").click(function() {
@@ -26,7 +26,7 @@ $(document).ready(function() {
         $('.flipper').addClass('flip');
         setTimeout(function() {
           $('#hidden_map').show();
-        }, 1000);  
+        }, 1000);
       } else {
         $("#menu").show("slow");
       }
@@ -66,10 +66,10 @@ $(document).ready(function() {
         $('#splash').show('slow');
         $("#menu").hide("slow");
       }
-      
+
   });
 
-  /* 
+  /*
     Close the popup when the close button is clicked
   */
   $("#close_btn").click(function() {
@@ -114,13 +114,13 @@ $(document).ready(function() {
 
   /*
     Take a snapshot of the main map canvas and save as a jpeg file
-    (can't use png as some canvases are too large) 
+    (can't use png as some canvases are too large)
   */
   $("#screenshot_btn").click(function() {
     var canvas = $("#map").find("canvas")[0];
     var image = canvas.toDataURL("image/jpeg");
     var link = document.createElement("a");
-    link.href = image; 
+    link.href = image;
     link.download = 'PolarExplorer_snapshot.jpg';
     link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
 
@@ -248,10 +248,10 @@ $(document).ready(function() {
     //first check if clicking on a circle in a table layer (and not a placeName)
     var featureAndCoords;
     if (evt.pixel) {
-      featureAndCoords = map.forEachFeatureAtPixel(evt.pixel, 
+      featureAndCoords = map.forEachFeatureAtPixel(evt.pixel,
         function(feature, layer) {
           if (["placeNamesLayer", "Antarctic Coast", "Thwaites Surface Catchment"].includes(layer.get('title'))) return null;
-          var geometry = feature.getGeometry(); 
+          var geometry = feature.getGeometry();
           var mypoint = geometry.getClosestPoint(evt.coordinate);
           // if multiple features withing tolerance range, return closest
           var closestFeature = layer.getSource().getClosestFeatureToCoordinate(evt.coordinate);
@@ -263,7 +263,7 @@ $(document).ready(function() {
         var feature = featureAndCoords[0];
         var feature_coord = featureAndCoords[1];
         //ignore placename label features
-        if (typeof feature.fontName != "undefined") return; 
+        if (typeof feature.fontName != "undefined") return;
 
         var content="";
         // if popup details included in the geojson
@@ -287,7 +287,7 @@ $(document).ready(function() {
 
         // old polar explorer code
         else {
-        
+
           var url;
           if (tablePopupObj.base_url && tablePopupObj.url_property) {
             url = tablePopupObj.base_url + feature.get(tablePopupObj.url_property);
@@ -315,13 +315,13 @@ $(document).ready(function() {
 
           for (var i in tablePopupObj.properties) {
             var key = tablePopupObj.properties[i];
-            // make sure any keys which originally had duplicate names are renamed back to 
+            // make sure any keys which originally had duplicate names are renamed back to
             // their original vales by removing the #repeated_key# extension
             var key_text = key.replace("#repeated_key#", "");
             var value = feature.get(key);
             var value_text = "n/a";
             if (value) {
-              value_text = feature.get(key).replace("|", ",") + " " + tablePopupObj.units[i]; 
+              value_text = feature.get(key).replace("|", ",") + " " + tablePopupObj.units[i];
             }
             content +=  key_text + " = " + value_text + "<br/>";
           }
@@ -341,7 +341,7 @@ $(document).ready(function() {
       var canvas1 = hidden_map1.getElementsByTagName("canvas");
       var ctx1 = canvas1[0].getContext("2d");
       var ratio1 = getPixelRatio(ctx1);
-      var p1 = ctx1.getImageData(x*ratio1, y*ratio1, 1, 1).data; 
+      var p1 = ctx1.getImageData(x*ratio1, y*ratio1, 1, 1).data;
       var argb = "ARGB: " + p1[3] + ", " + p1[0] + ", " + p1[1] + ", " + p1[2];
       $("#elev").text(argb).css({top:y-45+"px", left:x-40+"px", position:"absolute", color:"white"});
       $("#elev_triangle").css({top:y-8+"px", left:x-8+"px"}).show();
@@ -379,7 +379,7 @@ $(document).ready(function() {
       var canvas = hidden_map.getElementsByTagName("canvas");
       var ctx = canvas[0].getContext("2d");
       var ratio = getPixelRatio(ctx);
-      var p = ctx.getImageData(x*ratio, y*ratio, 1, 1).data; 
+      var p = ctx.getImageData(x*ratio, y*ratio, 1, 1).data;
       // find closest color in the scaleTable
       closest = getClosestColor(p[0], p[1], p[2]);
       console.log(map.getView().getZoom());
@@ -406,8 +406,8 @@ $(document).ready(function() {
     dragElement(document.getElementById(("popup")), false);
     //for tablets, make the whole of the legend draggable, since it will be smaller
     dragElement(document.getElementById(("legend")), $("#legend").css("zoom") < 1);
-    dragElement(document.getElementById(("settings")), false);  
-    dragElement(document.getElementsByClassName(("ol-overviewmap"))[1], true);  
+    dragElement(document.getElementById(("settings")), false);
+    dragElement(document.getElementsByClassName(("ol-overviewmap"))[1], true);
   }
 });
 
@@ -441,7 +441,7 @@ function populateMenu(overlays, title) {
     if (overlay.info) {
       info_icon.addClass("fa fa-info-circle");
       info_link.append(info_icon);
-      //open overlay.info url as an iframe in info.html 
+      //open overlay.info url as an iframe in info.html
       var info_url = overlay.info;
       if (overlay.info.indexOf(webpages_url) != -1) {
         var topic = info_url.split(webpages_url)[1].replace(".html", "");
@@ -449,8 +449,8 @@ function populateMenu(overlays, title) {
       } else {
         info_link.attr("href", info_url);
       }
-      // COMMENTED OUT LINKS FOR NOW
-      // info.append(info_link);
+      // COMMENTED OUT LINKS FOR NOW - UNCOMMENTED BY DFP ON 05 MARCH 2020
+      info.append(info_link);
     }
     //if overlay is of type overview, set as menu header
     if (overlay.type == "overview") {
@@ -512,7 +512,7 @@ function menuItemClicked(overlay, parent, icon, title) {
       $("#menuheader").hide().show("slide", {direction: "right"}, 500);
       $("#menubody").hide().show("slide", {direction: "right"}, 500);
 
-          
+
       $("#back_btn").unbind('click').click(function() {
         //repopulate menu with parent
         populateMenu(parents.pop(), parent_titles.pop());
@@ -561,16 +561,16 @@ function menuItemClicked(overlay, parent, icon, title) {
   icon.addClass("fa fa-check");
 
   //show the popup with text and audio
-  showPopup(overlay);   
+  showPopup(overlay);
 }
 
 /*
-  Remove all layers except the GMRT base and perform any other tidying up 
+  Remove all layers except the GMRT base and perform any other tidying up
   before switching to new overlay.  Only remove GMRT base layer if removeGMRT is
-  set to true, eg if the overlay.hideOpacitySlider has been set to true, or if 
-  this is a multi_layer overlay 
+  set to true, eg if the overlay.hideOpacitySlider has been set to true, or if
+  this is a multi_layer overlay
 */
-function removeAllLayers(removeGMRT) {    
+function removeAllLayers(removeGMRT) {
   var layersToRemove = [];
   //alwaysOnLayers = [];
   map.getLayers().forEach(function(lyr) {
@@ -579,7 +579,7 @@ function removeAllLayers(removeGMRT) {
       layersToRemove.push(lyr);
     }
   });
- 
+
   var len = layersToRemove.length;
   for(var i = 0; i < len; i++) {
       map.removeLayer(layersToRemove[i]);
@@ -594,16 +594,16 @@ function removeAllLayers(removeGMRT) {
   //   map.addLayer(lima);
   // }
   if (showSeabedNames) map.addLayer(placeNamesLayer);
-  $("#sequence").hide(); 
+  $("#sequence").hide();
   $("#legend").hide();
-  $("#opacity").hide(); 
+  $("#opacity").hide();
   $("#ldeo_label").hide();
   $("#elev").text("");
-  $("#elev_triangle").hide();  
-  scaleTable = {};  
-  scaleUnits = ""; 
+  $("#elev_triangle").hide();
+  scaleTable = {};
+  scaleUnits = "";
   closer.click();
-}  
+}
 
 /*
   A function to remove a layer using its name/title
@@ -632,12 +632,12 @@ function removeOldSequenceLayers(sequence, layer_title) {
           removeLayerByName(layer.get('title'));
       }
     });
-  }, 300);  
+  }, 300);
 }
 
 
 /*
-  make sure all tables are removed by removing any untitled vector layers 
+  make sure all tables are removed by removing any untitled vector layers
 */
 function removeAllTables() {
   var layersToRemove = [];
@@ -651,9 +651,9 @@ function removeAllTables() {
   for(var i = 0; i < len; i++) {
       map.removeLayer(layersToRemove[i]);
   }
-   
+
   tablePopupObj = {};
-} 
+}
 
 /*
   Show the popup for the selectd overlay
@@ -685,7 +685,7 @@ function showPopup(overlay) {
             $('.flipper').removeClass('flip');
             setTimeout(function() {
               $('#hidden_map').show();
-            }, 1000); 
+            }, 1000);
             $("#menu_btn").show();
           }
         });
@@ -701,7 +701,7 @@ function showPopup(overlay) {
 
 /*
   Play the audio given a url
-*/ 
+*/
 function playAudio(url) {
   var audioElement = document.getElementById("popup_audio");
   audioElement.src = url;
@@ -731,11 +731,11 @@ function showCredit(credit) {
 }
 
 
-/* 
+/*
   set the link for the info button
 */
 function setInfoLink(url) {
-  //open url as an iframe in info.html 
+  //open url as an iframe in info.html
   if (url.indexOf(webpages_url) != -1) {
     var topic = url.split(webpages_url)[1].replace(".html", "");
     $("#info_link").attr("href", "info.html?topic=" + topic);
@@ -775,7 +775,7 @@ function setSlider(layer, overlay) {
     return;
   }
   //only want to change opacity of top layer, so need to unbind previous layers
-  $("#opacity_slider").unbind(); 
+  $("#opacity_slider").unbind();
   $("#opacity_slider").on("input", function(e) {
     //for sequence layers, set opacity to 0 for all but the top layer
     map.getLayers().forEach(function (l) {
@@ -801,13 +801,13 @@ function setSlider(layer, overlay) {
   Everything that needs to be done when displaying a layer on the map
 */
 function displayLayer(layer, overlay, removeOldLayers) {
-  
+
   //hide new user button
   $(".new_user_btn-container").hide("slide", {direction: "down"}, 1500);
 
   //determine whether place names should be shown
   showSeabedNames = overlay.showSeabedNames;
-  
+
   //remove old layers if not a multilayer layer
   //only remove GMRT base layer is the hideOpacitySlider parameter is true
   //or if the parent overlay type is multi_layer
@@ -824,7 +824,7 @@ function displayLayer(layer, overlay, removeOldLayers) {
 
   //switch projection if necessary
   if (!overlay.mapProjection) {
-    if (map.getView().getProjection() != merc_proj) switchProjection(0); 
+    if (map.getView().getProjection() != merc_proj) switchProjection(0);
   }
 
   //add the new layer to the map
@@ -845,7 +845,7 @@ function displayLayer(layer, overlay, removeOldLayers) {
   }
 
   //set the opacity slider
-  setSlider(layer, overlay);  
+  setSlider(layer, overlay);
 
   //show legend if available
   if (overlay.legend) {
@@ -870,7 +870,7 @@ function displayLayer(layer, overlay, removeOldLayers) {
   }
   if (overlay.type != "dir") {
     showElevation = overlay.showElevation;
-  }  
+  }
   if (overlay.type == "overlay_sequence") {
     $("#sequence").show();
   }
