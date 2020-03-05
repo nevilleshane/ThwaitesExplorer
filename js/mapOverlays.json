@@ -3,8 +3,7 @@ var mapOverlays =
    {
       "name":"Explore Thwaites Glacier",
       "type":"overview",
-      "info":"http://app.earth-observer.org/data/web_pages/html/OverviewTopics.html",
-      "source":"http://app.earth-observer.org/data/web_pages/html/OverviewTopics.html"
+      // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewTopics.html",
    },
    {
       "name":"WHY do we study Thwaites?",
@@ -13,8 +12,7 @@ var mapOverlays =
          {
             "name":"Thwaites contribution to sea level rise",
             "type":"overview",
-            "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html",
-            "source":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html"
+            // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html",
          },
          {
             "name":"How is Thwaites changing?",
@@ -23,8 +21,7 @@ var mapOverlays =
                {
                   "name":"Thwaites Glacier change",
                   "type":"overview",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
-                  "source":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html"
+                  // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
                },
                {
                   "name":"Thwaites ice is thinning.",
@@ -73,8 +70,7 @@ var mapOverlays =
                {
                   "name":"Thwaites Vulnerability",
                   "type":"overview",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
-                  "source":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html"
+                  // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
                },
               {
                   "name":"Look under the Antarctic ice sheet",
@@ -141,8 +137,7 @@ var mapOverlays =
                {
                   "name":"Thwaites Sea Level Contributions",
                   "type":"overview",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
-                  "source":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html"
+                  // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
                },
                {
                   "name":"Height of Antarctic ice",
@@ -214,8 +209,7 @@ var mapOverlays =
          {
             "name":"How are we studying Thwaites?",
             "type":"overview",
-            "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhatAboutPolarRegions.html",
-            "source":"http://app.earth-observer.org/data/web_pages/html/OverviewWhatAboutPolarRegions.html"
+            // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhatAboutPolarRegions.html",
          },
          {
              "name":"ITGC Projects",
@@ -260,8 +254,7 @@ var mapOverlays =
          {
             "name":"What do we know about Thwaites Glacier",
             "type":"overview",
-            "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html",
-            "source":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html"
+            // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html",
          },
          {
              "name":"20,000 years of ice sheet history",
@@ -293,7 +286,7 @@ var mapOverlays =
              "legend":true,
              "legendPath":"data/SeaIceConcentration/SeaIceConcentrationLegend.png",
              "scale":true,
-             "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/SeaIceConcentration/SeaIceConcentration.scl",
+             "scalePath":"data/SeaIceConcentration/SeaIceConcentration.scl",
              "imageType":".png",
              "numLevels":2,
              "tileDelta":180,

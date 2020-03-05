@@ -433,7 +433,7 @@ function populateMenu(overlays, title) {
     var info = $("<td/>");
     var info_link = $("<a/>").attr("target", "_blank");
     var more = $("<td/>");
-     var info_icon = $("<i/>").addClass("menu_icon menu_info");
+    var info_icon = $("<i/>").addClass("menu_icon menu_info");
     var icon = $("<i/>").addClass("menu_icon");
     var overlay = overlays[i];
 
