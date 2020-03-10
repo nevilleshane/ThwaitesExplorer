@@ -46,7 +46,7 @@
   <script type="text/javascript">
     $(document).ready(function() {
 
-      var webpages_url = "http://app.earth-observer.org/data/web_pages/html/";
+      var webpages_url = "/data/info_pages/html/";
       var basemap_url = "http://app.earth-observer.org/data/basemaps/gmrt/";
 
       var topic = window.location.search.split("topic=")[1];
@@ -59,6 +59,7 @@
       } else if (topic) {
         url = webpages_url + topic + ".html";
       }
+      console.log(url)
       $("#iframe").attr("src", url);
     });
 
@@ -68,7 +69,7 @@
 
       //add our own css styling to the iframe contents
       var cssLink = document.createElement("link");
-      cssLink.href = "http://app.earth-observer.org/data/web_pages/webapp/info.css";
+      cssLink.href = "/css/info.css";
       cssLink.rel = "stylesheet";
       cssLink.type = "text/css";
       $(this).contents().find("head").append(cssLink);
