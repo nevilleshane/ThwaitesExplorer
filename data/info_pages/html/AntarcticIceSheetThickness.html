@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Antarctic Ice Sheet Thickness</title>
+	<meta name="generator" content="BBEdit 10.5" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
+<style type="text/css">
+p {
+text-align: justify;
+font-size: 11pt;
+font-family: sans-serif, verona, arial;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+figcaption {
+font-weight: lighter;
+font-style: italic;
+text-align: center;
+}
+
+small { 
+font-size: 9pt;
+}
+li { 
+margin-left: 10px;
+margin-right: 10px;
+}
+
+h3 {
+margin-left: 10px;
+margin-right: 10px;
+}
+
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+</style>
+</head>
+<body>
+<div>
+<img id="banner" max-width="100%" alt="Antarctic Ice Sheet Thickness" src="../banners/AntarcThick.png">
+</div>
+<div data-role="popup" id="metric">
+<p>2.48 mi</p>
+</div>
+<div data-role="popup" id="metric1">
+<p> 6,486,776 mi<sup>3</sup></p>
+</div>
+<div data-role="popup" id="metric2">
+<p> 200 feet </p>
+</div>
+<div data-role="popup" id="meters">
+<p>1.5 mi</p>
+</div>
+<div data-role="popup" id="meters1">
+<p> 20 feet</p>
+</div>
+<div data-role="popup" id="meters2">
+<p> 2.5 mi</p>
+</div>
+<div data-role="popup" id="meters3">
+<p>180 feet</p>
+</div>
+
+<figure style="float:right;">
+<a href="#imagecaption" data-rel="popup"><img id="picture" class="displayed" width="300" alt="Map Depicting Antarctic Ice Sheet Elevation" src="../pictures/Antarcticelevation.jpg"></a>
+<figcaption><small> (Touch Image For Description)</small></figcaption>
+<div data-role="popup" id="imagecaption">
+<p>Antarctic Ice Sheet Thickness color contour map showing Dome A in East Antartica as the high point at 4000 m. The white areas are floating ice sheets.
+Source: <a href="http://lima.nasa.gov/antarctica/">NASA</a></p>
+</div>
+</figure>
+<h4>Summary</h4> 
+</p>
+<p>
+A vast amount of ice is locked up in the Antarctic ice sheet. In the unlikely event that it were all to melt,
+sea-level would be expected to rise by about 200 feet, enough to flood many major coastal cities around the world. 
+Ice thickness is a key parameter in computer models that are designed to assess the behavior of the ice sheet under 
+changing climatic conditions. Reaching up to 4,000 m in thickness, the oldest ice in Antarctica dates from tens of 
+millions of years ago. Measurements using radar instruments on airplanes and satellites enable scientists to  
+accurately map the ice sheet, including its internal structure, and help provide a better understanding of potential future climatic impacts.
+ <hr>
+</p>
+<p>
+Ice elevation is a measure of ice thickness, or the height of the ice in the ice sheet excluding the land beneath. 
+Determining what is ice and what is the underlying topography is a starting point for calculating the total amount of ice in the Antarctic ice sheet, a necessary
+figure in measuring any changes in the ice. Knowing the ice elevation is a 'boundary condition', or a controlling parameter, for developing models of how we 
+expect the ice sheet to behave with changes in climate. The total amount of ice and where it has accumulated over time are both important in 
+understanding potential future impacts of the ice sheet. 
+</p>
+
+<p>
+The ice cover on Antarctica is both thick and old. For ~34 million years Antarctica has been mainly isolated from the rest of the world by the circulation of the Southern Ocean and the air mass of the Polar Front. 
+Over this period the continent has collected snow, pressing it into ice until in the interior regions ice measure more than <a href="#metric" data-rel="popup">4000 m</a> in depth. 
+The land mass is 98% covered with <a href="#metric1" data-rel="popup">27 million km<sup>3</sup></a> of ice which if fully melted would raise sea level close to <a href="#metric2" data-rel="popup">60 m</a>. 
+</p>
+<p>
+The map in the app divides the ice into contours of ice thickness. Clicking on each contour brings up the thickness of the ice in meters. 
+Although Antarctica is one continent it is made up of two different regions separated into West and East Antarctica by the Transantarctic Mountains. In the app you can 
+see the separation in the narrowing between the peninsula shape of West Antarctica, and the larger more oval shaped land mass of East Antarctica. 
+West Antarctica is an ice covered archipelago with ice measuring up to <a href="#meters" data-rel="popup">2500 m</a> thick.  In the app you can use the slide to remove 
+the ice and see how much of the West Antarctica land is below sea level. (Note that in the map views when you use the slider to remove the overlying map the data is still 
+linked to the map, not to the topography map below.) Were the West Antarctic ice sheet to melt the sea level rise contribution would be only <a href="#meters1" data-rel="popup">6 m</a> because much of this ice is already 
+resting in the ocean. East Antarctica, a much older and larger section of land and ice, has ice as thick as <a href="#meters2" data-rel="popup">4100 m</a> in the interior. Although sections 
+of East Antarctica are also below sea level there is enough ice stacked on land to raise sea level <a href="#meters3" data-rel="popup">55 m</a>; this is considerably more than any other source on Earth. 
+</p>
+
+<p>
+Measurements of ice thickness in the app is collected from the Radarsat Antarctic Mapping Project (RAMP) and includes high-resolution radarsat data and topographic data 
+from a number of sources to get full coverage of the area. Radar measures total ice thickness from the surface to the base of the ice, as well as information on the different 
+internal layers of ice thickness. Radar operates by sending pulses of radio waves and measuring and timing the delay between transmission and reception of a pulse through the ice.
+The size and remoteness of Antarctica makes data collection challenging. Data for this map has been collected from the 1940's to present, most of it from 1980 forward.
+Satellite data combined with airborne data continues to improve our understanding of ice thickness in Antarctica. 
+</p>
+<figure>
+<img id="picture" class="displayed" width="500" alt="Antarctic Profile" src="../pictures/Antarcticprofile.jpg">
+<figcaption><small> Antarctic Ice Sheet Profile images the ice sheet like a cake cut in half across the middle. The grey area is the bedrock below, the blue/black line is the icesheet. Source: <a href="http://lima.nasa.gov/antarctica/">NASA</a></small></figcaption>
+</figure>
+<p>
+<h3>Data Source</h3>
+<li><a href="http://nsidc.org/data/atlas/news/bedrock_elevation.html">NSIDC</a> </li>
+<li><i>Compiled by Bamber et al. Bedmap 1, and Fretwell et al. Bedmap 2, from the <a href="http://www.antarctica.ac.uk//bas_research/our_research/az/bedmap2/">Bedmap project</a> </li>
+
+</p>
+
+</body>
+</html> 

@@ -3,7 +3,7 @@ var mapOverlays =
    {
       "name":"Explore Thwaites Glacier",
       "type":"overview",
-      // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewTopics.html",
+      // "info":"/data/info_pages/html/OverviewTopics.html",
    },
    {
       "name":"WHY do we study Thwaites?",
@@ -12,7 +12,7 @@ var mapOverlays =
          {
             "name":"Thwaites contribution to sea level rise",
             "type":"overview",
-            // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html",
+            // "info":"/data/info_pages/html/OverviewWhyDoesSeaLevelChange.html",
          },
          {
             "name":"How is Thwaites changing?",
@@ -21,7 +21,7 @@ var mapOverlays =
                {
                   "name":"Thwaites Glacier change",
                   "type":"overview",
-                  // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
+                  // "info":"/data/info_pages/html/OverviewIceSheetContributions.html",
                },
                {
                   "name":"Thwaites ice is thinning.",
@@ -29,7 +29,7 @@ var mapOverlays =
                   "type":"xb_map",
                   "mapProjection":1,
                   "source":"data/AntarcticIceSurfaceLoss",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/ChangesAntarcticIceSheetElevations.html",
+                  "info":"/data/info_pages/html/ChangesAntarcticIceSheetElevations.html",
                   "imageType":".png",
                   "numLevels":2,
                   "credit":"CSIRIO",
@@ -46,7 +46,7 @@ var mapOverlays =
                   "type":"overlay_sequence",
                   "legendUnits":"equivalent water height in meters",
                   "mapProjection":1,
-                  "info":"http://app.earth-observer.org/data/web_pages/html/MassLossAntarctica.html",
+                  "info":"/data/info_pages/html/MassLossAntarctica.html",
                   "credit":"NASA/JPL CalTech",
                   "legend":true,
                   "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend_25_pcnt.png",
@@ -70,7 +70,7 @@ var mapOverlays =
                {
                   "name":"Thwaites Vulnerability",
                   "type":"overview",
-                  // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
+                  // "info":"/data/info_pages/html/OverviewIceSheetContributions.html",
                },
               {
                   "name":"Look under the Antarctic ice sheet",
@@ -84,7 +84,7 @@ var mapOverlays =
                   "extent":[-2719812.53530000, -2372227.21632370, 2939589.48209285, 2465145.45800000],
                   "legendUnits":" meters",
                   "source":"data/BeneathAntarcticIcesheet/Bedmachine_bed_ETOPO1_clipped_600m_zoom8",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/UnderTheAntarcticIceSheet_bedmachine.html",
+                  "info":"/data/info_pages/html/UnderTheAntarcticIceSheet.html",
                   "credit":"Morlighem, M. 2019. MEaSUREs BedMachine Antarctica, Version 1.",
                   "legend":true,
                   "legendPath":"data/BeneathAntarcticIcesheet/Bedmachine_legend_minus2500plus2000m.png",
@@ -100,7 +100,7 @@ var mapOverlays =
                   "type":"xb_map",
                   "mapProjection":1,
                   "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIceVelocity_320",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/AntarcticIceVelocity.html",
+                  "info":"/data/info_pages/html/AntarcticIceVelocity.html",
                   "imageType":".png",
                   "numLevels":4,
                   "credit":"Rignot/Wolovick",
@@ -137,7 +137,7 @@ var mapOverlays =
                {
                   "name":"Thwaites Sea Level Contributions",
                   "type":"overview",
-                  // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewIceSheetContributions.html",
+                  // "info":"/data/info_pages/html/OverviewIceSheetContributions.html",
                },
                {
                   "name":"Height of Antarctic ice",
@@ -145,7 +145,7 @@ var mapOverlays =
                   "type":"xb_map",
                   "mapProjection":1,
                   "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticElevation_320",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/AntarcticIceSheetElevation.html",
+                  "info":"/data/info_pages/html/AntarcticIceSheetElevation.html",
                   "imageType":".png",
                   "numLevels":2,
                   "credit":"NSIDC",
@@ -163,7 +163,7 @@ var mapOverlays =
                   "mapProjection":1,
                   "legendUnits":"m",
                   "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320",
-                  "info":"http://app.earth-observer.org/data/web_pages/html/AntarcticIceSheetThickness.html",
+                  "info":"/data/info_pages/html/AntarcticIceSheetThickness.html",
                   "imageType":".png",
                   "numLevels":2,
                   "credit":"British Antarctic Survey",
@@ -182,7 +182,7 @@ var mapOverlays =
                    "type":"overlay_sequence",
                    "overlayType":"tile_512",
                    "sequenceSource":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/IceSheetFootprintsList2.txt",
-                   "info":"http://app.earth-observer.org/data/web_pages/html/IceSheetFingerprinting.html",
+                   "info":"/data/info_pages/html/IceSheetFingerprinting.html",
                    "legend":true,
                    "legendPath":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/FootprintsLegend.png",
                    "scale":true,
@@ -209,7 +209,7 @@ var mapOverlays =
          {
             "name":"How are we studying Thwaites?",
             "type":"overview",
-            // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhatAboutPolarRegions.html",
+            // "info":"/data/info_pages/html/OverviewWhatAboutPolarRegions.html",
          },
          {
              "name":"ITGC Projects",
@@ -254,7 +254,7 @@ var mapOverlays =
          {
             "name":"What do we know about Thwaites Glacier",
             "type":"overview",
-            // "info":"http://app.earth-observer.org/data/web_pages/html/OverviewWhyDoesSeaLevelChange.html",
+            // "info":"/data/info_pages/html/OverviewWhyDoesSeaLevelChange.html",
          },
          {
              "name":"20,000 years of ice sheet history",
