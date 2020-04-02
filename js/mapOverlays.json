@@ -94,6 +94,27 @@ var mapOverlays =
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_UndertheAntarcticIceSheet.m4a"
                },
                {
+                   "name":"Seafloor Depths Around Antarctica",
+                   "title":"Bathymetry on the Continental Shelf",
+                   "type":"tiled",
+                   "mapProjection":1,
+                   "mapMaxZoom":6,
+                   "mapMaxResolution":150.00535457,
+                   "tileWidth":256,
+                   "tileHeight":256,
+                   "extent":[-2719869.97180000, -2372418.06603786, 2939531.24770073, 2465197.49710000],
+                   "legendUnits":" meters",
+                   "source":"data/BathymetryOnTheShelf/Bedmachine_Bed_bathyonly_spectrum_700m_zoom6",
+                   "info":"/data/info_pages/html/BathymetryOnTheShelf_bedmachine.html",
+                   "credit":"Morlighem, M. 2019. MEaSUREs BedMachine Antarctica, Version 1.",
+                   "legend":true,
+                   "legendPath":"data/BathymetryOnTheShelf/Bedmachine_legend_spectrum_minus1400zero.png",
+                   "scale":true,
+                   "scalePath":"",
+                   "aboutAlertURL":"data/BathymetryOnTheShelf/About_ThwaitesBathymetryOnTheShelf.txt",
+                   "aboutAudioURL":""
+                },
+                {
                   "name":"Speed of ice flow",
                   "title":"Antarctic Ice Sheet Velocity",
                   "legendUnits":"m/year",
@@ -110,8 +131,8 @@ var mapOverlays =
                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320.scl",
                   "aboutAlertURL":"data/AntarcticIceVelocity/About_ThwaitesAntarcticIceVelocity.txt",
                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticIceVelocity.m4a",
-               },
-               {
+                },
+                {
                   "name":"Ocean Temperatures at 550m",
                   "title":"Observed Ocean Temps at 550m below surface",
                   "type":"image",
@@ -127,7 +148,7 @@ var mapOverlays =
                   "aboutAlertURL":"data/oceanT550m/About_ThwaitesOceanTemp_550m.txt",
                   "aboutAudioURL":"TBD",
                   "extent": [-4590000.000000, -4590000.000000, 4590000.000000, 4590000.000000]
-               }
+                }
             ]
          },
          {
