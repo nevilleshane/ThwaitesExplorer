@@ -99,7 +99,7 @@ var mapOverlays =
                    "type":"tiled",
                    "mapProjection":1,
                    "mapMaxZoom":6,
-                   "mapMaxResolution":150.00535457,
+                   "mapMaxResolution":349.99389113,
                    "tileWidth":256,
                    "tileHeight":256,
                    "extent":[-2719869.97180000, -2372418.06603786, 2939531.24770073, 2465197.49710000],
@@ -110,7 +110,7 @@ var mapOverlays =
                    "legend":true,
                    "legendPath":"data/BathymetryOnTheShelf/Bedmachine_legend_spectrum_minus1400zero.png",
                    "scale":true,
-                   "scalePath":"",
+                   "scalePath":"data/BathymetryOnTheShelf/Bedmachine_spectrum_minus1400zero.scl",
                    "aboutAlertURL":"data/BathymetryOnTheShelf/About_ThwaitesBathymetryOnTheShelf.txt",
                    "aboutAudioURL":""
                 },
