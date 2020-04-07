@@ -109,7 +109,7 @@ var mapOverlays =
                    "credit":"Morlighem, M. 2019. MEaSUREs BedMachine Antarctica, Version 1.",
                    "legend":true,
                    "legendPath":"data/BathymetryOnTheShelf/Bedmachine_legend_spectrum_minus1400zero.png",
-                   "scale":true,
+                   "scale":false,
                    "scalePath":"data/BathymetryOnTheShelf/Bedmachine_spectrum_minus1400zero.scl",
                    "aboutAlertURL":"data/BathymetryOnTheShelf/About_ThwaitesBathymetryOnTheShelf.txt",
                    "aboutAudioURL":""
