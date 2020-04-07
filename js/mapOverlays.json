@@ -139,7 +139,7 @@ var mapOverlays =
                   "mapProjection":1,
                   "legendUnits":"°C",
                   "source":"data/oceanT550m/WOA18_grid_T550m.png",
-                  "info":"https://www.nodc.noaa.gov/OC5/woa18/",
+                  "info":"data/info_pages/html/OceanTemperatures550m.html",
                   "credit":"WOA 2018",
                   "legend":true,
                   "legendPath":"data/oceanT550m/WOA18_temps_ANT_550m_legend_minus2plus4.png",
@@ -224,6 +224,57 @@ var mapOverlays =
       ]
    },
    {
+      "name":"WHAT do we know about Thwaites?",
+      "type":"dir",
+      "children":[
+         {
+            "name":"What do we know about Thwaites Glacier",
+            "type":"overview",
+            // "info":"/data/info_pages/html/OverviewWhyDoesSeaLevelChange.html",
+         },
+         {
+             "name":"20,000 years of ice sheet history",
+             "title":"Reconstructed Grounding Line locations for past 20,000 years",
+             "type":"geojson",
+             "mapProjection":1,
+             "source":"data/Larter_Paleo_Groundinglines/Larter_paleo_groundinglines.geojson",
+             "styleFunctionFile":"data/Larter_Paleo_Groundinglines/Larter_paleo_groundinglines_style.js",
+             "styleFunction":"style_Larter_paleo_groundinglines",
+             "info":"data/info_pages/html/20000YearsOfHistory.html",
+             "credit":"Rob Larter, British Antarctic Survey",
+             "legend":false,
+             "legendPath":"TBD",
+             "scale":false,
+             "scalePath":"",
+             "aboutAlertURL":"data/Larter_Paleo_Groundinglines/About_Larter_paleo_groundinglines.txt",
+             "aboutAudioURL":"TBD"
+         },
+         {
+             "name":"Monthly sea ice concentration",
+             "title":"Monthly sea ice concentration climatology",
+             "mapProjection":1,
+             "showSeabedNames":false,
+             "showElevation":false,
+             "type":"overlay_sequence",
+             "overlayType":"xb_map",
+             "sequenceSource":"data/SeaIceConcentration/SeaIceConcentration_list.txt",
+             "info":"data/info_pages/html/MonthlySeaIceConcentration.html",
+             "legend":true,
+             "legendPath":"data/SeaIceConcentration/SeaIceConcentrationLegend.png",
+             "scale":true,
+             "scalePath":"data/SeaIceConcentration/SeaIceConcentration.scl",
+             "imageType":".png",
+             "numLevels":2,
+             "tileDelta":180,
+             "tileSize":512,
+             "credit":"W. Meier, NSIDC",
+             "aboutAlertURL":"data/SeaIceConcentration/About_Thwaites_SeaIceConcntration.txt",
+             "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_SeaIceConcentration.m4a",
+             "cycleSequence": true
+         }
+      ]
+    },
+    {
       "name":"HOW are we studying Thwaites?",
       "type":"dir",
       "children":[
@@ -267,56 +318,5 @@ var mapOverlays =
              "aboutAudioURL":"TBD"
          }
       ]
-   },
-   {
-      "name":"WHAT do we know about Thwaites?",
-      "type":"dir",
-      "children":[
-         {
-            "name":"What do we know about Thwaites Glacier",
-            "type":"overview",
-            // "info":"/data/info_pages/html/OverviewWhyDoesSeaLevelChange.html",
-         },
-         {
-             "name":"20,000 years of ice sheet history",
-             "title":"Reconstructed Grounding Line locations for past 20,000 years",
-             "type":"geojson",
-             "mapProjection":1,
-             "source":"data/Larter_Paleo_Groundinglines/Larter_paleo_groundinglines.geojson",
-             "styleFunctionFile":"data/Larter_Paleo_Groundinglines/Larter_paleo_groundinglines_style.js",
-             "styleFunction":"style_Larter_paleo_groundinglines",
-             "info":"https://www.sciencedirect.com/science/article/pii/S0277379113004101",
-             "credit":"Rob Larter, British Antarctic Survey",
-             "legend":false,
-             "legendPath":"TBD",
-             "scale":false,
-             "scalePath":"",
-             "aboutAlertURL":"data/Larter_Paleo_Groundinglines/About_Larter_paleo_groundinglines.txt",
-             "aboutAudioURL":"TBD"
-         },
-         {
-             "name":"Monthly sea ice concentration",
-             "title":"Monthly sea ice concentration climatology",
-             "mapProjection":1,
-             "showSeabedNames":false,
-             "showElevation":false,
-             "type":"overlay_sequence",
-             "overlayType":"xb_map",
-             "sequenceSource":"data/SeaIceConcentration/SeaIceConcentration_list.txt",
-             "info":"https://www.pnas.org/content/116/29/14414",
-             "legend":true,
-             "legendPath":"data/SeaIceConcentration/SeaIceConcentrationLegend.png",
-             "scale":true,
-             "scalePath":"data/SeaIceConcentration/SeaIceConcentration.scl",
-             "imageType":".png",
-             "numLevels":2,
-             "tileDelta":180,
-             "tileSize":512,
-             "credit":"W. Meier, NSIDC",
-             "aboutAlertURL":"data/SeaIceConcentration/About_SeaIceConcentration.txt",
-             "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_SeaIceConcentration.m4a",
-             "cycleSequence": true
-         }
-      ]
-    }
+   }
 ]
