@@ -212,7 +212,7 @@ $(document).ready(function() {
   tablePopupObj = {};
   alwaysOnLayers = new Set();
   showSeabedNames = true;
-  webpages_url = "/data/info_pages/html/";
+  webpages_url = "data/info_pages/html/";
 
   // Populate the menu using the overlays in the mapOverlays.json file
   console.log(mapOverlays);
@@ -446,7 +446,6 @@ function populateMenu(overlays, title) {
       if (overlay.info.indexOf(webpages_url) != -1) {
         var topic = info_url.split(webpages_url)[1].replace(".html", "");
         info_link.attr("href", "info.html?topic=" + topic);
-        console.log(info_link)
       } else {
         info_link.attr("href", info_url);
       }
