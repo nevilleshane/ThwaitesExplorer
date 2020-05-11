@@ -10,6 +10,19 @@ $(document).ready(function() {
 
 
   /*
+    Display Cookie compliance message until Understood button is clicked
+  */
+  $("#cookieButton").click(function(){
+    console.log('Understood');
+    var expire=new Date();
+    expire=new Date(expire.getTime()+7776000000);
+
+    setCookie("cookieCompliancyAccepted", "here", expire);
+    $("#myCookieConsent").hide(400);
+  });
+  testFirstCookie();
+
+  /*
     Close the splash screen
   */
   $("#close_splash").click(function() {
@@ -143,54 +156,79 @@ $(document).ready(function() {
   /*
     Toggle the scalebar with the scalebar switch
   */
+  scalebar = getCookie("scalebar") === "" ? true : (getCookie("scalebar") === 'true');
+  $("#scalebar_switch").prop('checked', scalebar);
+  $("#scaleline").toggle(scalebar);
   $("#scalebar_switch").click(function() {
-    $("#scaleline").toggle(this.checked);
+    scalebar = this.checked;
+    $("#scaleline").toggle(scalebar);
+    setCookie("scalebar", scalebar, 365)
   });
 
   /*
     Toggle the legend with the legend switch
   */
-  showLegendSetting = true;
+  showLegendSetting = getCookie("showLegendSetting") === "" ? true : (getCookie("showLegendSetting") === 'true');
+  $("#legend_switch").prop('checked', showLegendSetting);
+
   $("#legend_switch").click(function() {
     showLegendSetting = this.checked;
     if ($("#legend_img").attr("src") && $("#legend_img").attr("src") !== "") {
       $("#legend").toggle(this.checked);
     }
+    setCookie("showLegendSetting", showLegendSetting, 365)
   });
 
 
   /*
     Toggle the outline layers with the outlines switch
   */
-  // showOutlines = true;
+  showOutlines = getCookie("showOutlines") === "" ? true : (getCookie("showOutlines") === 'true');
+  $("#outline_switch").prop('checked', showOutlines);
+
   $("#outline_switch").click(function() {
-    // showOutlines = this.checked;
+    showOutlines = this.checked;
     for (var lyr of alwaysOnLayers) {
-      lyr.setVisible(this.checked);
+      lyr.setVisible(showOutlines);
     }
+    setCookie("showOutlines", showOutlines, 365)
   });
 
   /*
     Toggle place name labels with the place names switch
   */
+  showPlacenames = getCookie("showPlacenames") === "" ? true : (getCookie("showPlacenames") === 'true');
+  $("#place_names_switch").prop('checked', showPlacenames);
+
   $("#place_names_switch").click(function() {
-    placeNamesLayer.setVisible(this.checked);
+    showPlacenames = this.checked;
+    placeNamesLayer.setVisible(showPlacenames);
+    setCookie("showPlacenames", showPlacenames, 365)
   });
 
   /*
     Toggle overview map with the overview switch
   */
+  showOverview = getCookie("showOverview") === "" ? !isMobile : (getCookie("showOverview") === 'true');
+  $("#overview_switch").prop('checked', showOverview);
+  $(".ol-overviewmap").toggle(showOverview);
+
   $("#overview_switch").click(function() {
-    $(".ol-overviewmap").toggle(this.checked);
+    showOverview = this.checked;
+    $(".ol-overviewmap").toggle(showOverview);
+    setCookie("showOverview", showOverview, 365)
   });
 
 
   /*
     Toggle the RGB function with the RGB switch
   */
-  showRGB = false;
+  showRGB = getCookie("showRGB") === "" ? false : (getCookie("showRGB") === 'true');
+  $("#rgb_switch").prop('checked', showRGB);
+
   $("#rgb_switch").click(function() {
     showRGB = this.checked;
+    setCookie("showRGB", showRGB, 365)
   });
 
   /*
@@ -206,6 +244,7 @@ $(document).ready(function() {
   // Set some initial values
   parents = [];
   parent_titles = [];
+  parent_menu_ids = [];
   showElevation = true;
   scaleTable = {};
   scaleUnits = "";
@@ -213,6 +252,28 @@ $(document).ready(function() {
   alwaysOnLayers = new Set();
   showSeabedNames = true;
   webpages_url = "data/info_pages/html/";
+
+  // check for parameters in the URL of the current page
+  var query = window.location.search.substring(1);
+  url_params = parse_query_string(query);
+  display_params = {...url_params}
+  updateDisplayParams("", remove=true);
+
+  if (url_params.menu_id) {
+    // skip intro
+    startThwaitesExplorer();
+    // close splash screen
+    $("#close_splash").click();
+    loadFromUrl = true;
+  }
+  if (url_params.zoom) {
+    map.getView().setZoom(url_params.zoom);
+    map2.getView().setZoom(url_params.zoom);
+  }
+  if (url_params.center) {
+    map.getView().setCenter(url_params.center.split`,`.map(x=>+x));
+    map2.getView().setCenter(url_params.center.split`,`.map(x=>+x));
+  }
 
   // Populate the menu using the overlays in the mapOverlays.json file
   console.log(mapOverlays);
@@ -407,8 +468,9 @@ $(document).ready(function() {
     //for tablets, make the whole of the legend draggable, since it will be smaller
     dragElement(document.getElementById(("legend")), $("#legend").css("zoom") < 1);
     dragElement(document.getElementById(("settings")), false);
-    dragElement(document.getElementsByClassName(("ol-overviewmap"))[1], true);
+    dragElement(document.getElementsByClassName(("ol-overviewmap"))[0], true);
   }
+
 });
 
 
@@ -486,6 +548,14 @@ function populateMenu(overlays, title) {
     row.append(item);
     row.append(more);
     menu.append(row);
+
+    // if this item is part of the tree-branch specified in the URL parameters, simulate a click in the item
+    if (url_params.menu_id && url_params.menu_id.startsWith(overlay.menu_id) && overlay.type != "overview") {
+      menuItemClicked(overlay, overlays, icon, title);
+      if (url_params.menu_id != overlay.menu_id || overlay.type == "dir") {
+        return false;
+      }
+    }
   });
 }
 
@@ -496,6 +566,14 @@ function menuItemClicked(overlay, parent, icon, title) {
   //if current menu item, don't do anything
   if (icon.hasClass("fa-check")) return;
 
+  //make sure all existing menu items are unchecked
+  $(".fa-check").removeClass("fa fa-check");
+
+  //update url in browser bar, without reloading
+  if (overlay.type !== 'dir' && overlay.menu_id !== url_params.menu_id) updateDisplayParams("seq_num", remove=true);
+  updateDisplayParams({menu_id:overlay.menu_id});
+
+
   //perform appropraite action depending on overlay type
   console.log(overlay.type);
   switch(overlay.type) {
@@ -504,6 +582,7 @@ function menuItemClicked(overlay, parent, icon, title) {
       //keep track of parents in case back button is pressed
       parents.push(parent);
       parent_titles.push(title);
+      parent_menu_ids.push(overlay.menu_id.substring(0,overlay.menu_id.length-2));
 
       var $menu = $("#menu_list");
       //repopulate menu with childrem of this item
@@ -515,6 +594,12 @@ function menuItemClicked(overlay, parent, icon, title) {
 
       $("#back_btn").unbind('click').click(function() {
         //repopulate menu with parent
+
+        url_params.menu_id = parent_menu_ids.pop();
+        if (url_params.menu_id === "")
+          url_params.menu_id = "00" //main menu
+        // not sure whether to update url in browser bar
+        // window.history.pushState({},'Title','?'+ object_to_query_string(url_params));
         populateMenu(parents.pop(), parent_titles.pop());
         $("#menuheader").hide().show("slide", {direction: "left"}, 500);
         $("#menubody").hide().show("slide", {direction: "left"}, 500);
@@ -557,7 +642,6 @@ function menuItemClicked(overlay, parent, icon, title) {
       console.log("Unknown Overlay Type: " + overlay.type);
   }
   //place a check mark next to the selected row
-  $(".fa-check").removeClass("fa fa-check");
   icon.addClass("fa fa-check");
 
   //show the popup with text and audio
@@ -821,10 +905,10 @@ function displayLayer(layer, overlay, removeOldLayers) {
     // just remove alwaysOnLayers, so we can reload them at the top
     for(var alyr of alwaysOnLayers) map.removeLayer(alyr);
   }
-
   //switch projection if necessary
-  if (!overlay.mapProjection) {
-    if (map.getView().getProjection() != merc_proj) switchProjection(0);
+  if (overlay.mapProjection != params.proj_code) switchProjection(overlay.mapProjection, overlay)
+  if (!overlay.mapProjection) { 
+     if (map.getView().getProjection() != merc_proj) switchProjection(0, overlay);
   }
 
   //add the new layer to the map
@@ -881,15 +965,26 @@ function displayLayer(layer, overlay, removeOldLayers) {
     map.getView().setMinZoom(2);
   }
   if (overlay.wesn && removeOldLayers) {
-    var wesn = overlay.wesn.split(',');
-    var extent = ol.proj.transformExtent(
-      [parseInt(wesn[1]), parseInt(wesn[2]), parseInt(wesn[0]), parseInt(wesn[3])],
-      "EPSG:4326", map.getView().getProjection()
-    );
-
-    map.getView().fit( extent, map.getSize() );
-    map2.getView().fit( extent, map2.getSize() );
+    // if loading page from url parameters, use those to center the and zoom layer
+    if (loadFromUrl) {
+      map.getView().setZoom(url_params.zoom);
+      map2.getView().setZoom(url_params.zoom);
+      map.getView().setCenter(url_params.center.split`,`.map(x=>+x));
+      map2.getView().setCenter(url_params.center.split`,`.map(x=>+x));
+      loadFromUrl = false;
+    } else {
+      //otherwise, use the listed extent
+      var wesn = overlay.wesn.split(',');
+      var extent = ol.proj.transformExtent(
+        [parseInt(wesn[1]), parseInt(wesn[2]), parseInt(wesn[0]), parseInt(wesn[3])],
+        "EPSG:4326", map.getView().getProjection()
+      );
+      map.getView().fit( extent, map.getSize() );
+      map2.getView().fit( extent, map2.getSize() );
+    }
   }
+  //only the first load is from the url parameters, so set this to false now
+  loadFromUrl = false
 
   //on map 2 (the hidden map), just display top layer
   map2.setLayerGroup(new ol.layer.Group());
@@ -1024,4 +1119,72 @@ function dragElement(elmnt, dragOnAll) {
     event.preventDefault();
   }
 
+}
+
+function parse_query_string(query) {
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1]);
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = decodeURIComponent(value);
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], decodeURIComponent(value)];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(decodeURIComponent(value));
+    }
+  }
+  return query_string;
+}
+
+function object_to_query_string(obj) {
+  var str = [];
+  for (var p in obj)
+    if (obj.hasOwnProperty(p)) {
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    }
+  return str.join("&");   
+}
+
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  console.log("saving cookie: " + cname + " value: " + cvalue)
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+function testFirstCookie(){
+  var offset = new Date().getTimezoneOffset();
+  // if ((offset >= -180) && (offset <= 0)) { // European time zones
+    var visit=getCookie("cookieCompliancyAccepted");
+    if (visit==""){
+       $("#myCookieConsent").fadeIn(400); // Show warning
+     } else {
+      // Already accepted
+     }    
+  // }
 }

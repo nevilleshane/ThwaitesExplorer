@@ -33,9 +33,6 @@ function MapClient(view, params) {
   if (isMobile) {
     mobileZoomAdjust = 0.5;
     $("#close_btn").text("Cancel");
-    //hide overview map by default for mobiles
-    $(".ol-overviewmap").hide();
-    $("#overview_switch").prop("checked", false);
   }
 
   //set the map view
@@ -85,7 +82,7 @@ function MapClient(view, params) {
       basemap: true,
       visible: false,
       source: new ol.source.TileWMS({
-          url:"http://api.usap-dc.org:81/wfs?",
+          url:"https://api.usap-dc.org:8443/wfs?",
           // crossOrigin: 'anonymous',
           params: {
           layers: "LIMA 240m",
@@ -110,23 +107,23 @@ function MapClient(view, params) {
         tipLabel: 'Légende'
     });
     map.addControl(layerSwitcher);
+
+    // add overview map
+    overviewMapControl = new ol.control.OverviewMap({
+      className: 'ol-overviewmap ol-custom-overviewmap',
+      layers: map.getLayers(),
+      collapseLabel: '\u00BB',
+      label: '\u00AB',
+      collapsed: false, 
+      view: new ol.View({
+        center: params.overview_center,
+        projection: params.projection,
+        extent: params.view_extent,
+      })
+    });
+
+    map.addControl(overviewMapControl);
   }
-
-  // add overview map
-  overviewMapControl = new ol.control.OverviewMap({
-    className: 'ol-overviewmap ol-custom-overviewmap',
-    layers: map.getLayers(),
-    collapseLabel: '\u00BB',
-    label: '\u00AB',
-    collapsed: false, 
-    view: new ol.View({
-      center: params.overview_center,
-      projection: params.projection,
-      extent: params.view_extent,
-    })
-  });
-
-  map.addControl(overviewMapControl);
 
 
   return map;
@@ -164,11 +161,11 @@ $(document).ready(function() {
   //parameters for different GMRT projections
   gmrt_params = {
     "merc": {"url_ext": "wms_merc?", "projection": merc_proj, "layer": "topo", "zoom": 2, "view_extent": merc_view_extent, 
-             "center": [0,0], "overview_center": [0,0]},
+             "center": [0,0], "overview_center": [0,0], "proj_code":0},
     "sp": {"url_ext": "wms_SP?", "projection": sp_proj, "layer": "GMRT_SP", "zoom": 4.7, "view_extent": sp_view_extent, 
-           "center": thwaitesCoords, "overview_center": sp_center},
+           "center": thwaitesCoords, "overview_center": sp_center, "proj_code":1},
     "np": {"url_ext": "wms_NP?", "projection": np_proj, "layer": "GMRT_NP", "zoom": 2, "view_extent": np_view_extent,
-          "center": [0,0], "overview_center": [0,0]}
+          "center": [0,0], "overview_center": [0,0], "proj_code":2}
   };
 
   //initialize the main map in Mercator projection
@@ -331,6 +328,8 @@ var constrainPan = function() {
         view.setCenter(centre);
         map.updateSize();
     }
+
+    updateDisplayParams({zoom:map.getView().getZoom(), center:map.getView().getCenter()})
 };
 
 /*
@@ -482,6 +481,20 @@ function mergeObjects(obj1,obj2){
 }
 
 /*
+  update the parametsers displayed in the URL in the browser
+*/
+function updateDisplayParams(update, remove=false) {
+  if (remove) {
+    delete display_params[update];
+    delete url_params[update];
+  } else {
+   Object.assign(display_params, update);
+  }
+  window.history.pushState({},'Title','?' + object_to_query_string(display_params));
+}
+
+
+/*
   display an Overlay_sequence
 */
 function displayOverlaySequence(overlay, removeOldLayers) {
@@ -505,23 +518,28 @@ function displayOverlaySequence(overlay, removeOldLayers) {
         //so that we retain all information
         sequences.push(mergeObjects(seq, overlay));
       }
-      seq_num = 0;
+
+      seq_num = url_params.seq_num || 0;
+     
       if (overlay.cycleSequence) {
          $("#sequence_left").removeClass("disabled");
          $("#sequence_right").removeClass("disabled");
       }
       else {
-        $("#sequence_left").addClass("disabled");
-        if (sequences.length == 1) 
+        if (seq_num == 0) 
+          $("#sequence_left").addClass("disabled");
+        else
+          $("#sequence_left").removeClass("disabled");
+        if (sequences.length == 1 || (seq_num == sequences.length - 1 && !overlay.cycleSequence)) 
           $("#sequence_right").addClass("disabled");
         else
           $("#sequence_right").removeClass("disabled");
       }
 
-      $("#sequence_level").text(sequences[0].label);
-
+      $("#sequence_level").text(sequences[seq_num].label);
       $("#sequence").show();
-      displaySequenceLayer(sequences[0], type, true);
+      updateDisplayParams({seq_num:seq_num});
+      displaySequenceLayer(sequences[seq_num], type, true);
     }
   });
 
@@ -540,6 +558,7 @@ function displayOverlaySequence(overlay, removeOldLayers) {
     $("#sequence_level").text(sequences[seq_num].label);
     $("#sequence_right").removeClass("disabled");
 
+    updateDisplayParams({seq_num:seq_num});
     displaySequenceLayer(sequences[seq_num], type, false); 
   });
 
@@ -556,6 +575,7 @@ function displayOverlaySequence(overlay, removeOldLayers) {
     $("#sequence_level").text(sequences[seq_num].label);
     $("#sequence_left").removeClass("disabled");
 
+    updateDisplayParams({seq_num:seq_num});
     displaySequenceLayer(sequences[seq_num], type, false);
   });
 
@@ -713,7 +733,7 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
 
   //switch projection
   var proj = overlay.mapProjection;
-  switchProjection(proj);
+  switchProjection(proj, overlay);
 
   //calculate the resolutions for each zoom level
   var projExtent = map.getView().getProjection().getExtent();
@@ -734,9 +754,7 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
   //   enableRotation: false,
   // }));
 
-  if (!isMobile) {
-    $(".ol-overviewmap").show();
-  }
+
   
   //set up a tile grid
   tileGrid = new ol.tilegrid.TileGrid({
@@ -797,7 +815,7 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
 /* 
   switch to a different projection
 */
-function switchProjection(proj) {
+function switchProjection(proj, overlay) {
   switch(proj) {
     case 0:
       params = gmrt_params.merc;
@@ -809,13 +827,18 @@ function switchProjection(proj) {
       params = gmrt_params.np;
       break;
   }
+
   if (map.getView().getProjection() == params.projection) return;
   map.getView().setZoom(params.zoom);
   map.removeLayer(gmrtLayer);
 
+  var this_zoom = params.zoom;
+  if (url_params.menu_id == overlay.menu_id)
+    this_zoom = url_params.zoom;
+
   view = new ol.View({
     center: params.center,
-    zoom: params.zoom,
+    zoom: this_zoom,
     minZoom: 2,
     projection: params.projection,
     extent: params.view_extent,
@@ -923,7 +946,7 @@ function displayGeojson(overlay, removeOldLayers) {
 
   //switch projection
   var proj = overlay.mapProjection;
-  switchProjection(proj);
+  switchProjection(proj, overlay);
   
   //load up the geojson
   $.get({
@@ -931,7 +954,7 @@ function displayGeojson(overlay, removeOldLayers) {
     dataType: "json",
     crossOrigin: false,
     success: function(response) {
-      data = response;
+      var data = response;
 
       //load up the style function
       $.getScript(overlay.styleFunctionFile, function() {

@@ -3,28 +3,34 @@ var mapOverlays =
    {
       "name":"Explore Thwaites Glacier",
       "type":"overview",
+      "menu_id":"00",
       // "info":"data/info_pages/html/OverviewTopics.html",
    },
    {
       "name":"WHY do we study Thwaites?",
       "type":"dir",
+      "menu_id":"01",
       "children":[
          {
             "name":"Thwaites contribution to sea level rise",
             "type":"overview",
+            "menu_id":"0100",
             // "info":"data/info_pages/html/OverviewWhyDoesSeaLevelChange.html",
          },
          {
             "name":"How is Thwaites changing?",
             "type":"dir",
+            "menu_id":"0101",
             "children":[
                {
                   "name":"Thwaites Glacier change",
                   "type":"overview",
+                  "menu_id":"010100",
                   // "info":"data/info_pages/html/OverviewIceSheetContributions.html",
                },
                {
                   "name":"Thwaites ice is thinning.",
+                  "menu_id":"010101",
                   "title":"Antarctic Ice Surface Elevation Change",
                   "type":"xb_map",
                   "mapProjection":1,
@@ -42,6 +48,7 @@ var mapOverlays =
                },
                {
                   "name":"Thwaites is losing ice (2004-2013)",
+                  "menu_id":"010102",
                   "title":"Antarctic Total Ice Mass Change ",
                   "type":"overlay_sequence",
                   "legendUnits":"equivalent water height in meters",
@@ -66,14 +73,17 @@ var mapOverlays =
          {
             "name":"Why is Thwaites vulnerable?",
             "type":"dir",
+            "menu_id":"0102",
             "children":[
                {
                   "name":"Thwaites Vulnerability",
                   "type":"overview",
+                  "menu_id":"010200",
                   // "info":"data/info_pages/html/OverviewIceSheetContributions.html",
                },
               {
                   "name":"Look under the Antarctic ice sheet",
+                  "menu_id":"010201",
                   "title":"Bedrock Elevation Under the Antarctic Ice Sheet",
                   "type":"tiled",
                   "mapProjection":1,
@@ -95,6 +105,7 @@ var mapOverlays =
                },
                {
                    "name":"Seafloor Depths Around Antarctica",
+                   "menu_id":"010202",
                    "title":"Bathymetry on the Continental Shelf",
                    "type":"tiled",
                    "mapProjection":1,
@@ -116,6 +127,7 @@ var mapOverlays =
                 },
                 {
                   "name":"Speed of ice flow",
+                  "menu_id":"010203",
                   "title":"Antarctic Ice Sheet Velocity",
                   "legendUnits":"m/year",
                   "type":"xb_map",
@@ -134,6 +146,7 @@ var mapOverlays =
                 },
                 {
                   "name":"Ocean Temperatures at 550m",
+                  "menu_id":"010204",
                   "title":"Observed Ocean Temps at 550m below surface",
                   "type":"image",
                   "mapProjection":1,
@@ -154,14 +167,17 @@ var mapOverlays =
          {
             "name":"How does Thwaites affect sea level?",
             "type":"dir",
+            "menu_id":"0103",
             "children":[
                {
                   "name":"Thwaites Sea Level Contributions",
+                  "menu_id":"010300",
                   "type":"overview",
                   // "info":"data/info_pages/html/OverviewIceSheetContributions.html",
                },
                {
                   "name":"Height of Antarctic ice",
+                  "menu_id":"010301",
                   "title":"Antarctic Ice Sheet Elevation",
                   "type":"xb_map",
                   "mapProjection":1,
@@ -179,6 +195,7 @@ var mapOverlays =
                },
                {
                   "name":"Thickness of Antarctic ice",
+                  "menu_id":"010302",
                   "title":"Antarctic Ice Sheet Thickness",
                   "type":"xb_map",
                   "mapProjection":1,
@@ -197,10 +214,12 @@ var mapOverlays =
                },
                {
                    "name":"Fingerprints from melting ice sheets",
+                   "menu_id":"010303",
                    "title":"Fingerprints from Melting Ice Sheets",
                    "showSeabedNames":false,
                    "showElevation":false,
                    "type":"overlay_sequence",
+                   "mapProjection":0,
                    "overlayType":"tile_512",
                    "sequenceSource":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/IceSheetFootprintsList2.txt",
                    "info":"data/info_pages/html/IceSheetFingerprinting.html",
@@ -225,15 +244,18 @@ var mapOverlays =
    },
    {
       "name":"WHAT do we know about Thwaites?",
+      "menu_id":"02",
       "type":"dir",
       "children":[
          {
             "name":"What do we know about Thwaites Glacier",
             "type":"overview",
+            "menu_id":"0200",
             // "info":"data/info_pages/html/OverviewWhyDoesSeaLevelChange.html",
          },
          {
              "name":"20,000 years of ice sheet history",
+             "menu_id":"0201",
              "title":"Reconstructed Grounding Line locations for past 20,000 years",
              "type":"geojson",
              "mapProjection":1,
@@ -251,6 +273,7 @@ var mapOverlays =
          },
          {
              "name":"Monthly sea ice concentration",
+             "menu_id":"0202",
              "title":"Monthly sea ice concentration climatology",
              "mapProjection":1,
              "showSeabedNames":false,
@@ -277,14 +300,17 @@ var mapOverlays =
     {
       "name":"HOW are we studying Thwaites?",
       "type":"dir",
+      "menu_id":"03",
       "children":[
          {
             "name":"How are we studying Thwaites?",
             "type":"overview",
+            "menu_id":"0300",
             // "info":"data/info_pages/html/OverviewWhatAboutPolarRegions.html",
          },
          {
              "name":"ITGC Projects",
+             "menu_id":"0301",
              "title":"ITGC Projects",
              "type":"geojson",
              "mapProjection":1,
@@ -302,6 +328,7 @@ var mapOverlays =
          },
          {
              "name":"BAS Airborne Survey",
+             "menu_id":"0302",
              "title":"UK National Capability-LDEO Airborne Survey",
              "type":"geojson",
              "mapProjection":1,

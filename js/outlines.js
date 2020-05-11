@@ -1,27 +1,25 @@
 var size = 0;
 var placement = 'point';
 $(document).ready(function() {
-
   //load up the geojson files and add outline and project layers
   $.get({
     url: 'data/Thwaites_surfacecatchment/Thwaites_surfacecatchment.geojson',
     dataType: "json",
     success: function(response) {
-      data = response;
+      var data = response;
 
       var surfaceLayer = new ol.layer.Vector({
-        visible:true,
+        visible:showOutlines,
         source: new ol.source.Vector({
           features: (new ol.format.GeoJSON()).readFeatures(data, {dataProjection: 'EPSG:4326', featureProjection:'EPSG:3031'}),
         }),
         style: styleFunctionOutline,
         title: 'Thwaites Surface Catchment',
-        projection: params.projection
+        projection: sp_proj
       });
 
       alwaysOnLayers.add(surfaceLayer);
-        
-      map.addLayer(surfaceLayer);
+      if (map.getView().getProjection() == sp_proj) map.addLayer(surfaceLayer);
     },
     error: function(xhr,status,error) {
       console.log(status);
@@ -33,21 +31,20 @@ $(document).ready(function() {
       url: 'data/antarctic_coastS10RS/Antarctic_coastS10polyRS.geojson',
       dataType: "json",
       success: function(response) {
-        data = response;
+        var data = response;
 
         var coastLayer = new ol.layer.Vector({
-          visible:true,
+          visible:showOutlines,
           source: new ol.source.Vector({
             features: (new ol.format.GeoJSON()).readFeatures(data, {dataProjection: 'EPSG:4326', featureProjection:'EPSG:3031'}),
           }),
           style: styleFunctionOutline,
           title: 'Antarctic Coast',
-          projection: params.projection
+          projection: sp_proj
         });
 
         alwaysOnLayers.add(coastLayer);
-          
-        map.addLayer(coastLayer);
+        if (map.getView().getProjection() == sp_proj) map.addLayer(coastLayer);
       },
       error: function(xhr,status,error) {
         console.log(status);
@@ -59,21 +56,21 @@ $(document).ready(function() {
         url: 'data/ITGCprojects/ITGC_projects_multipoint.geojson',
         dataType: "json",
         success: function(response) {
-          data = response;
+          var data = response;
 
           var projectsLayer = new ol.layer.Vector({
-            visible:true,
+            visible:showOutlines,
             source: new ol.source.Vector({
               features: (new ol.format.GeoJSON()).readFeatures(data, {dataProjection: 'EPSG:4326', featureProjection:'EPSG:3031'}),
             }),
             style: styleFunctionProjects,
             title: 'ITGC Projects',
-            projection: params.projection
+            projection: sp_proj
           });
 
           alwaysOnLayers.add(projectsLayer);
              
-          map.addLayer(projectsLayer);
+          if (map.getView().getProjection() == sp_proj) map.addLayer(projectsLayer);
         },
         error: function(xhr,status,error) {
           console.log(status);
