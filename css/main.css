@@ -1600,6 +1600,7 @@ button {
     text-align: center;
     font-size: 15px;
     font-weight: bold;
+    width: -webkit-fill-available;
 }
 #myCookieConsent div {
     padding: 5px 0 0;
