@@ -845,7 +845,7 @@ function switchProjection(proj, overlay) {
     enableRotation: false
   });
   map.setView(view);
-
+ 
   gmrtLayer = new ol.layer.Tile({
     type: 'base',
     title: "GMRT Synthesis",
@@ -856,8 +856,11 @@ function switchProjection(proj, overlay) {
         }
     })
   });
-  map.addLayer(gmrtLayer);
-
+  // Adding the gmrtLayer to a mercator proj map seems to break the screenshot functionality.
+  // Since the gmrt background is not needed in cases where the layer covers the whole map,
+  // we will skip adding it for these cases, (which can be represented by hideOpacitySlider == true).
+  if (!overlay.hideOpacitySlider)
+     map.addLayer(gmrtLayer);
 
   //replace the overview map
   var layers = [];

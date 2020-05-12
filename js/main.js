@@ -134,7 +134,7 @@ $(document).ready(function() {
     var image = canvas.toDataURL("image/jpeg");
     var link = document.createElement("a");
     link.href = image;
-    link.download = 'PolarExplorer_snapshot.jpg';
+    link.download = 'ThwaitesExplorer_snapshot.jpg';
     link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
 
   });

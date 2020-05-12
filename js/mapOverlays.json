@@ -221,12 +221,12 @@ var mapOverlays =
                    "type":"overlay_sequence",
                    "mapProjection":0,
                    "overlayType":"tile_512",
-                   "sequenceSource":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/IceSheetFootprintsList2.txt",
+                   "sequenceSource":"data/IceSheetFingerprints_512/IceSheetFootprintsList2.txt",
                    "info":"data/info_pages/html/IceSheetFingerprinting.html",
                    "legend":true,
-                   "legendPath":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/FootprintsLegend.png",
+                   "legendPath":"data/IceSheetFingerprints_512/FootprintsLegend.png",
                    "scale":true,
-                   "scalePath":"http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/FootprintsLegend.scl",
+                   "scalePath":"data/IceSheetFingerprints_512/FootprintsLegend.scl",
                    "hideOpacitySlider":true,
                    "hideScaleBar":true,
                    "imageType":".png",
@@ -235,7 +235,7 @@ var mapOverlays =
                    "tileSize":512,
                    "wesn":"-180,180,-90,90",
                    "credit":"Carling Hay, Jerry Mitrovica",
-                   "aboutAlertURL":"data/IceSheetFingerprinting/About_ThwaitesIceSheetFingerprinting.txt",
+                   "aboutAlertURL":"data/IceSheetFingerprints_512/About_ThwaitesIceSheetFingerprinting.txt",
                    "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_IceSheetFingerprinting.m4a"
                }
             ]

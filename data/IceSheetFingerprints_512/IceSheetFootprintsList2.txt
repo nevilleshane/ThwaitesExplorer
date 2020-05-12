@@ -1,0 +1,2 @@
+Northern Source	data/IceSheetFingerprints_512/NorthernFingerprint_512
+Southern Source	data/IceSheetFingerprints_512/SouthernFingerprint_512
