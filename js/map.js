@@ -12,7 +12,7 @@ function MapClient(view, params) {
     title: "GMRT Synthesis",
     source: new ol.source.TileWMS({
         url: gmrtMapUrl + params.url_ext,
-        crossOrigin: 'anonymous',
+        // crossOrigin: 'anonymous',
         wrapX: true,
         params: {
           layers: params.layer,
