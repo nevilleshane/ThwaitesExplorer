@@ -2,7 +2,7 @@ function MapClient(view, params) {
   //global URLs
   gmrtUrl = "https://www.gmrt.org:443/services/PointServer";
   gmrtMapUrl = "https://www.gmrt.org/services/mapserver/";
-  placeNamesUrl = "http://app.earth-observer.org/data/overlays/WorldWFS";
+  placeNamesUrl = "https://d1ubeg96lo3skd.cloudfront.net/data/overlays/WorldWFS";
 
   //load up the GMRT base layer
   gmrtLayer = new ol.layer.Tile({
@@ -765,7 +765,7 @@ function displayXBMap(overlay, removeOldLayers, sequence) {
     tileSize: [320,320]
   });
 
-  var source_url = overlay.source.replace("www.earth-observer", "app.earth-observer");
+  var source_url = overlay.source.replace("http://www.earth-observer", "https://d1ubeg96lo3skd.cloudfront.net");
   //make sure there is not a / and the end of the source URL
   if (source_url.slice(-1) == "/") {
     source_url = source_url.slice(0, -1);
@@ -1189,7 +1189,7 @@ function displayPlaceNameFeatures() {
   ajax processes can overwhelm the network.  Use the `if (...) continue` lines to filter the feature sets.
 */
 function displayPlaceNames() {
-  var url_template = "http://app.earth-observer.org/data/overlays/WorldWFS/PlaceNames/{type}/{y}/{y}_{x}.xml.gz";
+  var url_template = "https://d1ubeg96lo3skd.cloudfront.net/data/overlays/WorldWFS/PlaceNames/{type}/{y}/{y}_{x}.xml.gz";
   formatWFS = new ol.format.WFS({gmlFormat: new ol.format.GML2()});
   var writer = new ol.format.GeoJSON();
   var allFeatures = [];
@@ -1460,7 +1460,7 @@ function displayPNLayer (layer, maxY) {
 
   function tileUrlFunction(tileCoord) {
 
-    var url = "http://app.earth-observer.org/data/overlays/WorldWFS/PlaceNames/{type}/{y}/{y}_{x}.xml.gz"
+    var url = "https://d1ubeg96lo3skd.cloudfront.net/data/overlays/WorldWFS/PlaceNames/{type}/{y}/{y}_{x}.xml.gz"
       .replace('{type}', layer.type)
       .replace('{x}', tileCoord[1].toString())
       .replace(/{y}/g, (maxY + tileCoord[2]).toString());

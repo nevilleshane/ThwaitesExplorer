@@ -44,7 +44,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"data/AntarcticIceSurfaceLoss/AntarcticSurfaceElevationChange_320.scl",
                   "aboutAlertURL":"data/AntarcticIceSurfaceLoss/About_ThwaitesAntarcticIceSurfaceLoss.txt",
-                  "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
                },
                {
                   "name":"Thwaites is losing ice (2004-2013)",
@@ -56,12 +56,12 @@ var mapOverlays =
                   "info":"data/info_pages/html/MassLossAntarctica.html",
                   "credit":"NASA/JPL CalTech",
                   "legend":true,
-                  "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend_25_pcnt.png",
+                  "legendPath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend_25_pcnt.png",
                   "scale":false,
-                  "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend.scl",
+                  "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend.scl",
                   "hideOpacitySlider":false,
                   "aboutAlertURL":"data/AntarcticaGrace_2004-2013_320/About_ThwaitesAntarcticIceMassLoss.txt",
-                  "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_MassLossAntarctica.m4a",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_MassLossAntarctica.m4a",
                   "overlayType":"xb_map",
                   "sequenceSource":"data/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
                   "imageType":".png",
@@ -101,7 +101,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"data/BeneathAntarcticIcesheet/Bedmachine_minus2500plus2000m.scl",
                   "aboutAlertURL":"data/BeneathAntarcticIcesheet/About_ThwaitesBeneathAntarcticIcesheet.txt",
-                  "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_UndertheAntarcticIceSheet.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_UndertheAntarcticIceSheet.m4a"
                },
                {
                    "name":"Seafloor Depths Around Antarctica",
@@ -132,17 +132,17 @@ var mapOverlays =
                   "legendUnits":"m/year",
                   "type":"xb_map",
                   "mapProjection":1,
-                  "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIceVelocity_320",
+                  "source":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320",
                   "info":"data/info_pages/html/AntarcticIceVelocity.html",
                   "imageType":".png",
                   "numLevels":4,
                   "credit":"Rignot/Wolovick",
                   "legend":true,
-                  "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320_Legend.png",
+                  "legendPath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320_Legend.png",
                   "scale":true,
-                  "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320.scl",
+                  "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320.scl",
                   "aboutAlertURL":"data/AntarcticIceVelocity/About_ThwaitesAntarcticIceVelocity.txt",
-                  "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticIceVelocity.m4a",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceVelocity.m4a",
                 },
                 {
                   "name":"Ocean Temperatures at 550m",
@@ -181,17 +181,17 @@ var mapOverlays =
                   "title":"Antarctic Ice Sheet Elevation",
                   "type":"xb_map",
                   "mapProjection":1,
-                  "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticElevation_320",
+                  "source":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticElevation_320",
                   "info":"data/info_pages/html/AntarcticIceSheetElevation.html",
                   "imageType":".png",
                   "numLevels":2,
                   "credit":"NSIDC",
                   "legend":true,
-                  "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320_Legend.png",
+                  "legendPath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320_Legend.png",
                   "scale":true,
-                  "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320.scl",
+                  "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320.scl",
                   "aboutAlertURL":"data/AntarcticIceSheetElevation/About_ThwaitesAntarcticIceSheetElevation.txt",
-                  "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticElevation.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticElevation.m4a"
                },
                {
                   "name":"Thickness of Antarctic ice",
@@ -200,17 +200,17 @@ var mapOverlays =
                   "type":"xb_map",
                   "mapProjection":1,
                   "legendUnits":"m",
-                  "source":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320",
+                  "source":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320",
                   "info":"data/info_pages/html/AntarcticIceSheetThickness.html",
                   "imageType":".png",
                   "numLevels":2,
                   "credit":"British Antarctic Survey",
                   "legend":true,
-                  "legendPath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320/AntarcticIcesheetThicknessLegend.png",
+                  "legendPath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320/AntarcticIcesheetThicknessLegend.png",
                   "scale":true,
-                  "scalePath":"http://app.earth-observer.org/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320/AntarcticIcesheetThickness.scl",
+                  "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320/AntarcticIcesheetThickness.scl",
                   "aboutAlertURL":"data/AntarcticIceSheetThickness/About_ThwaitesAntarcticIceSheetThickness.txt",
-                  "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_AntarcticIceSheetThickness.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceSheetThickness.m4a"
                },
                {
                    "name":"Fingerprints from melting ice sheets",
@@ -236,7 +236,7 @@ var mapOverlays =
                    "wesn":"-180,180,-90,90",
                    "credit":"Carling Hay, Jerry Mitrovica",
                    "aboutAlertURL":"data/IceSheetFingerprints_512/About_ThwaitesIceSheetFingerprinting.txt",
-                   "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_IceSheetFingerprinting.m4a"
+                   "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_IceSheetFingerprinting.m4a"
                }
             ]
          }
@@ -292,7 +292,7 @@ var mapOverlays =
              "tileSize":512,
              "credit":"W. Meier, NSIDC",
              "aboutAlertURL":"data/SeaIceConcentration/About_Thwaites_SeaIceConcntration.txt",
-             "aboutAudioURL":"http://app.earth-observer.org/data/audio/Audio_SeaIceConcentration.m4a",
+             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_SeaIceConcentration.m4a",
              "cycleSequence": true
          }
       ]

@@ -1,2 +1,0 @@
-Northern Source	http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/NorthernFingerprint_512
-Southern Source	http://app.earth-observer.org/data/basemaps/images/global/IceSheetFingerprints_512/SouthernFingerprint_512
