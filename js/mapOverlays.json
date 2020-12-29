@@ -213,31 +213,31 @@ var mapOverlays =
                   "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceSheetThickness.m4a"
                },
                {
-                   "name":"Fingerprints from melting ice sheets",
-                   "menu_id":"010303",
-                   "title":"Fingerprints from Melting Ice Sheets",
-                   "showSeabedNames":false,
-                   "showElevation":false,
-                   "type":"overlay_sequence",
-                   "mapProjection":0,
-                   "overlayType":"tile_512",
-                   "sequenceSource":"data/IceSheetFingerprints_512/IceSheetFootprintsList2.txt",
-                   "info":"data/info_pages/html/IceSheetFingerprinting.html",
-                   "legend":true,
-                   "legendPath":"data/IceSheetFingerprints_512/FootprintsLegend.png",
-                   "scale":true,
-                   "scalePath":"data/IceSheetFingerprints_512/FootprintsLegend.scl",
-                   "hideOpacitySlider":true,
-                   "hideScaleBar":true,
-                   "imageType":".png",
-                   "numLevels":2,
-                   "tileDelta":180,
-                   "tileSize":512,
-                   "wesn":"-180,180,-90,90",
-                   "credit":"Carling Hay, Jerry Mitrovica",
-                   "aboutAlertURL":"data/IceSheetFingerprints_512/About_ThwaitesIceSheetFingerprinting.txt",
-                   "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_IceSheetFingerprinting.m4a"
-               }
+                  "name":"Fingerprints from melting ice sheets",
+                  "menu_id":"010303",
+                  "title":"Fingerprints from Melting Ice Sheets",
+                  "showSeabedNames":false,
+                  "showElevation":false,
+                  "type":"overlay_sequence",
+                  "mapProjection":0,
+                  "overlayType":"tile_512",
+                  "sequenceSource":"data/IceSheetFingerprints_512/IceSheetFootprintsList2.txt",
+                  "info":"data/info_pages/html/IceSheetFingerprinting.html",
+                  "legend":true,
+                  "legendPath":"data/IceSheetFingerprints_512/FootprintsLegend.png",
+                  "scale":true,
+                  "scalePath":"data/IceSheetFingerprints_512/FootprintsLegend.scl",
+                  "hideOpacitySlider":true,
+                  "hideScaleBar":true,
+                  "imageType":".png",
+                  "numLevels":2,
+                  "tileDelta":180,
+                  "tileSize":512,
+                  "wesn":"-180,180,-90,90",
+                  "credit":"Carling Hay, Jerry Mitrovica",
+                  "aboutAlertURL":"data/IceSheetFingerprints_512/About_ThwaitesIceSheetFingerprinting.txt",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_IceSheetFingerprinting.m4a"
+              }
             ]
          }
       ]
@@ -342,6 +342,24 @@ var mapOverlays =
              "scale":false,
              "scalePath":"",
              "aboutAlertURL":"data/BAS_aerosurvey/About_BAS_aerosurvey.txt",
+             "aboutAudioURL":"TBD"
+         },
+         {
+             "name":"NBP Ship Surveys",
+             "menu_id":"0303",
+             "title":"National Science Foundation, Nathaniel B. Palmer",
+             "type":"geojson",
+             "mapProjection":1,
+             "source":"data/NBP_shipsurvey/NBP1902_ln.geojson",
+             "styleFunctionFile":"data/NBP_shipsurvey/NBP1902_ln_3031_0_style.js",
+             "styleFunction":"style_NBP1902_ln_3031_0",
+             "info":"https://www.marine-geo.org/tools/entry/NBP1902",
+             "credit":"MGDS",
+             "legend":true,
+             "legendPath":"data/NBP_shipsurvey/NBP_shipsurvey_legend.png",
+             "scale":false,
+             "scalePath":"",
+             "aboutAlertURL":"data/NBP_shipsurvey/About_NBP_shipsurvey.txt",
              "aboutAudioURL":"TBD"
          }
       ]
