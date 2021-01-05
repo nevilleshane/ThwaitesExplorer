@@ -91,11 +91,40 @@ function MapClient(view, params) {
       })
     });
 
+
+    var mapMinZoom = 0;
+    var mapMaxZoom = 6;
+    var mapMaxResolution = 374.99999949;
+    var tileExtent = [-3174449.99580000, -2816674.99630659, 2867549.99599430, 2406324.99660000];
+    var mapResolutions = [];
+    for (var z = 0; z <= mapMaxZoom; z++) {
+      mapResolutions.push(Math.pow(2, mapMaxZoom - z) * mapMaxResolution);
+    }
+    var mapTileGrid = new ol.tilegrid.TileGrid({
+      extent: tileExtent,
+      minZoom: mapMinZoom,
+      resolutions: mapResolutions
+    });
+    modis_moa = new ol.layer.Tile({
+      type: 'base',
+      title: "MODIS MOA",
+      basemap: true,
+      visible: false,
+      source: new ol.source.XYZ({
+        projection: 'EPSG:3031',
+        tileGrid: mapTileGrid,
+        tilePixelRatio: 1.00000000,
+        url: "data/MODISMOA/MOA2014_hp1_750m_zoom6/{z}/{x}/{y}.png",
+      })
+    });
+
+
     map.addLayer(gmrtLayer);
     if (params.projection == sp_proj) {
       map.addLayer(terra);
       map.addLayer(ibcso);
       map.addLayer(lima);
+      map.addLayer(modis_moa);
     }
   
     //add the scale line
@@ -932,6 +961,9 @@ function displayMultiLayers(overlay) {
         break;
       case "xb_map":
         displayXBMap(layer, removeOldLayers);
+        break;
+      case "geojson":
+        displayGeojson(layer, removeOldLayers);
         break;
       default:
         console.log("Unknown Overlay Type: " + layer.type);

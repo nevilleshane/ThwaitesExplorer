@@ -347,12 +347,7 @@ var mapOverlays =
          {
              "name":"NBP Ship Surveys",
              "menu_id":"0303",
-             "title":"National Science Foundation, Nathaniel B. Palmer",
-             "type":"geojson",
-             "mapProjection":1,
-             "source":"data/NBP_shipsurvey/NBP1902_ln.geojson",
-             "styleFunctionFile":"data/NBP_shipsurvey/NBP1902_ln_3031_0_style.js",
-             "styleFunction":"style_NBP1902_ln_3031_0",
+             "type":"multi_layer",
              "info":"https://www.marine-geo.org/tools/entry/NBP1902",
              "credit":"MGDS",
              "legend":true,
@@ -360,7 +355,28 @@ var mapOverlays =
              "scale":false,
              "scalePath":"",
              "aboutAlertURL":"data/NBP_shipsurvey/About_NBP_shipsurvey.txt",
-             "aboutAudioURL":"TBD"
+             "aboutAudioURL":"TBD",
+             "mapProjection":1,
+             "layers":[
+                {
+                  "type":"tiled",
+                  "source":"data/MODISMOA/MOA2014_hp1_750m_zoom6",
+                  "mapMaxZoom":6,
+                  "mapMaxResolution":374.99999949,
+                  "tileWidth":256,
+                  "tileHeight":256,
+                  "extent":[-3174449.99580000, -2816674.99630659, 2867549.99599430, 2406324.99660000],
+                  "title":"MODIS MOA"
+                },
+                {
+                   "type":"geojson",
+                   "source":"data/NBP_shipsurvey/NBP1902_ln.geojson",
+                   "styleFunctionFile":"data/NBP_shipsurvey/NBP1902_ln_3031_0_style.js",
+                   "styleFunction":"style_NBP1902_ln_3031_0",
+                   "mapProjection":1,
+                   "title":"National Science Foundation, Nathaniel B. Palmer"
+                }
+             ]
          }
       ]
    }
