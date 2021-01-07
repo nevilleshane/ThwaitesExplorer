@@ -754,9 +754,9 @@ function showPopup(overlay) {
     url: overlay.aboutAlertURL,
     crossOrigin: true,
     success: function(response) {
-      var text = response.replace(/â/g, "'").split(":");
+      var text = response.replace(/â/g, "'").match(/([^:]*):([\s\S]*)/m);
       $("#popupheader").text(overlay.name);
-      $("#popup_text").text(text[1]).append("<br/><br/>").scrollTop(0);
+      $("#popup_text").html(text[2]).append("<br/><br/>").scrollTop(0);
 
       //play the audio
       if (overlay.aboutAudioURL) {
