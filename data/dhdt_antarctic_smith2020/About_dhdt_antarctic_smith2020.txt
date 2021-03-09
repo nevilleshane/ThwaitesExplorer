@@ -1,0 +1,1 @@
+ICESat thinning rates: This map is of ICESat-I and ICESat-II thinning rates, accounting for firn densification.

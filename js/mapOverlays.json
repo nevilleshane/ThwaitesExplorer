@@ -29,7 +29,7 @@ var mapOverlays =
                   // "info":"data/info_pages/html/OverviewIceSheetContributions.html",
                },
                {
-                  "name":"Thwaites ice is thinning.",
+                  "name":"TO BE REMOVED",
                   "menu_id":"010101",
                   "title":"Antarctic Ice Surface Elevation Change",
                   "type":"xb_map",
@@ -47,7 +47,7 @@ var mapOverlays =
                   "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
                },
                {
-                  "name":"Thwaites is losing ice (2004-2013)",
+                  "name":"Thwaites is losing ice mass (2004-2013)",
                   "menu_id":"010102",
                   "title":"Antarctic Total Ice Mass Change ",
                   "type":"overlay_sequence",
@@ -67,6 +67,28 @@ var mapOverlays =
                   "imageType":".png",
                   "numLevels":1,
                   "extent": [-2732568+20000, -2732568-50000, 2830175+20000, 2830175-50000]
+               },
+               {
+                  "name":"Thwaites is thinning.",
+                  "menu_id":"010103",
+                  "title":"ICESat Thinning Rates",
+                  "type":"tiled",
+                  "mapProjection":1,
+                  "mapMaxZoom":6,
+                  "mapMaxResolution":625,
+                  "tileWidth":256,
+                  "tileHeight":256,
+                  "extent": [-2526157.06920000, -2129966.01440000, 2648842.93080000, 2185033.98560000],
+                  "legendUnits":" meters",
+                  "source":"data/dhdt_antarctic_smith2020/icesat2_dmdt_ais_float_filt_zoom6",
+                  "info":"",
+                  "credit":"Smith et al. (2020) Science, doi:10/ggtvtf",
+                  "legend":true,
+                  "legendPath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.png",
+                  "scale":true,
+                  "scalePath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.scl",
+                  "aboutAlertURL":"data/dhdt_antarctic_smith2020/About_dhdt_antarctic_smith2020.txt",
+                  "aboutAudioURL":""
                }
             ]
          },
