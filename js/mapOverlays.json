@@ -33,6 +33,7 @@ var mapOverlays =
                   "menu_id":"010101",
                   "type":"multi_layer",
                   "legendUnits":" meters",
+                  "mapProjection": 1,
                   "info":"",
                   "credit":"Smith et al. (2020) Science, doi:10/ggtvtf",
                   "legend":true,
