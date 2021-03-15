@@ -29,25 +29,44 @@ var mapOverlays =
                   // "info":"data/info_pages/html/OverviewIceSheetContributions.html",
                },
                {
-                  "name":"TO BE REMOVED",
+                  "name":"Thwaites is thinning.",
                   "menu_id":"010101",
-                  "title":"Antarctic Ice Surface Elevation Change",
-                  "type":"xb_map",
-                  "mapProjection":1,
-                  "source":"data/AntarcticIceSurfaceLoss",
-                  "info":"data/info_pages/html/ChangesAntarcticIceSheetElevations.html",
-                  "imageType":".png",
-                  "numLevels":2,
-                  "credit":"CSIRIO",
+                  "type":"multi_layer",
+                  "legendUnits":" meters",
+                  "info":"",
+                  "credit":"Smith et al. (2020) Science, doi:10/ggtvtf",
                   "legend":true,
-                  "legendPath":"data/AntarcticIceSurfaceLoss/AntarcticSurfaceElevationChangeLegend.png",
+                  "legendPath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.png",
                   "scale":true,
-                  "scalePath":"data/AntarcticIceSurfaceLoss/AntarcticSurfaceElevationChange_320.scl",
-                  "aboutAlertURL":"data/AntarcticIceSurfaceLoss/About_ThwaitesAntarcticIceSurfaceLoss.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_ChangesAntarcticIceSheetElevation.m4a"
+                  "scalePath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.scl",
+                  "aboutAlertURL":"data/dhdt_antarctic_smith2020/About_dhdt_antarctic_smith2020.txt",
+                  "aboutAudioURL":"",
+                  "layers":[
+                     {
+                       "type":"tiled",
+                       "source":"data/MODISMOA/MOA2014_hp1_750m_zoom6",
+                       "mapMaxZoom":6,
+                       "mapMaxResolution":374.99999949,
+                       "tileWidth":256,
+                       "tileHeight":256,
+                       "extent":[-3174449.99580000, -2816674.99630659, 2867549.99599430, 2406324.99660000],
+                       "title":"MODIS MOA"
+                     },
+                     {
+                        "type":"tiled",
+                        "source":"data/dhdt_antarctic_smith2020/icesat2_dmdt_ais_float_filt_zoom6",
+                        "mapMaxZoom":6,
+                        "mapMaxResolution":625,
+                        "tileWidth":256,
+                        "tileHeight":256,
+                        "extent": [-2526157.06920000, -2129966.01440000, 2648842.93080000, 2185033.98560000],
+                        "mapProjection":1,
+                        "title":"ICESat Thinning Rates",
+                     }
+                  ]
                },
                {
-                  "name":"Thwaites is losing ice mass (2004-2013)",
+                  "name":"Thwaites is losing ice mass.",
                   "menu_id":"010102",
                   "title":"Antarctic Total Ice Mass Change ",
                   "type":"overlay_sequence",
@@ -67,28 +86,6 @@ var mapOverlays =
                   "imageType":".png",
                   "numLevels":1,
                   "extent": [-2732568+20000, -2732568-50000, 2830175+20000, 2830175-50000]
-               },
-               {
-                  "name":"Thwaites is thinning.",
-                  "menu_id":"010103",
-                  "title":"ICESat Thinning Rates",
-                  "type":"tiled",
-                  "mapProjection":1,
-                  "mapMaxZoom":6,
-                  "mapMaxResolution":625,
-                  "tileWidth":256,
-                  "tileHeight":256,
-                  "extent": [-2526157.06920000, -2129966.01440000, 2648842.93080000, 2185033.98560000],
-                  "legendUnits":" meters",
-                  "source":"data/dhdt_antarctic_smith2020/icesat2_dmdt_ais_float_filt_zoom6",
-                  "info":"",
-                  "credit":"Smith et al. (2020) Science, doi:10/ggtvtf",
-                  "legend":true,
-                  "legendPath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.png",
-                  "scale":true,
-                  "scalePath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.scl",
-                  "aboutAlertURL":"data/dhdt_antarctic_smith2020/About_dhdt_antarctic_smith2020.txt",
-                  "aboutAudioURL":""
                }
             ]
          },
@@ -148,7 +145,7 @@ var mapOverlays =
                    "aboutAudioURL":""
                 },
                 {
-                  "name":"Speed of ice flow",
+                  "name":"Speed of ice flow", // TODO: make this "multi_layer", with "Look under the Antarctic ice sheet" as basemap
                   "menu_id":"010203",
                   "title":"Antarctic Ice Sheet Velocity",
                   "legendUnits":"m/year",
@@ -164,7 +161,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320.scl",
                   "aboutAlertURL":"data/AntarcticIceVelocity/About_ThwaitesAntarcticIceVelocity.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceVelocity.m4a",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceVelocity.m4a"
                 },
                 {
                   "name":"Ocean Temperatures at 550m",
