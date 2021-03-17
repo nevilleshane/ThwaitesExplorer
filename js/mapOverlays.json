@@ -170,21 +170,37 @@ var mapOverlays =
                 {
                   "name":"Speed of ice flow", // TODO: make this "multi_layer", with "Look under the Antarctic ice sheet" as basemap
                   "menu_id":"010203",
-                  "title":"Antarctic Ice Sheet Velocity",
                   "legendUnits":"m/year",
-                  "type":"xb_map",
+                  "type":"multi_layer",
                   "mapProjection":1,
-                  "source":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320",
                   "info":"data/info_pages/html/AntarcticIceVelocity.html",
                   "imageType":".png",
-                  "numLevels":4,
                   "credit":"Rignot/Wolovick",
                   "legend":true,
                   "legendPath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320_Legend.png",
                   "scale":true,
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320.scl",
                   "aboutAlertURL":"data/AntarcticIceVelocity/About_ThwaitesAntarcticIceVelocity.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceVelocity.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceVelocity.m4a",
+                  "layers":[
+                     {
+                       "type":"tiled",
+                       "source":"data/BeneathAntarcticIcesheet/Bedmachine_bed_ETOPO1_clipped_600m_zoom8",
+                       "mapMaxZoom":8,
+                       "mapMaxResolution":150.00535457,
+                       "tileWidth":256,
+                       "tileHeight":256,
+                       "extent":[-2719812.53530000, -2372227.21632370, 2939589.48209285, 2465145.45800000],
+                       "title":"Bedrock Elevation Under the Antarctic Ice Sheet"
+                     },
+                     {
+                        "type":"xb_map",
+                        "source":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320",
+                        "numLevels":4,
+                        "mapProjection":1,
+                        "title":"Antarctic Ice Sheet Velocity"
+                     }
+                  ]
                 },
                 {
                   "name":"Ocean Temperatures at 550m",
