@@ -670,13 +670,12 @@ function removeAllLayers(removeGMRT) {
   }
 
   /* TODO: Handle remove GMRT */
-
-  // if (!removeGMRT) {
-  //   map.addLayer(gmrtLayer);
+   if (!removeGMRT && map.getView().getProjection() == gmrt_params.merc.projection) {
+     map.addLayer(gmrtLayer);
   //   map.addLayer(terra);
   //   map.addLayer(ibcso);
   //   map.addLayer(lima);
-  // }
+   }
   if (showSeabedNames) map.addLayer(placeNamesLayer);
   $("#sequence").hide();
   $("#legend").hide();
@@ -895,7 +894,8 @@ function displayLayer(layer, overlay, removeOldLayers) {
   //remove old layers if not a multilayer layer
   //only remove GMRT base layer is the hideOpacitySlider parameter is true
   //or if the parent overlay type is multi_layer
-  var removeGMRT = overlay.hideOpacitySlider || overlay.parent_type == "multi_layer";
+  //This only applies for polar projections
+  var removeGMRT = overlay.hideOpacitySlider || overlay.parent_type == "multi_layer" || overlay.mapProjection != 0;
   //don't remove base layer of multilayer with overlay sequence
   if (overlay.parent_type == "multi_layer" && overlay.type == "overlay_sequence") removeOldLayers = false;
 

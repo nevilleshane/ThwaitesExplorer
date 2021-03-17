@@ -185,6 +185,7 @@ var mapOverlays =
                   "layers":[
                      {
                        "type":"tiled",
+                       "mapProjection":1,
                        "source":"data/BeneathAntarcticIcesheet/Bedmachine_bed_ETOPO1_clipped_600m_zoom8",
                        "mapMaxZoom":8,
                        "mapMaxResolution":150.00535457,
@@ -295,7 +296,38 @@ var mapOverlays =
                   "credit":"Carling Hay, Jerry Mitrovica",
                   "aboutAlertURL":"data/IceSheetFingerprints_512/About_ThwaitesIceSheetFingerprinting.txt",
                   "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_IceSheetFingerprinting.m4a"
-              }
+              },
+              {
+                  "name":"Tide stations recording rising and falling",
+                  "menu_id":"010304",
+                  "title":"Tide Station Histories",
+                  "type":"table",
+                  "separator":"tsv",
+                  "firstRowUnique":false,
+                  "legendUnits":"mm/year",
+                  "source":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/tables/global/TideStations/TideStationRecords.txt",
+                  "info":"https://d1ubeg96lo3skd.cloudfront.net/data/web_pages/html/WhereIsSealevelChanging.html",
+                  "latitudeColumn":3,
+                  "longitudeColumn":2,
+                  "scale":true,
+                  "defaultScaleSize":4,
+                  "symbolColor":true,
+                  "symbolColorColumn":7,
+                  "listOrder":"1,5,6,8",
+                  "listUnits":"NULL,mm/year,ft/century,NULL",
+                  "clickableLink":"9",
+                  "imageColumn":10,
+                  "imageLink":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/tables/global/TideStations/Images/,10",
+                  "imageClickable":true,
+                  "imageSize":"110,120",
+                  "credit":"NOAA",
+                  "legend":true,
+                  "legendPath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/tables/global/TideStations/TideStationsLegend.png",
+                  "aboutAlertURL":"https://d1ubeg96lo3skd.cloudfront.net/data/about/About_WhereIsSeaLevelChanging.txt",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_WhereIsSeaLevelChanging.m4a",
+                  "mapProjection":0,
+                  "hideOpacitySlider":false
+               },
             ]
          }
       ]

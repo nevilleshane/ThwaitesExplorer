@@ -12,7 +12,7 @@ function MapClient(view, params) {
     title: "GMRT Synthesis",
     source: new ol.source.TileWMS({
         url: gmrtMapUrl + params.url_ext,
-        // crossOrigin: 'anonymous',
+        crossOrigin: 'anonymous',
         wrapX: true,
         params: {
           layers: params.layer,
@@ -417,6 +417,10 @@ function displayTile512(overlay, removeOldLayers, sequence) {
 */
 function displayTiled(overlay, removeOldLayers, sequence) {
   console.log(overlay);
+  
+  var proj = overlay.mapProjection;
+  switchProjection(proj, overlay);
+
   var mapResolutions = [];
   for (var z = 0; z <= overlay.mapMaxZoom; z++) {
     mapResolutions.push(Math.pow(2, overlay.mapMaxZoom - z) * overlay.mapMaxResolution);
@@ -882,14 +886,15 @@ function switchProjection(proj, overlay) {
         url: gmrtMapUrl + params.url_ext,
         params: {
         layers: params.layer
-        }
+        }, 
+        crossOrigin: "Anonymous"
     })
   });
-  // Adding the gmrtLayer to a mercator proj map seems to break the screenshot functionality.
-  // Since the gmrt background is not needed in cases where the layer covers the whole map,
-  // we will skip adding it for these cases, (which can be represented by hideOpacitySlider == true).
-  if (!overlay.hideOpacitySlider)
-     map.addLayer(gmrtLayer);
+
+  if (proj == 0) {
+    console.log("ADDING GMRT in switchprojection")
+    map.addLayer(gmrtLayer);
+  }
 
   //replace the overview map
   var layers = [];
@@ -1055,9 +1060,6 @@ function displayTable(overlay, removeOldLayers) {
       if (sizeCol) sizeColString = columns[sizeCol];
       if (colorCol) colorColString = columns[colorCol];
       csv2geojson.csv2geojson(csvString, function(err, data) {
-        console.log(data);
-        console.log(err);
-
         //make sure all other tables are cleared first
         removeAllTables();
 
@@ -1066,7 +1068,8 @@ function displayTable(overlay, removeOldLayers) {
           source: new ol.source.Vector({
             features: (new ol.format.GeoJSON()).readFeatures(data, {featureProjection:'EPSG:3857'}),
           }),
-           style: styleFunction 
+           style: styleFunction,
+           title: overlay.title
         });
         //set up Object for table popup display
         properties = [];
