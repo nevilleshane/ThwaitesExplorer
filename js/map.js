@@ -417,7 +417,7 @@ function displayTile512(overlay, removeOldLayers, sequence) {
 */
 function displayTiled(overlay, removeOldLayers, sequence) {
   console.log(overlay);
-  
+
   var proj = overlay.mapProjection;
   switchProjection(proj, overlay);
 
@@ -646,6 +646,9 @@ function displayOverlaySequence(overlay, removeOldLayers) {
         break;
       case "xb_map":
         displayXBMap(layer, removeOldLayers, sequence);
+        break;
+      case "geojson":
+        displayGeojson(layer, removeOldLayers);
         break;
       case "image":
         displayImage(layer, removeOldLayers, sequence);
@@ -969,6 +972,9 @@ function displayMultiLayers(overlay) {
         break;
       case "geojson":
         displayGeojson(layer, removeOldLayers);
+        break;
+      case "image":
+        displayImage(layer, removeOldLayers, sequence);
         break;
       default:
         console.log("Unknown Overlay Type: " + layer.type);
