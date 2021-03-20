@@ -32,7 +32,7 @@ var mapOverlays =
                   "name":"Thwaites is thinning.",
                   "menu_id":"010101",
                   "type":"multi_layer",
-                  "legendUnits":" meters",
+                  "legendUnits":" m/yr",
                   "mapProjection": 1,
                   "info":"",
                   "credit":"Smith et al. (2020) Science, doi:10/ggtvtf",
@@ -92,9 +92,15 @@ var mapOverlays =
                   "name":"Thwaites is melting from below.",
                   "menu_id":"010103",
                   "title":"Antarctic Ice Shelf Basal Melt ",
-                  "type":"multi_layer",
+                  "type":"tiled",
                   "mapProjection":1,
-                  "legendUnits":" meters",
+                  "mapMaxZoom":7,
+                  "mapMaxResolution":250,
+                  "tileWidth":256,
+                  "tileHeight":256,
+                  "extent": [-2736000.00000000, -2374000.00000000, 2734000.00000000, 2740000.00000000],
+                  "legendUnits":" m/yr",
+                  "source":"data/adamusilli2020_basalmelt_1km/adamusilli2020_wb_1km_zoom7",
                   "info":"",
                   "credit":"Adusumilli (2020), https://doi.org/10.1038/s41561-020-0616-z",
                   "legend":true,
@@ -103,25 +109,6 @@ var mapOverlays =
                   "scalePath":"data/adamusilli2020_basalmelt_1km/adumusilli_wb_minus10.scl",
                   "aboutAlertURL":"data/adamusilli2020_basalmelt_1km/About_adumusilli_wb_minus10.txt",
                   "aboutAudioURL":"",
-                  "layers":[
-                     {
-                       "type":"image",
-                       "source":"data/oceanT550m/WOA18_grid_T550m.png",
-                       "mapProjection":1,
-                       "extent": [-4590000.000000, -4590000.000000, 4590000.000000, 4590000.000000],
-                       "title":"Observed Ocean Temps at 550m below surface"
-                     },
-                     {
-                        "type":"tiled",
-                        "source":"data/adamusilli2020_basalmelt_1km/adamusilli2020_wb_1km_zoom7",
-                        "mapMaxZoom":7,
-                        "mapMaxResolution":250,
-                        "tileWidth":256,
-                        "tileHeight":256,
-                        "extent": [-2736000.00000000, -2374000.00000000, 2734000.00000000, 2740000.00000000],
-                        "title":"Antarctic Ice Shelf Basal Melt "
-                     }
-                  ]
                }
             ]
          },
