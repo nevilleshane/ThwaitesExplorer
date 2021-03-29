@@ -7,6 +7,7 @@ TBD
 
 Usage:
 python getSeaLevelTrendsTable.py 
+upload output file to S3 bucket www.earth-observer.org/data/basemaps/tables/global/TideStations
 
 Inputs:
 

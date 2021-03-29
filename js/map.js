@@ -1064,7 +1064,7 @@ function displayTable(overlay, removeOldLayers) {
 
       if (sizeCol) sizeColString = columns[sizeCol];
       if (colorCol) colorColString = columns[colorCol];
-      csv2geojson.csv2geojson(csvString, {latfield: columns[overlay.latitudeColumn], lonfield: columns[overlay.longitudeColumn], delimeter: ','}, function(err, data) {
+      csv2geojson.csv2geojson(csvString, {latfield: columns[overlay.latitudeColumn-1], lonfield: columns[overlay.longitudeColumn]-1, delimeter: ','}, function(err, data) {
         //make sure all other tables are cleared first
         removeAllTables();
         tableLayer = new ol.layer.Vector({
