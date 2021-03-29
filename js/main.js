@@ -371,9 +371,20 @@ $(document).ready(function() {
           else if (!tablePopupObj.image_base_url && tablePopupObj.image_url_property) {
             image_url = feature.get(tablePopupObj.image_url_property);
           }
-          if (image_url) content += "<a target='_blank' href='" + url + "'><img style='width:150px;height:150px;' src='" + image_url +"'></img></a><br/>";
-
-
+          if (image_url) {
+            content += "<div align='center' style='width:270px;'>"
+            content += "<a target='_blank' href='" + url + "'><img style='width:150px;height:150px;' src='" + image_url +"'></img>";
+            var image_text_keys = tablePopupObj.image_text_keys
+            // image text for tidal stations
+            if (image_text_keys && tablePopupObj.layer == "Tide Station Histories") {
+              content += "<div align='center' class='popupimagetext' style='width:109px;'>"+feature.get(image_text_keys[0]);
+              content += "<p style='font-size: 18px;'>mm/year</p>";
+              content += "<p style='font-size: 12px;'>"+feature.get(image_text_keys[1])+"</p></div>";
+            }
+            content += "</a><br/>";
+          }
+          console.log(properties)
+          content += "<div align='left'>"
           for (var i in tablePopupObj.properties) {
             var key = tablePopupObj.properties[i];
             // make sure any keys which originally had duplicate names are renamed back to
@@ -390,6 +401,7 @@ $(document).ready(function() {
           if (url) content += "<a target='_blank' href='" + url + "'>More info</a>";
         }
         if (content !== '') {
+          content += "</div></div>"
           content_element.innerHTML = content;
           table_popup_overlay.setPosition(feature_coord);
           $("#table-popup").css("width", "max-content");

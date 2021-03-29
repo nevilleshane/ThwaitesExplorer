@@ -895,7 +895,6 @@ function switchProjection(proj, overlay) {
   });
 
   if (proj == 0) {
-    console.log("ADDING GMRT in switchprojection")
     map.addLayer(gmrtLayer);
   }
 
@@ -1062,13 +1061,12 @@ function displayTable(overlay, removeOldLayers) {
           csvString = csvString.replace(col + ",", col + "#repeated_key#,");
         }
       }
-  
+
       if (sizeCol) sizeColString = columns[sizeCol];
       if (colorCol) colorColString = columns[colorCol];
-      csv2geojson.csv2geojson(csvString, function(err, data) {
+      csv2geojson.csv2geojson(csvString, {latfield: columns[overlay.latitudeColumn], lonfield: columns[overlay.longitudeColumn], delimeter: ','}, function(err, data) {
         //make sure all other tables are cleared first
         removeAllTables();
-
         tableLayer = new ol.layer.Vector({
           visible:true,
           source: new ol.source.Vector({
@@ -1110,14 +1108,26 @@ function displayTable(overlay, removeOldLayers) {
             else image_url_property = columns[image_link[0]-1];
           }
         }
+        
+        // used by tidal stations layer
+        var image_text_keys = [];
+        if (overlay.imageTextCols) {
+          var image_text_cols = overlay.imageTextCols.split(",");
+          for (var i in image_text_cols){
+            var ind = image_text_cols[i] - 1;
+            image_text_keys.push(columns[ind])
+          }
+        }
 
-        tablePopupObj = {"properties": properties, 
+        tablePopupObj = {"layer": overlay.title,
+                         "properties": properties, 
                          "units": units,
                          "list_order": list_order, 
                          "base_url": url,
                          "url_property": url_property,
                          "image_base_url": image_url,
-                         "image_url_property": image_url_property};
+                         "image_url_property": image_url_property,
+                         "image_text_keys": image_text_keys};
         console.log(tablePopupObj);
 
         displayLayer(tableLayer, overlay, removeOldLayers);
