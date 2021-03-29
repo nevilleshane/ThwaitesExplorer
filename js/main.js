@@ -383,8 +383,8 @@ $(document).ready(function() {
             }
             content += "</a><br/>";
           }
-          console.log(properties)
           content += "<div align='left'>"
+          
           for (var i in tablePopupObj.properties) {
             var key = tablePopupObj.properties[i];
             // make sure any keys which originally had duplicate names are renamed back to

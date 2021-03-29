@@ -15,7 +15,7 @@ Inputs:
 import requests
 import re
 
-output_file = "../data/TideStations/TideStationRecords2020.txt"
+output_file = "TideStationRecords2020.txt"
 
 global_url = 'https://tidesandcurrents.noaa.gov/sltrends/data/GlobalStationsLinearSeaLevelTrends.txt'
 us_url = 'https://tidesandcurrents.noaa.gov/sltrends/data/USStationsLinearSeaLevelTrends.txt'
