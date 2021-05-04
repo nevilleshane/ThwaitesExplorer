@@ -41,7 +41,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.scl",
                   "aboutAlertURL":"data/dhdt_antarctic_smith2020/About_dhdt_antarctic_smith2020.txt",
-                  "aboutAudioURL":"",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_dhdt_antarctic_smith2020.mp4",
                   "layers":[
                      {
                        "type":"tiled",
@@ -81,7 +81,7 @@ var mapOverlays =
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend.scl",
                   "hideOpacitySlider":false,
                   "aboutAlertURL":"data/AntarcticaGrace_2004-2013_320/About_ThwaitesAntarcticIceMassLoss.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_MassLossAntarctica.m4a",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_MassLossAntarctica.mp4",
                   "overlayType":"xb_map",
                   "sequenceSource":"data/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
                   "imageType":".png",
@@ -108,7 +108,7 @@ var mapOverlays =
                   "scale":false,
                   "scalePath":"data/adamusilli2020_basalmelt_1km/adumusilli_wb_minus10.scl",
                   "aboutAlertURL":"data/adamusilli2020_basalmelt_1km/About_adumusilli_wb_minus10.txt",
-                  "aboutAudioURL":"",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_ThwaitesIsMeltingFromBelow.mp4",
                }
             ]
          },
@@ -143,7 +143,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"data/BeneathAntarcticIcesheet/Bedmachine_minus2500plus2000m.scl",
                   "aboutAlertURL":"data/BeneathAntarcticIcesheet/About_ThwaitesBeneathAntarcticIcesheet.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_UndertheAntarcticIceSheet.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_UndertheAntarcticIceSheet.mp4"
                },
                {
                    "name":"Seafloor Depths Around Antarctica",
@@ -165,7 +165,7 @@ var mapOverlays =
                    "scale":false,
                    "scalePath":"data/BathymetryOnTheShelf/Bedmachine_spectrum_minus1400zero.scl",
                    "aboutAlertURL":"data/BathymetryOnTheShelf/About_ThwaitesBathymetryOnTheShelf.txt",
-                   "aboutAudioURL":""
+                   "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_SeafloorDepthsAroundAntarctica.mp4"
                 },
                 {
                   "name":"Speed of ice flow", // TODO: make this "multi_layer", with "Look under the Antarctic ice sheet" as basemap
@@ -181,7 +181,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIceVelocity_320/AntarcticIceVelocity_320.scl",
                   "aboutAlertURL":"data/AntarcticIceVelocity/About_ThwaitesAntarcticIceVelocity.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceVelocity.m4a",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceVelocity.mp4",
                   "layers":[
                      {
                        "type":"tiled",
@@ -218,7 +218,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"data/oceanT550m/WOA18_temps_ANT_550m.scl",
                   "aboutAlertURL":"data/oceanT550m/About_ThwaitesOceanTemp_550m.txt",
-                  "aboutAudioURL":"TBD",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_OceanTemperatures_550m.mp4",
                   "extent": [-4590000.000000, -4590000.000000, 4590000.000000, 4590000.000000]
                 }
             ]
@@ -250,7 +250,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320.scl",
                   "aboutAlertURL":"data/AntarcticIceSheetElevation/About_ThwaitesAntarcticIceSheetElevation.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticElevation.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticElevation.mp4"
                },
                {
                   "name":"Thickness of Antarctic ice",
@@ -269,7 +269,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticIcesheetThickness_320/AntarcticIcesheetThickness.scl",
                   "aboutAlertURL":"data/AntarcticIceSheetThickness/About_ThwaitesAntarcticIceSheetThickness.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceSheetThickness.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticIceSheetThickness.mp4"
                },
                {
                   "name":"Fingerprints from melting ice sheets",
@@ -295,7 +295,7 @@ var mapOverlays =
                   "wesn":"-180,180,-90,90",
                   "credit":"Carling Hay, Jerry Mitrovica",
                   "aboutAlertURL":"data/IceSheetFingerprints_512/About_ThwaitesIceSheetFingerprinting.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_IceSheetFingerprinting.m4a"
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_IceSheetFingerprinting.mp4"
               },
               {
                   "name":"Tide stations recording rising and falling",
@@ -325,7 +325,7 @@ var mapOverlays =
                   "legend":true,
                   "legendPath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/tables/global/TideStations/TideStationsLegend.png",
                   "aboutAlertURL":"https://d1ubeg96lo3skd.cloudfront.net/data/about/About_WhereIsSeaLevelChanging.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_WhereIsSeaLevelChanging.m4a",
+                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_WhereIsSeaLevelChanging.mp4",
                   "mapProjection":0,
                   "hideOpacitySlider":false
                },
@@ -360,7 +360,7 @@ var mapOverlays =
              "scale":false,
              "scalePath":"",
              "aboutAlertURL":"data/Larter_Paleo_Groundinglines/About_Larter_paleo_groundinglines.txt",
-             "aboutAudioURL":"TBD"
+             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_Larter_paleo_groundinglines.mp4"
          },
          {
              "name":"Monthly sea ice concentration",
@@ -383,7 +383,7 @@ var mapOverlays =
              "tileSize":512,
              "credit":"W. Meier, NSIDC",
              "aboutAlertURL":"data/SeaIceConcentration/About_Thwaites_SeaIceConcntration.txt",
-             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_SeaIceConcentration.m4a",
+             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_SeaIceConcentration.mp4",
              "cycleSequence": true
          }
       ]
@@ -415,7 +415,7 @@ var mapOverlays =
              "scale":false,
              "scalePath":"",
              "aboutAlertURL":"data/ITGCprojects/About_ThwaitesProjects.txt",
-             "aboutAudioURL":"TBD"
+             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_ThwaitesProjects.mp4"
          },
          {
              "name":"BAS Airborne Survey",
@@ -433,7 +433,7 @@ var mapOverlays =
              "scale":false,
              "scalePath":"",
              "aboutAlertURL":"data/BAS_aerosurvey/About_BAS_aerosurvey.txt",
-             "aboutAudioURL":"TBD"
+             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_BAS_aerosurvey.mp4"
          },
          {
              "name":"NBP Ship Surveys",
@@ -446,7 +446,7 @@ var mapOverlays =
              "scale":false,
              "scalePath":"",
              "aboutAlertURL":"data/NBP_shipsurvey/About_NBP_shipsurvey.txt",
-             "aboutAudioURL":"TBD",
+             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_NBP_shipsurvey.mp4",
              "mapProjection":1,
              "layers":[
                 {
