@@ -164,8 +164,8 @@ var mapOverlays =
                    "legendPath":"data/BathymetryOnTheShelf/Bedmachine_legend_spectrum_minus1400zero.png",
                    "scale":false,
                    "scalePath":"data/BathymetryOnTheShelf/Bedmachine_spectrum_minus1400zero.scl",
-                   "aboutAlertURL":"data/BathymetryOnTheShelf/About_ThwaitesBathymetryOnTheShelf.txt",
-                   "aboutAudioURL":""
+                   "aboutAlertURL":"data/BathymetryOnTheShelf/About_ThwaitesBathymetryOnTheShelf.html",
+                   "aboutAudioURL":"data/BathymetryOnTheShelf/Audio_SeafloorDepthsAroundAntarctica.mp4"
                 },
                 {
                   "name":"Speed of ice flow", // TODO: make this "multi_layer", with "Look under the Antarctic ice sheet" as basemap
