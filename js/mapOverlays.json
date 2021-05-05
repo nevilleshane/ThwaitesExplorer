@@ -80,7 +80,7 @@ var mapOverlays =
                   "scale":false,
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend.scl",
                   "hideOpacitySlider":false,
-                  "aboutAlertURL":"data/AntarcticaGrace_2004-2013_320/About_ThwaitesAntarcticIceMassLoss.txt",
+                  "aboutAlertURL":"data/AntarcticaGrace_2004-2013_320/About_ThwaitesAntarcticIceMassLoss.html",
                   "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_MassLossAntarctica.m4a",
                   "overlayType":"xb_map",
                   "sequenceSource":"data/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
