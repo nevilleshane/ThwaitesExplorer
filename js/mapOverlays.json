@@ -89,7 +89,7 @@ var mapOverlays =
                   "extent": [-2732568+20000, -2732568-50000, 2830175+20000, 2830175-50000]
                },
                {
-                  "name":"Thwaites is melting from below.",
+                  "name":"Thwaites ice shelf is melting from below.",
                   "menu_id":"010103",
                   "title":"Antarctic Ice Shelf Basal Melt ",
                   "type":"tiled",
