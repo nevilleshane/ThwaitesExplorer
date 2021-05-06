@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Regions where sea level is rising and falling?</title>
+	<meta name="generator" content="BBEdit 10.5" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
+<style type="text/css">
+p {
+text-align: justify;
+font-size: 11pt;
+font-family: sans-serif, verona, arial;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+figcaption {
+font-weight: lighter;
+font-style: italic;
+text-align: center;
+}
+
+small { 
+font-size: 9pt;
+}
+li { 
+margin-left: 10px;
+margin-right: 10px;
+}
+
+h3 {
+margin-left: 10px;
+margin-right: 10px;
+}
+
+body {
+margin-left: 100px;
+margin-right: 100px;
+}
+
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+</style>
+</head>
+<body>
+<div>
+<img id="banner" max-width="100%" alt="Regions where sea level is rising and falling" src="../banners/WhereRiseFall.png">
+</div>
+<div data-role="popup" id="inches">
+<p>8 in</p>
+</div>
+<div data-role="popup" id="metric">
+<p>0.06 in/year </p>
+</div>
+<div data-role="popup" id="metric1">
+<p> 0.13 in/year </p>
+</div>
+<div data-role="popup" id="texas">
+<p> Southwest Texas</p>
+</div>
+<div data-role="popup" id="metric2">
+<p>65,000mm/213.25 feet</p>
+</div>
+<div data-role="popup" id="metric3">
+<p> 0.23in/year</p>
+</div>
+<div data-role="popup" id="metric4">
+<p>0.16in/year</p>
+</div>
+<div data-role="popup" id="metric11">
+<p> 50 mi </p>
+</div>
+<div data-role="popup" id="imagecaption">
+<p>Freshwater pumping from aquifers has caused the level of groundwater to drop dramatically  
+	in parts of Virginia, leading to land subsidence that averages almost 3 mm/year across the region. The highest 
+	rate of land subsidence coincides roughly with the location of the pumping stations. (Image credit: 
+	<a href="http://pubs.usgs.gov/circ/1392/pdf/circ1392.pdf">USGS</a>)</a></p>
+</div>
+<div data-role="popup" id="metric5">
+<p> 0.35-0.43 in/year</p>
+</div>
+<div data-role="popup" id="metric6">
+<p> 10-20 feet</p>
+</div>
+<div data-role="popup" id="imagecaption1">
+<p>During glaciation, loading the land with ice causes the underlying mantle to flow 
+	slowly away from the area. That mantle cannot escape completely and produces a peripheral bulge 
+	(also called a forebulge or flexural bulge) of elevated land in the surrounding region. When the 
+	ice melts, the mantle slowly returns and the land movements are reversed: The peripheral bulge is 
+	no longer supported and the land there slowly subsides whilst the land that was under the ice slowly 
+	rises. (Image credit: <a href="http://www.nrcan.gc.ca/home">Natural Resources Canada</a>) </a></p>
+</div>	
+<div data-role="popup" id="metric8">
+<p>0.39-0.59 in/year</p>
+</div>
+<div data-role="popup" id="gulf">
+<p> a slowing of the Gulf Stream current</p>
+</div>
+<div data-role="popup" id="metric9">
+<p>7.87in</p>
+</div>
+<div data-role="popup" id="metric10">
+<p>19.68 feet</p>
+</div>
+<div data-role="popup" id="metricLA"
+<p>0.4 inches</p>
+</div>
+<div data-role="popup" id="metricAK"
+<p>0.6 inches</p>
+</div>
+<div data-role="popup" id="imagecaption2">
+<p>During the last ice age, the crushing weight of the Fennoscandinavian ice sheet 
+		pushed the land downwards. With the ice now gone, the land is rebounding, with parts of Finland and Sweden 
+		rising at more than 10 mm/year. At the bottom of the map, the blue color indicates land that is now sinking 
+		- this was the peripheral bulge during the ice age. (Image credit: 
+		<a href="http://holt.oso.chalmers.se/hgs/Bifrost_01/">BIFROST</a>)</a></p>
+</div>	
+<h4>Summary</h4> 
+<p>
+Sea-level is affected by many factors and does not change the same way everywhere on Earth. 
+Locally-defined sea-level, known as relative sea-level, has the largest impact upon our communities. 
+Averaged across the globe, sea-level has risen about 200mm over the past 100 years, but locally in some coastal regions, 
+sea-levels can be far from the average, rising faster or in some areas falling. Local vertical land movement plays a big part in 
+determining the height of relative sea-level and can result from natural processes such the land rebounding following earlier ice covering, or 
+earthquake-induced motion. 
+<hr>
+</p>	
+<p>
+	<figure  style="float:right"> 
+		<a href="#imagecaptionCore" data-rel="popup"><img id="picture" width="400" alt="Core Network of Global Tide Gauges" src="../pictures/glossCoreNetwork.png"></a>
+		<figcaption><small><right>(Touch Image For Description)</small></right></figcaption>
+	</figure>
+</p>		
+<p>
+<b>What causes sea level to change?</b> Sea level changes through time as a result of a range of Earth processes that can be explored through this app. 
+In the past century, the absolute height of average sea-level has risen <b>globally</b> by approximately<a href="#inches" data-rel="popup"> 200 mm</a>. 
+Over that time about half of that rise has been due to thermal expansion of the warming ocean water, and the majority of the remainder has come from 
+additional discharged into the ocean by melting land glaciers, and in a smaller amount melting from the ice sheets. The Permanent Service for Mean Sea Level (PSMSL) 
+was established in 1993 to collect, publish, analyze and interpret sea level data from a permanent global network of tide stations. 
+Based in Liverpool at the National Oceanography Centre (NOC) it relies on member nations to contribute their monthly data. The image shows the GLOSS Core Network of 300 
+tide stations around the world allocated for baseline data. These sites are located on islands to maximize exposure to the open ocean. 
+Most studies of 20th century global sea level rise are based on the PSMSL data set.
+</p>
+
+
+</div>
+<div data-role="popup" id="imagecaptionCore">
+<p>The The global network of backbone tide gauges used to determine global sea level rise amounts. (Image credit:<a href="https://www.psmsl.org/gloss/">PSML</a>)</a>
+</div>
+<p>
+<b>What is happening with sea level globally?</b> For most of the past century, the change in global sea-level occurred at a pace of about <a href="#metric" data-rel="popup">1.7 mm/year</a>. However, 
+tide gauge data and satellite measurements show that since the early 1990s sea-level rise has been accelerating, rising at about <a href="#metric1" data-rel="popup">3.2 mm/year</a>, twice as fast as before. These are average values. In some locations, the rise in sea-level 
+has been greater than the average rate, while in other areas there has actually been a drop in average 
+sea-level over the same time frame. This map from NOAA is of tide gauge measurements showing <i>relative sea-level</i> in each location. On the map 
+view (and in the image to the below) you see areas of the Gulf Coast and sections of the Northeastern U.S. that are experiencing a pronounced rise in sea-level. 
+In coastal Louisiana, pronounced land subsidence leads to relative sea-level rising at about <a href="#metricLA" data-rel="popup">10 mm/year</a>.  
+In contrast, in part of Alaska, the 
+strong vertical land uplift due to tectonic motion combines with post-glacial rebound to result in a fall in relative sea-level of as 
+much as <a href="#metricAK" data-rel="popup">15 mm/year</a>. These differences can be explained by vertical changes in the shoreline from either <i>subsidence</i> or <i>uplift</i> as explained below.
+</p>
+<p>
+<figure  style="float:left"> 
+		<a href="#imagecaptionEPA" data-rel="popup"><img id="picture" width="400" alt="sea_level_trend_epa" src="../pictures/sea_level_trend_epa.jpg"></a>
+		<figcaption><small><left>(Touch Image For Description)</small></left></figcaption>
+	</figure>
+	</div>
+<div data-role="popup" id="imagecaptionEPA">
+<p>Relative sea-level is rising rapidly along the Gulf Coast shoreline and the 
+	Chesapeake Bay area and is dropping in parts of Alaska. (Image credit:<a href="http://www.epa.gov/climatechange/science/indicators/oceans/sea-level.html">EPA-NOAA</a>)</a>
+</div>
+
+</p>
+<p>
+<b>What is relative sea-level?</b> <i>Relative sea-level</i> refers to the mean height of the ocean at one particular location. 
+There are different factors affecting relative sea-level that include ocean density, atmospheric pressure, seasonal 
+weather patterns, the movement of sediments, and anthropogenic influences such as dredging and 
+the draining of wetlands. However, the major players are the interaction between the warming and thermally-expanding ocean and up and down vertical movements of the land 
+surface. In places where the land is <i>subsiding</i> or moving downwards at the same time that absolute 
+sea-level is rising, the local, relative rise in sea-level can be dramatic.
+Land subsidence is causing faster-than-average rates of sea-level rise around many parts of the eastern and southern shorelines in the U.S. 
+Some of the subsidence is driven by natural earth processes, but some is <b>aggravated by human activities</b>. 
+</p>
+
+<p>
+<b>How can humans affect sea-level?</b> The <a href="#texas" data-rel="popup">Galveston-Houston</a> area 
+of Texas and Virginia's Chesapeake Bay region have both been affected by the decades-long removal 
+of freshwater from underground aquifers, with the Texas locality also impacted by oil and gas 
+extraction. The map below, for Chesapeake Bay, shows that groundwater levels in the aquifer 
+have dropped by as much as <a href="#metric2" data-rel="popup">65 m</a> in the 20th Century. The corresponding reduction in groundwater 
+pressure causes the land surface to subside as the sedimentary layers compress.
+</p> 
+<p>
+<figure style="float:right"> 
+	<a href="#imagecaption" data-rel="popup"><img id="picture" width="300" alt="Chesapeake_Bay_groundwater" src="../pictures/Chesapeake_Bay_groundwater.jpg"></a>
+	<figcaption><small>(Touch Image For Description)</small></figcaption>
+</figure>
+</p>
+<p>
+In these parts of Texas and Virginia, the sinking land and rising ocean water produce 
+a local sea-level rise of about <a href="#metric3" data-rel="popup">6 mm/year</a> (Texas) and <a href="#metric4" data-rel="popup">4 mm/year</a> (Virginia). 
+But the story in the Chesapeake Bay is complex with natural and human induced contributions involved. 35 million years ago a large meteor 
+impacted the bay by Norfolk VA. weakening the sediment in a wide <a href="#metric11" data-rel="popup">80 km</a> stretch. 
+This weakening may still be contributing to the land subsidence. In addition, this area is still undergoing <i>glacial isostatic adjustment</i> after the last Glacial Maximum. 
+This area sat on the edge of the land that was popped up like the end of a lever by the weight of the ice sheet further north. 
+In coastal Louisiana, sea-level is rising even faster, at a rate of <a href="#metric5" data-rel="popup">9-11 mm/year</a> 
+which is the fastest rate in the U.S. and one of the fastest rates in the world. 
+That high rate results from the combination of global sea-level rise and local, rapid land subsidence 
+due to compaction of Mississippi delta sediment and large-scale engineering projects that 
+reduce the flow of replenishing sediments that once flooded the area regularly. We saw one effect of this subsidence when in 
+2005, Hurricane Katrina hit the Gulf coast and the city of New Orleans. Storm surge measuring <a href="#metric6" data-rel="popup">3-6 m</a> flooded areas further inland, 
+causing destruction to the highly settled region.
+</p>
+
+
+<p>
+<figure style="float:left"> 
+	<a href="#imagecaptionRebound" data-rel="popup"><img id="picture" width="400" alt="Isostatic Rebound" src="../pictures/isostacy.png"></a>
+	<figcaption><small>(Touch Image For Description)</small></figcaption>
+</figure>
+</p>
+<div data-role="popup" id="imagecaptionRebound">
+<p>Try out this interactive developed by Lamont/Columbia to see how the Laurentide affected sea level (Image credit:<a href="https://polarexplorer.ctl.columbia.edu/isostatic_rebound/">Columbia University</a>)</a>
+</div>
+<p>
+<b>What else causes sea-level to fall?</b> There are some areas of the world where relative sea-level is actually <i>falling</i> because 
+the land is moving upwards at a rate faster than absolute global sea-level is rising. There are several causes for this. 
+During the last ice age, northern hemisphere ice sheets were centered upon Hudson Bay in northeastern Canada (the Laurentide ice sheet) and 
+upon Fennoscandia (the Eurasian ice sheet). Their immense weight pushed down the land beneath, is hard for us to imagine. You can use the interactive that is 
+linked in the image to the left that lets you click through time, starting 120,000 years ago in a relatively warm period, through to the most recent ice age and 
+the growth of the Laurentide ice sheet, and then up to present. See how the land deforms under the weight of the ice, and the linked 
+impacts on global sea level. Additionally, the image below shows how the ice weight pushes down on the land directly below, while the edges (called the peripheral bulge) 
+are popped up. It is this combination of processes that directly affects sea level. Together geologists refer to this process as <i>glacial isostatic adjustment</i> and the timing 
+of the land response is slow with <i>uplift</i> occurring over thousands of years. 
+</p>
+<p>
+<figure style="float:left"> 
+	<a href="#imagecaption1" data-rel="popup"><img id="picture" width="300" alt="GIA_model" src="../pictures/GIA_model.jpg"></a>
+	<figcaption><small>(Touch Image For Description)</small></figcaption>
+</figure>
+</p>
+<p>
+The map of Scandinavia below shows that the rate of uplift is as much as <a href="#metric7" data-rel="popup">10 mm/year</a>. Similar rates are measured for Hudson Bay. 
+Areas once popped up on the glacial peripheral bulge are now subsiding as the mantle beneath 
+returns to a state of equilibrium. As mentioned in the discussion above on the Chesapeake Bay region, elevations across much of the northeastern U.S. below New York, some Baltic nations and the south of England are subsiding because 
+of this glacial rebound effect. This contributes to the rise in relative sea-level, in some 
+cases of up to a few millimeters per year.
+<div data-role="popup" id="metric7">
+<p> more than 3 feet/century</p>
+</div>
+
+</p>
+
+<p>
+Regionally, the vertical movement of land can be complicated to understand. 
+Parts of southern Alaska that were once depressed beneath the weight of regional glaciers and smaller 
+ice sheets are rapidly being uplifted as you can see on the map. At the same time, the complex interaction of the Pacific and North 
+American tectonic plates and the smaller Yakutat terrane, a small fragment of crustal material that is attaching itself to the Alaskan coast, is causing additional rapid uplift of the land. 
+Here the combined effect of the post-glacial rebound and tectonic forces greatly exceeds the rise in absolute 
+sea-level, resulting in the localised relative sea-level dropping very quickly. At rates of <a href="#metric8" data-rel="popup">10-15 mm/year</a>, these are some of the fastest retreats of sea-level on Earth. 
+Plate tectonics is also responsible for more drastic changes in relative sea-level. For example, 
+the catastrophic magnitude 9 Tohoku earthquake of March 2011 caused a significant area of land in 
+eastern Japan to instantaneously drop below sea-level. 
+</p>
+<p>
+<figure  style="float:right"> 
+		<a href="#imagecaption2" data-rel="popup"><img id="picture" height="300" alt="Fennoscandinavia glacial rebound, BIFROST" src="../pictures/GIA_BIFROST.jpg"></a>
+		<figcaption><small><center>(Touch Image For Description)</small></center></figcaption>
+	</figure>
+</p>	
+
+<p>
+The dynamics of the ocean and atmosphere also play a role. In the Western Pacific Ocean, sea-level 
+has been rising at three times the global average since 1993, perhaps due to an 
+intensification of the trade winds that piles up ocean water there. In another example,
+<a href="#gulf" data-rel="popup"> the mid-Atlantic Drift</a> could produce a rise in sea-level of an extra <a href="#metric9" data-rel="popup">200 mm</a> in New York City. In that scenario, 
+warming of the north Atlantic and increased melting of Greenland glaciers could alter the temperature 
+and density of the seawater enough to reduce the strength of the Gulf Stream which, at present, sweeps 
+ocean water away from the U.S. northeast coastline and into the strong flow. If that flow is reduced, the 
+water could move closer to shore. Additionally, some research suggests that the gravitational pull exerted 
+by the massive Antarctic and Greenland ice sheets attracts ocean water and effectively lowers sea-level
+in other parts of the global ocean. For example, if the West Antarctic Ice Sheet was to melt, which would take 
+considerable time, the gravitational attraction around West Antarctica itself would weaken and the water that had been attracted 
+there would move away resulting in additional sea-level rise in the northern hemisphere. This change could add as much as a meter or two on top of the expected 
+~6 m of sea level rise from the melted ice sheet itself.
+</p> 
+<p> 
+<b>What can I learn from this map?</b> There is a wealth of information in this map! Spend some time exploring by selecting a dot and clicking on it. 
+You will see the location name, length of time the station has been collecting data, and the current rate of sea level change at that tide gauge listed 
+in mm/year. You can even explore further by clicking on each station for long-term trends and station specifics. 
+There are many areas that will cause you to wonder and question what is happening in that region! We noted several interesting stories here and in the audio 
+clip of the app...but there are many more things to learn from exploring this map!
+</p> 
+<p>
+<b>Data Source</b>
+<li><a href="https://tidesandcurrents.noaa.gov/sltrends/">NOAA</a></li>
+</p>
+<p>
+<p>
+<h3>Additional information</h3>
+</p>
+<p>
+<li><a href="http://tidesandcurrents.noaa.gov/sltrends/faq.shtml">Sea-level description - NOAA</a> </li>
+<li><a href="http://pubs.usgs.gov/circ/circ1182/pdf/07Houston.pdf">Land Subsistence in Galveston-Houston</a></li>
+<li><a href="http://onlinelibrary.wiley.com/doi/10.1029/2011GL049576/full">Intensification of the Trade Winds</a></li>
+<li><a href="http://www.climatecentral.org/news/east-coast-faces-rising-seas-from-slowing-gulf-stream-15587">Mid-Atlantic Drift</a></li>
+<li><a href="http://www.sciencedaily.com/releases/2009/02/090205142132.htm">Gravitational Pull By The Arctic</a></li>
+<li><a href="http://www.epa.gov/climatechange/science/indicators/oceans/sea-level.html">Sea-level trends - EPA</a> </li>
+<li><a href="http://www.climate.gov/news-features/understanding-climate/2012-state-climate-global-sea-level">Sea-level trends - climate.gov</a> </li>
+<li><a href="http://www.epa.gov/climatechange/pdfs/sea-level_documentation.pdf">Sea-level trends - data sources</a> </li>
+<li><a href="http://pubs.usgs.gov/circ/circ1182/">Us land subsidence - USGS</a> </li>
+<li><a href="http://e360.yale.edu/feature/the_secret_of_sea_level_rise_it_will_vary_greatly_by_region/2255/">Sea-level regional variation - M. Lemonick, (Yale e360)</a> </li>
+<li><a href="http://www.antarcticglaciers.org/glaciers-and-climate/sea-level-rise-2/recovering-from-an-ice-age/">Glacial isostatic adjustment - Pippa Whitehouse</a> </li>
+<li><a href="http://vimeo.com/channels/483881/page:2">Alaska relative sea-level variations - Jeff Freymueller presentation</a> </li>
+</p>
+
+</body>
+</html>

@@ -89,7 +89,7 @@ var mapOverlays =
                   "extent": [-2732568+20000, -2732568-50000, 2830175+20000, 2830175-50000]
                },
                {
-                  "name":"Thwaites is melting from below.",
+                  "name":"Thwaites ice shelf is melting from below.",
                   "menu_id":"010103",
                   "title":"Antarctic Ice Shelf Basal Melt ",
                   "type":"tiled",
@@ -101,7 +101,7 @@ var mapOverlays =
                   "extent": [-2736000.00000000, -2374000.00000000, 2734000.00000000, 2740000.00000000],
                   "legendUnits":" m/yr",
                   "source":"data/adamusilli2020_basalmelt_1km/adamusilli2020_wb_1km_zoom7",
-                  "info":"",
+                  "info":"data/info_pages/html/ThwaitesIsMeltingFromBelow.html",
                   "credit":"Adusumilli (2020), https://doi.org/10.1038/s41561-020-0616-z",
                   "legend":true,
                   "legendPath":"data/adamusilli2020_basalmelt_1km/adumusilli_wb_minus10.png",
@@ -298,15 +298,15 @@ var mapOverlays =
                   "aboutAudioURL":"data/IceSheetFingerprints_512/Audio_IceSheetFingerprinting.mp4"
               },
               {
-                  "name":"Tide stations recording rising and falling",
+                  "name":"Tide Station Record Trends",
                   "menu_id":"010304",
-                  "title":"Tide Station Histories",
+                  "title":"Global Tide Station Records",
                   "type":"table",
                   "separator":"tsv",
                   "firstRowUnique":false,
                   "legendUnits":"mm/year",
                   "source":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/tables/global/TideStations/TideStationRecords2020.txt",
-                  "info":"https://d1ubeg96lo3skd.cloudfront.net/data/web_pages/html/WhereIsSealevelChanging.html",
+                  "info":"data/info_pages/html/WhereIsSealevelChanging.html",
                   "latitudeColumn":3,
                   "longitudeColumn":2,
                   "scale":true,
