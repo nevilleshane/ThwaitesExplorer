@@ -34,14 +34,14 @@ var mapOverlays =
                   "type":"multi_layer",
                   "legendUnits":" m/yr",
                   "mapProjection": 1,
-                  "info":"",
+                  "info":"data/info_pages/html/ChangesAntarcticIceSheetElevations.html",
                   "credit":"Smith et al. (2020) Science, doi:10/ggtvtf",
                   "legend":true,
                   "legendPath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.png",
                   "scale":true,
                   "scalePath":"data/dhdt_antarctic_smith2020/dhdt_colorbar_cont.scl",
                   "aboutAlertURL":"data/dhdt_antarctic_smith2020/About_dhdt_antarctic_smith2020.html",
-                  "aboutAudioURL":"data/dhdt_antarctic_smith2020/Audio_dhdt_antarctic_smith2020.mp4",
+                  "aboutAudioURL":"data/dhdt_antarctic_smith2020/Audio_AntarcticIceSheetThickness.mp4",
                   "layers":[
                      {
                        "type":"tiled",
@@ -81,7 +81,7 @@ var mapOverlays =
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_Legend.scl",
                   "hideOpacitySlider":false,
                   "aboutAlertURL":"data/AntarcticaGrace_2004-2013_320/About_ThwaitesAntarcticIceMassLoss.html",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_MassLossAntarctica.m4a",
+                  "aboutAudioURL":"data/AntarcticaGrace_2004-2013_320/Audio_MassLossAntarctica.mp4",
                   "overlayType":"xb_map",
                   "sequenceSource":"data/AntarcticaGrace_2004-2013_320/AntarcticGrace_2004-2013_list.txt",
                   "imageType":".png",
@@ -217,7 +217,7 @@ var mapOverlays =
                   "legendPath":"data/oceanT550m/WOA18_temps_ANT_550m_legend_minus2plus4.png",
                   "scale":true,
                   "scalePath":"data/oceanT550m/WOA18_temps_ANT_550m.scl",
-                  "aboutAlertURL":"data/oceanT550m/About_ThwaitesOceanTemp_550m.txt",
+                  "aboutAlertURL":"data/oceanT550m/About_ThwaitesOceanTemp_550m.html",
                   "aboutAudioURL":"data/oceanT550m/Audio_OceanTemperatures_550m.mp4",
                   "extent": [-4590000.000000, -4590000.000000, 4590000.000000, 4590000.000000]
                 }
@@ -250,7 +250,7 @@ var mapOverlays =
                   "scale":true,
                   "scalePath":"https://d1ubeg96lo3skd.cloudfront.net/data/basemaps/images/antarctic/AntarcticElevation_320/AntarcticElevation_320.scl",
                   "aboutAlertURL":"data/AntarcticIceSheetElevation/About_ThwaitesAntarcticIceSheetElevation.txt",
-                  "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_AntarcticElevation.m4a"
+                  "aboutAudioURL":"data/AntarcticIceSheetElevation/Audio_AntarcticElevation.mp4"
                },
                {
                   "name":"Thickness of Antarctic ice",
@@ -298,7 +298,7 @@ var mapOverlays =
                   "aboutAudioURL":"data/IceSheetFingerprints_512/Audio_IceSheetFingerprinting.mp4"
               },
               {
-                  "name":"Tide Station Record Trends",
+                  "name":"Tide Stations Record Sea Level Trends",
                   "menu_id":"010304",
                   "title":"Global Tide Station Records",
                   "type":"table",
@@ -383,7 +383,7 @@ var mapOverlays =
              "tileSize":512,
              "credit":"W. Meier, NSIDC",
              "aboutAlertURL":"data/SeaIceConcentration/About_Thwaites_SeaIceConcntration.txt",
-             "aboutAudioURL":"https://d1ubeg96lo3skd.cloudfront.net/data/audio/Audio_SeaIceConcentration.m4a",
+             "aboutAudioURL":"data/SeaIceConcentration/Audio_SeaIceConcentration.mp4",
              "cycleSequence": true
          }
       ]
