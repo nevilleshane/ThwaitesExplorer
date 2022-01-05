@@ -169,7 +169,7 @@ var mapOverlays =
                 },
                 {
                   "name":"Speed of ice flow", // TODO: make this "multi_layer", with "Look under the Antarctic ice sheet" as basemap
-                  "menu_id":"010203",
+                  "menu_id":"010204",
                   "legendUnits":"m/year",
                   "type":"multi_layer",
                   "mapProjection":1,
@@ -205,7 +205,7 @@ var mapOverlays =
                 },
                 {
                   "name":"Ocean Temperatures at 550m",
-                  "menu_id":"010204",
+                  "menu_id":"010205",
                   "title":"Observed Ocean Temps at 550m below surface",
                   "type":"image",
                   "mapProjection":1,
@@ -334,7 +334,7 @@ var mapOverlays =
       ]
    },
    {
-      "name":"WHAT do we know about Thwaites?",
+      "name":"WHAT did we know about Thwaites?",
       "menu_id":"02",
       "type":"dir",
       "children":[
@@ -388,7 +388,7 @@ var mapOverlays =
          }
       ]
     },
-    {
+   {
       "name":"HOW are we studying Thwaites?",
       "type":"dir",
       "menu_id":"03",
@@ -466,6 +466,57 @@ var mapOverlays =
                    "styleFunction":"style_NBP1902_ln_3031_0",
                    "mapProjection":1,
                    "title":"National Science Foundation, Nathaniel B. Palmer"
+                }
+             ]
+         }
+      ]
+   },
+   {
+      "name":"WHAT are ITGC teams learning now?",
+      "type":"dir",
+      "menu_id":"04",
+      "children":[
+         {
+            "name":"Latest ITGC Results",
+            "type":"overview",
+            "menu_id":"0400",
+            // "info":"data/info_pages/html/OverviewWhatAboutPolarRegions.html",
+         },
+         {
+             "name":"New Detailed Seafloor Map near Thwaites",
+             "menu_id":"0401",
+             "type":"multi_layer",
+             "info":"data/info_pages/html/southASE.html",
+             "credit":"Morlighem, M. 2019. MEaSUREs BedMachine Antarctica, Version 1.",
+             "legend":true,
+             "scale":true,
+			 "legendPath":"data/Hogan2020_bathy/Hogan2020_legend_minus1400.png",
+			 "scalePath":"data/Hogan2020_bathy/Hogan2020_legend_minus1400.scl",
+			 "aboutAlertURL":"data/Hogan2020_bathy/About_Hogan2020.html",
+			 // "aboutAudioURL":"data/Hogan2020_bathy/About_Hogan2020.mp4"}}
+             // "mapProjection":1,
+             "layers":[
+                {
+                  "type":"tiled",
+                  "source":"data/MODISMOA/MOA2014_hp1_750m_zoom6",
+                  "mapMaxZoom":6,
+                  "mapMaxResolution":374.99999949,
+                  "tileWidth":256,
+                  "tileHeight":256,
+                  "extent":[-3174449.99580000, -2816674.99630659, 2867549.99599430, 2406324.99660000],
+                  "title":"MODIS MOA"
+                },
+                {
+                   "source":"data/Hogan2020_bathy/southASE_hillshade_300dpiPNGwhitealpha_zoom6",
+                   "type":"tiled",
+                   "title":"Detailed Sonar Mapping",
+                   "mapProjection":1,
+                   "mapMaxZoom":6,
+                   "mapMaxResolution":23.2,
+                   "tileWidth":256,
+                   "tileHeight":256,
+                   "extent": [-1722816.63100000, -598447.10857491, -1488066.63100000, -274841.40022509],
+                   "legendUnits":" meters",
                 }
              ]
          }
