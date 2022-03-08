@@ -519,6 +519,44 @@ var mapOverlays =
                    "legendUnits":" meters",
                 }
              ]
+         },
+         {
+             "name":"New Hi-Res Subglacial Topography",
+             "menu_id":"0402",
+             "type":"multi_layer",
+             "info":"data/info_pages/html/swath_radar.html",
+             "credit":"Holschuh et al., 2019",
+             "legend":true,
+             "scale":true,
+			 "legendPath":"data/Holschuh_downstream/Holschuh2019_legend_minus1400.png",
+			 "scalePath":"data/Holschuh_downstream/Holschuh2019_legend_minus1400.scl",
+			 "aboutAlertURL":"data/Holschuh_downstream/About_Holschuh2019.html",
+			 // "aboutAudioURL":"data/Holschuh_downstream/About_Hogan2020.mp4"}}
+             // "mapProjection":1,
+             "layers":[
+                {
+                  "type":"tiled",
+                  "source":"data/MODISMOA/MOA2014_hp1_750m_zoom6",
+                  "mapMaxZoom":6,
+                  "mapMaxResolution":374.99999949,
+                  "tileWidth":256,
+                  "tileHeight":256,
+                  "extent":[-3174449.99580000, -2816674.99630659, 2867549.99599430, 2406324.99660000],
+                  "title":"MODIS MOA"
+                },
+                {
+                   "source":"data/Holschuh_downstream/Holschuh_downstream_300dpi_z0-6-13_whitealpha",
+                   "type":"tiled",
+                   "title":"Detailed Topography from RADAR",
+                   "mapProjection":1,
+                   "mapMaxZoom":6,
+                   "mapMaxResolution":1.97,
+                   "tileWidth":256,
+                   "tileHeight":256,
+                   "extent": [-1436000.00000000, -449200.67276093, -1418983.00000000, -440682.32723907],
+                   "legendUnits":" meters",
+                }
+             ]
          }
       ]
    }
