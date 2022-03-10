@@ -531,6 +531,7 @@ var mapOverlays =
 			 "legendPath":"data/Holschuh_swathradar/Holschuh2019_legend_minus1400.png",
 			 "scalePath":"data/Holschuh_swathradar/Holschuh2019_legend_minus1400.scl",
 			 "aboutAlertURL":"data/Holschuh_swathradar/About_Holschuh2019.html",
+          "wesn": "-109,-106,-75,-77",
 			 // "aboutAudioURL":"data/Holschuh_swathradar/About_Hogan2020.mp4"}}
              // "mapProjection":1,
              "layers":[
@@ -568,6 +569,7 @@ var mapOverlays =
                    "tileHeight":256,
                    "extent": [-1436000.00000000, -449200.67276093, -1418983.00000000, -440682.32723907],
                    "legendUnits":" meters",
+                   "clickLayerBelow": true
                 }
              ]
          }

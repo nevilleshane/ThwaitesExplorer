@@ -252,6 +252,7 @@ $(document).ready(function() {
   alwaysOnLayers = new Set();
   showSeabedNames = true;
   webpages_url = "data/info_pages/html/";
+  loadFromUrl = false;
 
   // check for parameters in the URL of the current page
   var query = window.location.search.substring(1);
@@ -1003,8 +1004,10 @@ function displayLayer(layer, overlay, removeOldLayers) {
   //only the first load is from the url parameters, so set this to false now
   loadFromUrl = false
 
-  //on map 2 (the hidden map), just display top layer
-  map2.setLayerGroup(new ol.layer.Group());
+  //on map 2 (the hidden map), just display top layer, unless clickLayerBelow is set to true
+  if (overlay.clickLayerBelow !== true) {
+    map2.setLayerGroup(new ol.layer.Group());
+  }
   map2.addLayer(layer);
 
 }
