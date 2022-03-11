@@ -528,12 +528,11 @@ var mapOverlays =
              "credit":"Holschuh et al., 2019",
              "legend":true,
              "scale":true,
-			 "legendPath":"data/Holschuh_swathradar/Holschuh2019_legend_minus1400.png",
-			 "scalePath":"data/Holschuh_swathradar/Holschuh2019_legend_minus1400.scl",
+			 "legendPath":"data/Holschuh_swathradar/Holschuh_legend_minus1400m.png",
+			 "scalePath":"data/Holschuh_swathradar/Holschuh_legend_minus1400m.scl",
 			 "aboutAlertURL":"data/Holschuh_swathradar/About_Holschuh2019.html",
-          "wesn": "-109,-106,-75,-77",
+          	 "wesn": "-108,-106.5,-76,-77",
 			 // "aboutAudioURL":"data/Holschuh_swathradar/About_Hogan2020.mp4"}}
-             // "mapProjection":1,
              "layers":[
                 {
                        "type":"tiled",
@@ -547,27 +546,27 @@ var mapOverlays =
                        "title":"Bedrock Elevation Under the Antarctic Ice Sheet"
             	},
                 {
-                   "source":"data/Holschuh_swathradar/Holschuh_upstream_300dpi_z0-6",
+                   "source":"data/Holschuh_swathradar/Holschuh_upstream_300dpi_z0-5",
                    "type":"tiled",
                    "title":"Detailed Topography from RADAR",
                    "mapProjection":1,
-                   "mapMaxZoom":6,
-                   "mapMaxResolution":0.99,
+                   "mapMaxZoom":5,
+                   "mapMaxResolution":1.3164,
                    "tileWidth":256,
                    "tileHeight":256,
-                   "extent": [-1325000.00000000, -438502.22170748, -1315991.00000000, -433988.77829252],
+                   "extent": [-1325193.50000000, -438470.00000000, -1316175.50000000, -433961.00000000],
                    "legendUnits":" meters",
                 },
                 {
-                   "source":"data/Holschuh_swathradar/Holschuh_downstream_300dpi_z0-6",
+                   "source":"data/Holschuh_swathradar/Holschuh_downstream_300dpi_z0-5",
                    "type":"tiled",
                    "title":"Detailed Topography from RADAR",
                    "mapProjection":1,
-                   "mapMaxZoom":6,
-                   "mapMaxResolution":1.97,
+                   "mapMaxZoom":5,
+                   "mapMaxResolution":2.925,
                    "tileWidth":256,
                    "tileHeight":256,
-                   "extent": [-1436000.00000000, -449200.67276093, -1418983.00000000, -440682.32723907],
+                   "extent": [-1436187.00000000, -449215.33212996, -1419170.00000000, -440693.66787004],
                    "legendUnits":" meters",
                    "clickLayerBelow": true
                 }
