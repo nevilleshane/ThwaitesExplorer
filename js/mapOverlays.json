@@ -493,7 +493,8 @@ var mapOverlays =
 			 "legendPath":"data/Hogan2020_bathy/Hogan2020_legend_minus1400.png",
 			 "scalePath":"data/Hogan2020_bathy/Hogan2020_legend_minus1400.scl",
 			 "aboutAlertURL":"data/Hogan2020_bathy/About_Hogan2020.html",
-			 "wesn": "-109,-105,-81,-79",
+             "mapProjection":1,
+             "wesn": "-107,-102,-71,-77",
 			 // "aboutAudioURL":"data/Hogan2020_bathy/About_Hogan2020.mp4"}}
              "layers":[
                 {
@@ -535,15 +536,15 @@ var mapOverlays =
 			 // "aboutAudioURL":"data/Holschuh_swathradar/About_Hogan2020.mp4"}}
              "layers":[
                 {
-                       "type":"tiled",
-                       "mapProjection":1,
-                       "source":"data/BeneathAntarcticIcesheet/Bedmachine_bed_ETOPO1_clipped_600m_zoom8",
-                       "mapMaxZoom":8,
-                       "mapMaxResolution":150.00535457,
-                       "tileWidth":256,
-                       "tileHeight":256,
-                       "extent":[-2719812.53530000, -2372227.21632370, 2939589.48209285, 2465145.45800000],
-                       "title":"Bedrock Elevation Under the Antarctic Ice Sheet"
+                    "type":"tiled",
+                    "mapProjection":1,
+                    "source":"data/BeneathAntarcticIcesheet/Bedmachine_bed_ETOPO1_clipped_600m_zoom8",
+                    "mapMaxZoom":8,
+                    "mapMaxResolution":150.00535457,
+                    "tileWidth":256,
+                    "tileHeight":256,
+                    "extent":[-2719812.53530000, -2372227.21632370, 2939589.48209285, 2465145.45800000],
+                    "title":"Bedrock Elevation Under the Antarctic Ice Sheet"
             	},
                 {
                    "source":"data/Holschuh_swathradar/Holschuh_upstream_300dpi_z0-5",
