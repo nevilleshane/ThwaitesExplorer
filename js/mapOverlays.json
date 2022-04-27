@@ -339,7 +339,7 @@ var mapOverlays =
       "type":"dir",
       "children":[
          {
-            "name":"What do we know about Thwaites Glacier",
+            "name":"What do we know about Thwaites Glacier's past?",
             "type":"overview",
             "menu_id":"0200",
             // "info":"data/info_pages/html/OverviewWhyDoesSeaLevelChange.html",
@@ -472,7 +472,7 @@ var mapOverlays =
       ]
    },
    {
-      "name":"WHAT are ITGC teams learning now?",
+      "name":"WHAT can we learn from regional data?",
       "type":"dir",
       "menu_id":"04",
       "children":[
@@ -487,14 +487,14 @@ var mapOverlays =
              "menu_id":"0401",
              "type":"multi_layer",
              "info":"data/info_pages/html/southASE.html",
-             "credit":"Morlighem, M. 2019. MEaSUREs BedMachine Antarctica, Version 1.",
+             "credit":"Hogan et al. (2020) https://doi.org/10/ggs949",
              "legend":true,
              "scale":true,
 			 "legendPath":"data/Hogan2020_bathy/Hogan2020_legend_minus1400.png",
 			 "scalePath":"data/Hogan2020_bathy/Hogan2020_legend_minus1400.scl",
 			 "aboutAlertURL":"data/Hogan2020_bathy/About_Hogan2020.html",
+			 "wesn": "-109,-105,-81,-79",
 			 // "aboutAudioURL":"data/Hogan2020_bathy/About_Hogan2020.mp4"}}
-             // "mapProjection":1,
              "layers":[
                 {
                   "type":"tiled",
