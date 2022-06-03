@@ -572,6 +572,24 @@ var mapOverlays =
                    "clickLayerBelow": true
                 }
              ]
+         },
+        {
+             "name":"Bed Type",
+             "menu_id":"0403",
+             "title":"Clyne - Impedance",
+             "type":"geojson",
+             "mapProjection":1,
+             "source":"data/Clyne_LTG/Clyne_Thwaites_ALL_0.js",
+             "styleFunctionFile":"data/Clyne_LTG/Clyne_Thwaites_ALL_0_style.js",
+             "styleFunction":"styleFunctionProjects",
+             "info":"https://thwaitesglacier.org/",
+             "credit":"TBD",
+             "legend":true,
+             "legendPath":"data/Clyne_LTG/Clyne_LTG_legend.png",
+             "scale":false,
+             "scalePath":"",
+             "aboutAlertURL":"data/Clyne_LTG/About_Clyne_LTG.txt",
+             // "aboutAudioURL":"data/Clyne_LTG/Audio_Clyne_LTG.mp4"
          }
       ]
    }
