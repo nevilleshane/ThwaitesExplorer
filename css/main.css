@@ -393,7 +393,7 @@ tr.disabled {
   border: 5px solid #666666;
   bottom: 12px;
   left: -50px;
-  min-width: 150px;
+  min-width: 50px;
   z-index: 80;
 }
 .ol-popup:after, .ol-popup:before {

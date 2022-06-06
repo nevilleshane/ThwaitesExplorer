@@ -334,7 +334,7 @@ $(document).ready(function() {
           var popup = feature.get('popup');
 
           if (popup.desc) {
-            content += "<p style='width:250px'>"+popup.desc+"</p>";
+            content += "<p style='max-width:250px'>"+popup.desc+"</p>";
           }
           if (popup.url) {
             content += "<a target='_blank' href='" + popup.url + "'>More info</a>";
