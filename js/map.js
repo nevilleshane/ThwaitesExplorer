@@ -1005,10 +1005,15 @@ function displayGeojson(overlay, removeOldLayers) {
       $.getScript(overlay.styleFunctionFile, function() {
         //make sure all other tables are cleared first
         removeAllTables();
+        //check projection in data file
+        var dataProjection = 'EPSG:4326';
+        if (data.crs  && data.crs.properties && data.crs.properties.name === "urn:ogc:def:crs:EPSG::3031")
+            dataProjection = 'EPSG:3031';
+            
         var geojsonLayer = new ol.layer.Vector({
           visible:true,
           source: new ol.source.Vector({
-            features: (new ol.format.GeoJSON()).readFeatures(data, {dataProjection: 'EPSG:4326', featureProjection:'EPSG:3031'}),
+            features: (new ol.format.GeoJSON()).readFeatures(data, {dataProjection: dataProjection, featureProjection:'EPSG:3031'}),
           }),
           style: eval(overlay.styleFunction),
           title: overlay.title,
