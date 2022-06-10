@@ -486,7 +486,7 @@ var mapOverlays =
              "name":"New Detailed Seafloor Map near Thwaites",
              "menu_id":"0401",
              "type":"multi_layer",
-             "info":"data/info_pages/html/southASE.html",
+             "info":"data/info_pages/html/NewDetailedSeafloorMapNearThwaites.html",
              "credit":"Hogan et al. (2020) https://doi.org/10/ggs949",
              "legend":true,
              "scale":true,
@@ -522,10 +522,10 @@ var mapOverlays =
              ]
          },
          {
-             "name":"New Hi-Res Subglacial Topography",
+             "name":"New detailed look under Thwaites Glacier",
              "menu_id":"0402",
              "type":"multi_layer",
-             "info":"data/info_pages/html/swath_radar.html",
+             "info":"data/info_pages/html/NewDetailedLookUnderThwaitesGlacier.html",
              "credit":"Holschuh et al., 2019",
              "legend":true,
              "scale":true,
@@ -575,24 +575,68 @@ var mapOverlays =
                 }
              ]
          },
-        {
-             "name":"Bed Type",
+         {
+             "name":"Identifying Subglacial Bed Types",
              "menu_id":"0403",
-             "title":"Seismic Impedance",
-             "type":"geojson",
-             "mapProjection":1,
-             // "source":"data/Clyne_LTG/Clyne_Thwaites_ALL_0.js",
-             "source":"data/Clyne_LTG/Thwaites_Upper+Lower_bedtype_3031.geojson",
-             "styleFunctionFile":"data/Clyne_LTG/Clyne_Thwaites_ALL_0_style.js",
-             "styleFunction":"style_Clyne_Thwaites_ALL_0",
-             "info":"https://thwaitesglacier.org/",
-             "credit":"Clyne et al., Muto et al.",
+             "type":"multi_layer",
+             "info":"data/info_pages/html/Identifyingsubglacialbedtype.html",
+             "credit":"Clyne et al. (2020); Muto et al. (2019)",
              "legend":true,
-             "legendPath":"data/Clyne_LTG/Clyne_LTG_legend.png",
-             "scale":false,
-             "scalePath":"",
+             "scale":true,
+			 "legendPath":"data/Clyne_LTG/Clyne_LTG_legend.png",
+			 "scalePath":"data/Holschuh_swathradar/Holschuh_legend_minus1400m.scl",
+          	 "wesn": "-108,-106.5,-76,-77",
              "aboutAlertURL":"data/Clyne_LTG/About_Clyne_LTG.txt",
              // "aboutAudioURL":"data/Clyne_LTG/Audio_Clyne_LTG.mp4"
+             "layers":[
+                {
+                    "type":"tiled",
+                    "mapProjection":1,
+                    "source":"data/BeneathAntarcticIcesheet/Bedmachine_bed_ETOPO1_clipped_600m_zoom8",
+                    "mapMaxZoom":8,
+                    "mapMaxResolution":150.00535457,
+                    "tileWidth":256,
+                    "tileHeight":256,
+                    "extent":[-2719812.53530000, -2372227.21632370, 2939589.48209285, 2465145.45800000],
+                    "title":"Bedrock Elevation Under the Antarctic Ice Sheet"
+            	},
+                {
+                   "source":"data/Holschuh_swathradar/tiles_holschuh_upstream_shaded_72dpi_zoom4",
+                   // "source":"data/Holschuh_swathradar/Holschuh_upstream_300dpi_z0-5",
+                   "type":"tiled",
+                   "mapProjection":1,
+                   "mapMaxZoom":4,
+                   "mapMaxResolution":34.3669,
+                   "tileWidth":256,
+                   "tileHeight":256,
+                   "extent": [-1331866.96530000, -467075.22478662, -1260486.82110000, -424528.94721338],
+                   "legendUnits":" meters",
+                },
+                {
+                   "source":"data/Holschuh_swathradar/tiles_holschuh_downstream_shaded_72dpi_zoom4",
+                   // "source":"data/Holschuh_swathradar/Holschuh_downstream_300dpi_z0-5",
+                   "type":"tiled",
+                   "mapProjection":1,
+                   "mapMaxZoom":4,
+                   "mapMaxResolution":28.2,
+                   "tileWidth":256,
+                   "tileHeight":256,
+                   "extent": [-1437816.69360087, -476085.39770000, -1379170.91569913, -434034.28650000],
+                   "legendUnits":" meters",
+                   "clickLayerBelow": true
+                },
+                {
+                   "source":"data/Clyne_LTG/Thwaites_Upper+Lower_bedtype_3031.geojson",
+                   "type":"geojson",
+                   "title":"Bed Type",
+                   "mapProjection":1,
+				   "styleFunctionFile":"data/Clyne_LTG/Clyne_Thwaites_ALL_0_style.js",
+				   "styleFunction":"style_Clyne_Thwaites_ALL_0",
+				   "legend":true,
+				   "scale":false,
+                   "clickLayerBelow": true
+                }
+             ]
          }
       ]
    }

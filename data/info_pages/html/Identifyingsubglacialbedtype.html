@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Identifying Subglacial Bed Type</title>
+	<meta name="generator" content="BBEdit 10.5" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
+<style type="text/css">
+p {
+text-align: justify;
+font-size: 11pt;
+font-family: sans-serif, verona, arial;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+figcaption {
+font-weight: lighter;
+font-style: italic;
+text-align: center;
+}
+
+small { 
+font-size: 9pt;
+}
+li { 
+margin-left: 10px;
+margin-right: 10px;
+}
+
+h3 {
+margin-left: 10px;
+margin-right: 10px;
+}
+
+body {
+margin-left: 100px;
+margin-right: 100px;
+}
+
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+    
+</style>
+</head>
+<body>
+<div>
+<img id="banner" width="580" height="28" alt="IdentifyingSubglacialBedType" src="../banners/banner_Clyne.png">
+</div>
+<h4>Summary</h4> 
+</p>
+<p>
+This map steps from the first application of a swath data technology used in Antarctica that allowed us to measure the land features under glacial
+ice in very high resolution, moving into an immediate application of this understanding. Recall that the sensitivity of the overlying ice to changes in the climate 
+is dependent on <a href="#topo" data-rel="popup">bed topography</a> and the bed composition that the ice is moving over. 
+This data identifies the bed surface material under the ice as hard, soft, or wet, predicting how the ice moves in this area, and how this will affect the future of Thwaites Glacier. 
+<hr>
+<div data-role="popup" id="topo">
+<p>surface features or shape of the land</p>
+</div>	
+<p>
+
+<p>
+<b>What is this map about?</b> Ice interacts with the bed below, both creating land features as it moves across the landscape, 
+and being influenced by the land below in its flow. Our understanding of how different ice processes generate landscape 
+features has been developed from studying exposed landscapes around the world many years after any ice has melted away. 
+Landforms that were once under the ice have been studied with high precision instruments using techniques such as <a href="#lidar" data-rel="popup">lidar</a> to measure land surface elevation 
+and topography and <a href="#multi" data-rel="popup">multibeam</a> swath bathymetry to collect equivalent data on the ocean floor. Models of how the ice interacted with, 
+and contributed to the development of the landscape, have been developed from these data. However, new techniques were needed to measure the 
+forms hidden under the ice with the same high resolution imagery that would match that of our surface topography. This is now possible using 
+swath radar processing. Thwaites Glacier was the first area in Antarctica where this technique was used.  
+
+<div data-role="popup" id="lidar">
+<p>stands for Light Detection and Ranging, is a remote sensing method using light in the form of a pulsed laser.</p>
+</div>	
+<div data-role="popup" id="multi">
+<p>an echosounder or type of sonar that is used to map the seabed using acoustic waves.</p>
+</div>
+</p>
+
+<p>
+<b>How can we look under the ice?</b> For information on this we refer you back to the information page for the map called <b>A Look Under the Antarctic Ice Sheet</b> in the App. There we 
+review how a combination of geophysical tools can be used to image through the ice to better understand the land surface below. 
+There we also review some of the many things we can learn from looking under the ice, and broad questions we can answer by interacting with the data. 
+The more developed the technology, and the more detailed the data we collect, the more specific the questions that can be asked and answered, 
+helping us to push forward our understanding of ice/landscape interactions. 
+</p>
+
+<figure style="float:right" > 
+		<a href="#imagecaption1" data-rel="popup"><img id="picture" class="displayed" width="300" alt="Swath radar" src="../pictures/SLAR-geometry_p.jpg"></a>
+		<figcaption><small>(Touch Image For Description)</small></figcaption>
+	<div data-role="popup" id="imagecaption1">
+	<p>Swath width refers to the strip of the Earth’s surface from which data are collected by a side-looking airborne radar. (Image credit: <a href="/https://www.radartutorial.eu/20.airborne/ab06.en.html">radartutorial.eu)</a></p>
+	</div>	
+	</figure>
+ 
+<p>
+<b>What is swath processing?</b> Conventional techniques for measuring and characterizing the land surface under the ice includes the use of seismic 
+and <a href="#nadir" data-rel="popup"> nadir-focused</a> radar. Seismic measurements use small explosions that when detonated send sound reverberations that are then measured to provide 
+information on the depth to the bed and on its surface material. Nadir-focused radar measures the timing of the travel of radar waves collected 
+directly below the source. Traditionally radar lines are collected at spacing that is kilometers apart, and the areas that fall in between are 'smoothed' to connect the data. 
+Swath radar collects data not just directly below but all along a fan shaped strip spreading out on either side from the nadir, 
+creating higher resolution, three-dimensional maps of the features below. For the data shown in this map the swaths were ~ 2km wide, and subglacial land 
+features were imaged at~ 25 meter resolution, which allowed land features to be retained and identified clearly in the data. 
+
+<div data-role="popup" id="nadir">
+<p>the direction pointing directly below the radar focus</p>
+</div>
+</p>
+
+<p>
+<b>Why is subglacial bed type important?</b> This map adds another layer of data over the top of the high 
+resolution bed image. Scientists from the ITGC GHOST (Geophysical Habitat of Subglacial Thwaites) project used seismics to identify in 
+detail what type of bed material was found under the ice. Their work identified <b>soft material, hard surfaces and areas of water under the ice</b>. 
+
+<figure style="float:left" > 
+		<a href="#imagecaption2" data-rel="popup"><img id="picture" class="displayed" width="400" alt="Map of high low areas" src="../pictures/ClyneMapofhighlow.png"></a>
+		<figcaption><small>(Touch Image For Description)</small></figcaption>
+	<div data-role="popup" id="imagecaption2">
+	<p>This image has the ocean on the left moving inland on the ice sheet to the right. It combines the regional topography information from Hulschuh with a lower plains area 
+	closer to the ocean moving inland to diffrent elevation surfaces. (Image credit: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0012821X20304878?via%3Dihub">Earth & Planetary Science Letters)</a></p>
+	</div>	
+	</figure>
+
+They used the terms ‘slip' for where the ice was able to flow easily and 'stick’ for where it was stuck to the bed. They focused on the bed material 
+near Thwaites’ glacier’s <a href="#GL" data-rel="popup"> grounding line</a>. Thwaites' grounding line is currently resting on a high area or a  ‘sill’ 
+that is stopping the glacier from retreating rapidly backwards and releasing 
+more ice to the oceans. If the ice is sliding over <b>hard bed</b>, the climate driven thinning of the glacier will remain localized along the coast, 
+causing the grounding line to melt back off the sill and rapidly retreat inland. If the ice is sliding over <b>softer bed</b> material which behaves 
+in a more ‘plastic’ manner, the ice thinning will reach further inland but limit the amount of coastal thinning. While this will slow grounding 
+line retreat it will still thin a large amount of the glacier ‘catchment’ and could destabilize the whole basin. But what about mixed beds? Data 
+from this section of the map shows a mix of hard and soft bed types. Will one process dominate the ice behavior? Adding this data when building new models 
+for Thwaites will be important to answering these questions.  
+<div data-role="popup" id="GL">
+<p>the final place where the glacier is attached to the land below before going afloat</p>
+</div>
+</p>
+
+<p>
+<b>What can I learn from this map?</b> Click on the different dots to see where the landscape is hard, soft or wet. Looking at the hard, soft, wet areas,
+are the hard areas different in elevation than the soft areas? Do the wet areas fall in high or low elevation areas? What is the surface like in the depressions 
+or low areas that form around the high landforms as the ice moves across the landscape? See if you can develop your own hypothesis of what the 
+relationship is between the landscape elevation and bed type. Consider how the ice interacted with the land below to create these formations. 
+Think of the power of the ice as it carves across the landscape, scraping across and digging out areas of the surface as it goes. 
+</p>
+
+
+
+<p>
+<b>Data Sources </b>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0012821X20304878?via%3Dihub">Clyne et al., Earth & Planetary Science Letters, 2020</a> </li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0012821X18307179?via%3Dihub">Muto et al., Earth & Planetary Science Letters, 2019</a> </li>
+</p>
+<p>
+<b>Additional Reading </b>
+<li><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021JF006339">Alley et al.,Journal of Geophysical Research, 2021</a> </li>
+
