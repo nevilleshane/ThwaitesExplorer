@@ -586,7 +586,7 @@ var mapOverlays =
 			 "legendPath":"data/Clyne_LTG/Clyne_LTG_legend.png",
 			 "scalePath":"data/Holschuh_swathradar/Holschuh_legend_minus1400m.scl",
           	 "wesn": "-108,-106.5,-76,-77",
-             "aboutAlertURL":"data/Clyne_LTG/About_Clyne_LTG.txt",
+             "aboutAlertURL":"data/Clyne_LTG/About_Clyne_LTG.html",
              // "aboutAudioURL":"data/Clyne_LTG/Audio_Clyne_LTG.mp4"
              "layers":[
                 {
