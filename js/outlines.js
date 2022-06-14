@@ -68,7 +68,7 @@ $(document).ready(function() {
             projection: sp_proj
           });
 
-          alwaysOnLayers.add(projectsLayer);
+//           alwaysOnLayers.add(projectsLayer);
              
           if (map.getView().getProjection() == sp_proj) map.addLayer(projectsLayer);
         },

@@ -468,6 +468,39 @@ var mapOverlays =
                    "title":"National Science Foundation, Nathaniel B. Palmer"
                 }
              ]
+         },
+         {
+             "name":"ITGC Logistics",
+             "menu_id":"0304",
+             "type":"multi_layer",
+             "info":"https://thwaitesglacier.org/",
+             "credit":"TBD",
+             "legend":true,
+             "legendPath":"data/ITGClogistics/ITGC_logistics_legend.png",
+             "scale":false,
+             "scalePath":"",
+             // "aboutAlertURL":"data/ITGClogistics/About_ThwaitesProjects.txt",
+             // "aboutAudioURL":"data/ITGClogistics/Audio_ThwaitesProjects.mp4"
+             "layers":[
+                {
+                  "type":"tiled",
+                  "source":"data/MODISMOA/MOA2014_hp1_750m_zoom6",
+                  "mapMaxZoom":6,
+                  "mapMaxResolution":374.99999949,
+                  "tileWidth":256,
+                  "tileHeight":256,
+                  "extent":[-3174449.99580000, -2816674.99630659, 2867549.99599430, 2406324.99660000],
+                  "title":"MODIS MOA"
+                },
+                {
+				 "type":"geojson",
+				 "source":"data/ITGClogistics/PGC_20212022_3031.geojson",
+				 "styleFunctionFile":"data/ITGClogistics/PGC_20212022_FixedWing_v2_0_style.js",
+				 "styleFunction":"style_PGC_20212022_FixedWing_v2_0",
+				 "mapProjection":1,
+				 "title":"ITGC Logistics"
+                }
+             ]
          }
       ]
    },

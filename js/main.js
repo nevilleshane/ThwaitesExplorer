@@ -339,7 +339,10 @@ $(document).ready(function() {
           if (popup.url) {
             content += "<a target='_blank' href='" + popup.url + "'>More info</a>";
           }
-
+		  if (popup.img) {
+            content += "<img id='_blank' src='"+popup.img+"'><br>"+popup.caption+"</a>";
+          }
+          
         }
         else if (feature.get('layer')) {
           var layer = feature.get('layer');
