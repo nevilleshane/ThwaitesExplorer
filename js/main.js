@@ -340,7 +340,10 @@ $(document).ready(function() {
             content += "<a target='_blank' href='" + popup.url + "'>More info</a>";
           }
 		  if (popup.img) {
-            content += "<img id='_blank' src='"+popup.img+"'><br>"+popup.caption+"</a>";
+            content += "<div align='center'><img src='"+popup.img+"'></div>";
+          }
+          if (popup.caption) {
+            content += "<p><i>"+popup.caption+"</i></p>";
           }
           
         }

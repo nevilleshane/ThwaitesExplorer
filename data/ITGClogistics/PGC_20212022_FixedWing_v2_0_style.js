@@ -12,20 +12,7 @@ function categories_PGC_20212022_FixedWing_v2_0(feature, value, size, resolution
                   anchorXUnits: "pixels",
                   anchorYUnits: "pixels",
                   rotation: 0.0,
-                  src: "data/ITGClogistics/styles/transport_airport.svg"
-            }),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
-        image: new ol.style.Icon({
-                  imgSize: [580, 580],
-                  scale: 0.05172413793103448,
-                  anchor: [15, 15],
-                  anchorXUnits: "pixels",
-                  anchorYUnits: "pixels",
-                  rotation: 0.0,
-                  src: "data/ITGClogistics/styles/transport_airport.svg"
+                  src: "data/ITGClogistics/styles/transport_airport_red.svg"
             }),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
@@ -34,19 +21,6 @@ function categories_PGC_20212022_FixedWing_v2_0(feature, value, size, resolution
                     break;
 case 'LC130':
                     return [ new ol.style.Style({
-        image: new ol.style.Icon({
-                  imgSize: [580, 580],
-                  scale: 0.05172413793103448,
-                  anchor: [15, 15],
-                  anchorXUnits: "pixels",
-                  anchorYUnits: "pixels",
-                  rotation: 0.0,
-                  src: "data/ITGClogistics/styles/transport_airport.svg"
-            }),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    }),new ol.style.Style({
         image: new ol.style.Icon({
                   imgSize: [580, 580],
                   scale: 0.05172413793103448,
