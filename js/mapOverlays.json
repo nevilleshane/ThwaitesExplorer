@@ -481,6 +481,7 @@ var mapOverlays =
              "scalePath":"",
              // "aboutAlertURL":"data/ITGClogistics/About_ThwaitesProjects.txt",
              // "aboutAudioURL":"data/ITGClogistics/Audio_ThwaitesProjects.mp4"
+             "mapProjection":1,
              "layers":[
                 {
                   "type":"tiled",
